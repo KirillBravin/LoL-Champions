@@ -1,7 +1,7 @@
 export function SkinDiscounts() {
   return (
-    <section className="skin-discount bg-black width-100">
-      <h1>Discounts</h1>
+    <section className="skin-discount">
+      <h2 className="d-flex justify-content-center">Weekly skin discount</h2>
     </section>
   );
 }

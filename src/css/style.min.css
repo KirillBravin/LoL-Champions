@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "BeaufortforLOL-Regular";
+  src: url("../public/fonts/BeaufortforLOL-Regular.eot");
+  src: url("../public/fonts/BeaufortforLOL-Regular.eot") format("eot"), url("../public/fonts/BeaufortforLOL-Regular.woff") format("woff"), url("../public/fonts/BeaufortforLOL-Regular.ttf") format("truetype"), url("../public/fonts/BeaufortforLOL-Regular.svg#") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BeaufortforLOL-BoldItalic";
+  src: url("../public/fonts/BeaufortforLOL-BoldItalic.eot?#iefix");
+  src: url("../public/fonts/BeaufortforLOL-BoldItalic.eot?#iefix") format("eot"), url("../public/fonts/BeaufortforLOL-BoldItalic.woff") format("woff"), url("../public/fonts/BeaufortforLOL-BoldItalic.ttf") format("truetype"), url("../public/fonts/BeaufortforLOL-BoldItalic.svg#") format("svg");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "BeaufortforLOL-HeavyItalic";
+  src: url("../public/fonts/BeaufortforLOL-HeavyItalic.eot?#iefix");
+  src: url("../public/fonts/BeaufortforLOL-HeavyItalic.eot?#iefix") format("eot"), url("../public/fonts/BeaufortforLOL-HeavyItalic.woff") format("woff"), url("../public/fonts/BeaufortforLOL-HeavyItalic.ttf") format("truetype"), url("../public/fonts/BeaufortforLOL-HeavyItalic.svg#") format("svg");
+  font-weight: 800;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Spiegel-Regular";
+  src: url("../public/fonts/Spiegel-RegularItalic.eot?#iefix");
+  src: url("../public/fonts/Spiegel-RegularItalic.eot?#iefix") format("eot"), url("../public/fonts/Spiegel-RegularItalic.woff") format("woff"), url("../public/fonts/Spiegel-RegularItalic.ttf") format("truetype"), url("../public/fonts/Spiegel-RegularItalic.svg#") format("svg");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../public/fonts/Poppins-Regular.eot");
+  src: url("../public/fonts/Poppins-Regular.eot?#iefix") format("embedded-opentype"), url("../public/fonts/Poppins-Regular.woff2") format("woff2"), url(".../public/fonts/Poppins-Regular.woff") format("woff"), url("../Poppins-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+.skin-discount h1 {
+  font-family: BeaufortforLOL-Regular;
+}/*# sourceMappingURL=style.min.css.map */

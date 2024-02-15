@@ -1,0 +1,34 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "BeaufortforLOL-Regular";
+  src: url("src\fonts௪ufortforLOL-Regular.eot");
+  src: url("src\fonts௪ufortforLOL-Regular.eot") format("eot"), url("src\fonts௪ufortforLOL-Regular.woff") format("woff"), url("src\fonts௪ufortforLOL-Regular.ttf") format("truetype"), url("./fonts/BeaufortforLOL-Regular.svg#") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BeaufortforLOL-BoldItalic";
+  src: url("./fonts/BeaufortforLOL-BoldItalic.eot?#iefix");
+  src: url("./fonts/BeaufortforLOL-BoldItalic.eot?#iefix") format("eot"), url("./fonts/BeaufortforLOL-BoldItalic.woff") format("woff"), url("./fonts/BeaufortforLOL-BoldItalic.ttf") format("truetype"), url("./fonts/BeaufortforLOL-BoldItalic.svg#") format("svg");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "BeaufortforLOL-HeavyItalic";
+  src: url("./fonts/BeaufortforLOL-HeavyItalic.eot?#iefix");
+  src: url("./fonts/BeaufortforLOL-HeavyItalic.eot?#iefix") format("eot"), url("./fonts/BeaufortforLOL-HeavyItalic.woff") format("woff"), url("./fonts/BeaufortforLOL-HeavyItalic.ttf") format("truetype"), url("./fonts/BeaufortforLOL-HeavyItalic.svg#") format("svg");
+  font-weight: 800;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Spiegel-Regular";
+  src: url("./fonts/Spiegel-RegularItalic.eot?#iefix");
+  src: url("./fonts/Spiegel-RegularItalic.eot?#iefix") format("eot"), url("./fonts/Spiegel-RegularItalic.woff") format("woff"), url("./fonts/Spiegel-RegularItalic.ttf") format("truetype"), url("./fonts/Spiegel-RegularItalic.svg#") format("svg");
+  font-weight: 400;
+  font-style: italic;
+  @font-face;
+  font-family: "Roboto-Regular";
+  src: url("Roboto-Regular.tft") format("tft");
+  font-weight: 400;
+  font-style: normal;
+}/*# sourceMappingURL=fonts.min.css.map */
