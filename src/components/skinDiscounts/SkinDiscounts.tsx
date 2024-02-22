@@ -22,7 +22,7 @@ export function SkinDiscounts() {
   };
 
   return (
-    <section className="skin-discount h-500">
+    <section className="skin-discount">
       <Container>
         <h2 className="d-flex justify-content-center pt-5">
           Weekly skin discount
