@@ -8,7 +8,7 @@ import "../skinDiscounts/skinDiscount.sass";
 
 export function SkinDiscounts() {
   const { getChampionLoading } = useLeagueService();
-  const _imgPath = `.././public/icons/RP_icon.webp`;
+  const _imgPath = `/icons/RP_icon.webp`;
 
   const settings = {
     dots: true,
