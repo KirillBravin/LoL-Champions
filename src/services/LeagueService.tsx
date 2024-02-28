@@ -1,7 +1,11 @@
 import { useHttp } from "./http.hook";
 
 export const useLeagueService = () => {
+  const { loading, request, error, clearError, process, setProcess } =
+    useHttp();
+
   // Base paths
+  const version: string = "14.4.1";
   const _apiBase: string = "https://ddragon.leagueoflegends.com/cdn/";
   //img
   const _skinLoading: string = "img/champion/loading/";
@@ -12,8 +16,8 @@ export const useLeagueService = () => {
     return `${_apiBase + _skinLoading + name}`;
   };
 
-  const getChampionAhri = (name: "Ahri") => {
-    const championSplashArt_0 = `${_apiBase + _splashLoading}Ahri_0.jpg`;
+  const getChampion = (name: "Ahri") => {
+    const res = await request(`${_apiBase}`);
   };
 
   return {

@@ -2,10 +2,8 @@ import { useState, useCallback } from "react";
 
 export const useHttp = () => {
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
   const [process, setProcess] = useState("waiting");
-
-  const version: string = "14.4.1";
 
   const request = useCallback(
     async (
@@ -25,9 +23,11 @@ export const useHttp = () => {
         }
 
         const data = await response.json();
-      } catch (e: any) {
+      } catch (e: unknown) {
+        if (e instanceof Error) {
+          setError(e.message);
+        }
         setLoading(false);
-        setError(e.message);
         setProcess("error");
         throw e;
       }
