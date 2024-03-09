@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "../skinDiscounts/skinDiscount.sass";
 
 export function SkinDiscounts() {
-  const { getChampionLoading, getChampion } = useLeagueService();
+  const { getChampionLoading } = useLeagueService();
   const _imgPath = `/icons/RP_icon.webp`;
 
   const settings = {

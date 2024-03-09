@@ -1,0 +1,30 @@
+.slick-slider {
+  padding-bottom: 177px;
+}
+
+.slick-dots {
+  bottom: 144px;
+}
+
+.black-box {
+  width: 162px;
+  height: 25px;
+  background-color: black;
+  display: flex;
+  justify-content: space-evenly;
+  color: #c9aa71;
+}
+.black-box__rp-icon {
+  width: 17px;
+  height: 17px;
+  margin-top: 3px;
+  margin-left: 5px;
+}
+.black-box__item-align {
+  display: flex;
+  display: space-between;
+}
+
+.skinImg {
+  max-width: 162px;
+}/*# sourceMappingURL=skinDiscount.css.map */
