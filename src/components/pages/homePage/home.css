@@ -1,0 +1,36 @@
+.title {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  font-family: BeaufortforLOL-BoldItalic;
+  color: rgb(1, 1, 1);
+  bottom: 80px;
+}
+.title__intro {
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 2.4px;
+  font-weight: 600;
+  font-style: italic;
+  text-transform: uppercase;
+}
+.title__main {
+  font-size: 120px;
+  line-height: 102px;
+  letter-spacing: 3.6px;
+  font-weight: 800;
+  font-style: italic;
+  text-transform: uppercase;
+}
+.title__subtitle {
+  font-family: Spiegel;
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  font-weight: 400;
+  max-width: 460px;
+  text-align: center;
+  color: #000000;
+  line-height: 1.6;
+  margin-top: 12px;
+}/*# sourceMappingURL=home.css.map */

@@ -1,5 +1,13 @@
+.skin-discount {
+  font-family: BeaufortforLOL-Regular;
+  background-color: #f8f8f8;
+}
+
 .slick-slider {
   padding-bottom: 177px;
+}
+.slick-slider div {
+  outline: none;
 }
 
 .slick-dots {
