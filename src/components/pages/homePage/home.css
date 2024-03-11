@@ -15,7 +15,7 @@
   font-style: italic;
   text-transform: uppercase;
   animation-duration: 2800ms;
-  animation-delay: 900ms;
+  animation-delay: 1500ms;
 }
 .title__main {
   font-size: 120px;
@@ -25,7 +25,7 @@
   font-style: italic;
   text-transform: uppercase;
   animation-duration: 2800ms;
-  animation-delay: 2500ms;
+  animation-delay: 1500ms;
 }
 .title__subtitle {
   font-family: Spiegel;
@@ -38,5 +38,5 @@
   line-height: 1.6;
   margin-top: 12px;
   animation-duration: 2800ms;
-  animation-delay: 3500ms;
+  animation-delay: 1500ms;
 }/*# sourceMappingURL=home.css.map */

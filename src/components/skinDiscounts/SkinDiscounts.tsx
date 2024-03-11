@@ -4,7 +4,8 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "../skinDiscounts/skinDiscount.sass";
+import "animate.css";
+import "../skinDiscounts/skinDiscount.css";
 
 export function SkinDiscounts() {
   const { getChampionLoading } = useLeagueService();
@@ -22,7 +23,7 @@ export function SkinDiscounts() {
   };
 
   return (
-    <section className="skin-discount">
+    <section className="animate__animated skin-discount animate__fadeIn">
       <Container>
         <h2 className="d-flex justify-content-center pt-5">
           Weekly skin discount
