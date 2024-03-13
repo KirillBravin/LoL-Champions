@@ -34,6 +34,13 @@
   font-style: normal;
 }
 @font-face {
+  font-family: "Spiegel-SemiBold";
+  src: url("../public/fonts/Spiegel-SemiBold.eot?#iefix");
+  src: url("../public/fonts/Spiegel-SemiBold.eot?#iefix") format("eot"), url("../public/fonts/Spiegel-SemiBold.woff") format("woff"), url("../public/fonts/Spiegel-SemiBold.ttf") format("truetype"), url("../public/fonts/Spiegel-SemiBold.svg#") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
   font-family: "Poppins";
   src: url("../public/fonts/Poppins-Regular.eot");
   src: url("../public/fonts/Poppins-Regular.eot?#iefix") format("embedded-opentype"), url("../public/fonts/Poppins-Regular.woff2") format("woff2"), url(".../public/fonts/Poppins-Regular.woff") format("woff"), url("../Poppins-Regular.ttf") format("truetype");
