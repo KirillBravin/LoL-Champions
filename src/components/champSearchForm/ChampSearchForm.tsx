@@ -31,33 +31,56 @@ export function ChampSearchForm() {
 
   return (
     <>
-      <nav className="nav-wrapper">
-        <section className="nav">
-          <div className="nav__search-bar">
-            <input
-              type="text"
-              value={searchItem}
-              onChange={handleInputChange}
-              placeholder="Search"
-            />
+      <div className="style-wrapper">
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <img
+                src="public/icons/magnifying-glass.svg"
+                alt="search"
+                className="search-bar__icon"
+              />
+              <input
+                type="text"
+                value={searchItem}
+                onChange={handleInputChange}
+                className="search-bar"
+              />
+              <label className="search-bar__placeholder">search</label>
+            </div>
+            <div className="col-8">
+              <ul className="roles">
+                <li className="roles">
+                  <button className="roles__button__all">all</button>
+                </li>
+                <li className="roles__assassins">
+                  <button className="roles__button__assassins">
+                    assassins
+                  </button>
+                </li>
+                <li className="roles__fighters">
+                  <button className="roles__button__fighters">fighters</button>
+                </li>
+                <li className="roles__mages">
+                  <button className="roles__button__mages">mages</button>
+                </li>
+                <li className="roles__marksmen">
+                  <button className="roles__button__marksmen">marksmen</button>
+                </li>
+                <li className="roles__supports">
+                  <button className="roles__button__supports">supports</button>
+                </li>
+                <li className="roles__tanks">
+                  <button className="roles__button__tanks">tanks</button>
+                </li>
+              </ul>
+            </div>
+            <div className="col">
+              <div className="difficulties">all difficulties</div>
+            </div>
           </div>
-          {/*         {filteredChamps.map((champ) => (
-          <li key={champ.id}>{champ.champion}</li>
-        ))} */}
-          <ul className="nav__roles">
-            <li className="roles">
-              <button className="roles__button__all"></button>
-            </li>
-            <li className="roles__assassins">assassins</li>
-            <li className="roles__fighters">fighters</li>
-            <li className="roles__mages">mages</li>
-            <li className="roles__marksmen">marksmen</li>
-            <li className="roles__supports">supports</li>
-            <li className="roles__tanks">tanks</li>
-          </ul>
-          <div className="nav__difficulties">all difficulties</div>
-        </section>
-      </nav>
+        </div>
+      </div>
     </>
   );
 }
