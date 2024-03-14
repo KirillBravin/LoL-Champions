@@ -35,43 +35,43 @@ export function ChampSearchForm() {
         <div className="container">
           <div className="row">
             <div className="col">
-              <img
-                src="public/icons/magnifying-glass.svg"
-                alt="search"
-                className="search-bar__icon"
-              />
-              <input
-                type="text"
-                value={searchItem}
-                onChange={handleInputChange}
-                className="search-bar"
-              />
-              <label className="search-bar__placeholder">search</label>
+              <div className="search-bar">
+                <img
+                  src="public/icons/magnifying-glass.svg"
+                  alt="search"
+                  className="search-bar__icon"
+                />
+                <input
+                  type="text"
+                  value={searchItem}
+                  onChange={handleInputChange}
+                  className="search-bar__input"
+                />
+                <label className="search-bar__placeholder">search</label>
+              </div>
             </div>
             <div className="col-8">
               <ul className="roles">
-                <li className="roles">
-                  <button className="roles__button__all">all</button>
+                <li className="roles__all">
+                  <button className="roles__button-all">all</button>
                 </li>
                 <li className="roles__assassins">
-                  <button className="roles__button__assassins">
-                    assassins
-                  </button>
+                  <button className="roles__button-assassins">assassins</button>
                 </li>
                 <li className="roles__fighters">
-                  <button className="roles__button__fighters">fighters</button>
+                  <button className="roles__button-fighters">fighters</button>
                 </li>
                 <li className="roles__mages">
-                  <button className="roles__button__mages">mages</button>
+                  <button className="roles__button-mages">mages</button>
                 </li>
                 <li className="roles__marksmen">
-                  <button className="roles__button__marksmen">marksmen</button>
+                  <button className="roles__button-marksmen">marksmen</button>
                 </li>
                 <li className="roles__supports">
-                  <button className="roles__button__supports">supports</button>
+                  <button className="roles__button-supports">supports</button>
                 </li>
                 <li className="roles__tanks">
-                  <button className="roles__button__tanks">tanks</button>
+                  <button className="roles__button-tanks">tanks</button>
                 </li>
               </ul>
             </div>

@@ -20,9 +20,7 @@ export function Home() {
           playstyle. Master one, or master them all.
         </span>
       </h1>
-      <body>
-        <ChampSearchForm />
-      </body>
+      <ChampSearchForm />
     </>
   );
 }
