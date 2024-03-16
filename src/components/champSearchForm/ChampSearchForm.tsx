@@ -55,27 +55,27 @@ export function ChampSearchForm() {
             <div className="col-8">
               <div className="roles__wrapper">
                 <ul className="roles">
-                  <li className="roles__all">
+                  <li className="roles__general">
                     <button className="button button_all">all</button>
                   </li>
-                  <li className="roles__assassins">
+                  <li className="roles__general">
                     <button className="button button_assassins">
                       assassins
                     </button>
                   </li>
-                  <li className="roles__fighters">
+                  <li className="roles__general">
                     <button className="button button_fighters">fighters</button>
                   </li>
-                  <li className="roles__mages">
+                  <li className="roles__general">
                     <button className="button button_mages">mages</button>
                   </li>
-                  <li className="roles__marksmen">
+                  <li className="roles__general">
                     <button className="button button_marksmen">marksmen</button>
                   </li>
-                  <li className="roles__supports">
+                  <li className="roles__general">
                     <button className="button button_supports">supports</button>
                   </li>
-                  <li className="roles__tanks">
+                  <li className="roles__general">
                     <button className="button button_tanks">tanks</button>
                   </li>
                 </ul>
