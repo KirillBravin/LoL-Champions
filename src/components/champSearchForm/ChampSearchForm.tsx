@@ -36,44 +36,50 @@ export function ChampSearchForm() {
           <div className="row">
             <div className="col">
               <div className="search-bar">
-                <img
-                  src="public/icons/magnifying-glass.svg"
-                  alt="search"
-                  className="search-bar__icon"
-                />
-                <input
-                  type="text"
-                  value={searchItem}
-                  onChange={handleInputChange}
-                  className="search-bar__input"
-                />
-                <label className="search-bar__placeholder">search</label>
+                <div className="search-bar__wrapper">
+                  <img
+                    src="public/icons/magnifying-glass.svg"
+                    alt="search"
+                    className="search-bar__icon"
+                  />
+                  <input
+                    type="text"
+                    value={searchItem}
+                    onChange={handleInputChange}
+                    className="search-bar__input"
+                  />
+                  <label className="search-bar__placeholder">search</label>
+                </div>
               </div>
             </div>
             <div className="col-8">
-              <ul className="roles">
-                <li className="roles__all">
-                  <button className="roles__button-all">all</button>
-                </li>
-                <li className="roles__assassins">
-                  <button className="roles__button-assassins">assassins</button>
-                </li>
-                <li className="roles__fighters">
-                  <button className="roles__button-fighters">fighters</button>
-                </li>
-                <li className="roles__mages">
-                  <button className="roles__button-mages">mages</button>
-                </li>
-                <li className="roles__marksmen">
-                  <button className="roles__button-marksmen">marksmen</button>
-                </li>
-                <li className="roles__supports">
-                  <button className="roles__button-supports">supports</button>
-                </li>
-                <li className="roles__tanks">
-                  <button className="roles__button-tanks">tanks</button>
-                </li>
-              </ul>
+              <div className="roles__wrapper">
+                <ul className="roles">
+                  <li className="roles__all">
+                    <button className="button button_all">all</button>
+                  </li>
+                  <li className="roles__assassins">
+                    <button className="button button_assassins">
+                      assassins
+                    </button>
+                  </li>
+                  <li className="roles__fighters">
+                    <button className="button button_fighters">fighters</button>
+                  </li>
+                  <li className="roles__mages">
+                    <button className="button button_mages">mages</button>
+                  </li>
+                  <li className="roles__marksmen">
+                    <button className="button button_marksmen">marksmen</button>
+                  </li>
+                  <li className="roles__supports">
+                    <button className="button button_supports">supports</button>
+                  </li>
+                  <li className="roles__tanks">
+                    <button className="button button_tanks">tanks</button>
+                  </li>
+                </ul>
+              </div>
             </div>
             <div className="col">
               <div className="difficulties">all difficulties</div>
