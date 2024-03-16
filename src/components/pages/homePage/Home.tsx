@@ -16,13 +16,11 @@ export function Home() {
           champion
         </strong>
         <span className="animate__animated title__subtitle animate__fadeIn">
-          With more than 140 champions, you’ll find the perfect match for your
+          With more than 140 champions, you'll find the perfect match for your
           playstyle. Master one, or master them all.
         </span>
       </h1>
-      <body>
-        <ChampSearchForm />
-      </body>
+      <ChampSearchForm />
     </>
   );
 }
