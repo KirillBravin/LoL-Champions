@@ -50,6 +50,7 @@ export function ChampSearchForm() {
                       className="search-bar__input"
                     />
                     <label className="search-bar__placeholder">search</label>
+                    <div className="search-bar__line-right"></div>
                   </div>
                 </div>
               </div>
