@@ -1,9 +1,7 @@
-import { useState } from "react";
+import { MouseEventHandler, useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./champSearchForm.css";
-
-const buttons = document.querySelectorAll(".button") as NodeListOf<HTMLElement>;
 
 const champions = [
   { champion: "Ahri", id: 1 },
@@ -31,11 +29,29 @@ export function ChampSearchForm() {
     setFilteredChamps(filteredItems);
   };
 
-  const buttonActive = (e) => {
+  const buttonActive: MouseEventHandler<HTMLButtonElement> = (e) => {
+    const buttons = document.querySelectorAll(
+      ".button"
+    ) as NodeListOf<HTMLElement>;
+    const bottomLines = document.querySelectorAll(
+      ".roles__general-bottom-line"
+    ) as NodeListOf<HTMLElement>;
+
+    const oneLine = (e.target as HTMLElement).nextElementSibling;
+
     buttons.forEach((button) => {
-      button.style.color = "#cacaca";
+      button.classList.remove("active");
     });
-    e.target.style.color = "black";
+
+    (e.target as HTMLElement).classList.add("active");
+
+    bottomLines.forEach((line) => {
+      line.classList.remove("clicked");
+    });
+
+    if (oneLine != null) {
+      oneLine.classList.add("clicked");
+    }
   };
 
   return (
@@ -48,7 +64,7 @@ export function ChampSearchForm() {
                 <div className="search-bar">
                   <div className="search-bar__wrapper">
                     <img
-                      src="public/icons/magnifying-glass.svg"
+                      src="/icons/magnifying-glass.svg"
                       alt="search"
                       className="search-bar__icon"
                     />
