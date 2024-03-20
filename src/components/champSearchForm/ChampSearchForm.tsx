@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 import "./champSearchForm.css";
 
+const buttons = document.querySelectorAll(".button") as NodeListOf<HTMLElement>;
+
 const champions = [
   { champion: "Ahri", id: 1 },
   { champion: "Aatrox", id: 2 },
@@ -27,6 +29,13 @@ export function ChampSearchForm() {
     );
 
     setFilteredChamps(filteredItems);
+  };
+
+  const buttonActive = (e) => {
+    buttons.forEach((button) => {
+      button.style.color = "#cacaca";
+    });
+    e.target.style.color = "black";
   };
 
   return (
@@ -58,33 +67,67 @@ export function ChampSearchForm() {
                 <div className="roles__wrapper">
                   <ul className="roles">
                     <li className="roles__general">
-                      <button className="button button_all">all</button>
+                      <button
+                        onClick={buttonActive}
+                        className="button button_all"
+                      >
+                        all
+                      </button>
+                      <div className="roles__general-bottom-line"></div>
                     </li>
                     <li className="roles__general">
-                      <button className="button button_assassins">
+                      <button
+                        onClick={buttonActive}
+                        className="button button_assassins"
+                      >
                         assassins
                       </button>
+                      <div className="roles__general-bottom-line"></div>
                     </li>
                     <li className="roles__general">
-                      <button className="button button_fighters">
+                      <button
+                        onClick={buttonActive}
+                        className="button button_fighters"
+                      >
                         fighters
                       </button>
+                      <div className="roles__general-bottom-line"></div>
                     </li>
                     <li className="roles__general">
-                      <button className="button button_mages">mages</button>
+                      <button
+                        onClick={buttonActive}
+                        className="button button_mages"
+                      >
+                        mages
+                      </button>
+                      <div className="roles__general-bottom-line"></div>
                     </li>
                     <li className="roles__general">
-                      <button className="button button_marksmen">
+                      <button
+                        onClick={buttonActive}
+                        className="button button_marksmen"
+                      >
                         marksmen
                       </button>
+                      <div className="roles__general-bottom-line"></div>
                     </li>
                     <li className="roles__general">
-                      <button className="button button_supports">
+                      <button
+                        onClick={buttonActive}
+                        className="button button_supports"
+                      >
                         supports
                       </button>
+                      <div className="roles__general-bottom-line"></div>
                     </li>
                     <li className="roles__general">
-                      <button className="button button_tanks">tanks</button>
+                      <button
+                        onClick={buttonActive}
+                        className="button button_tanks"
+                      >
+                        tanks
+                      </button>
+                      <div className="roles__general-bottom-line"></div>
                     </li>
                   </ul>
                 </div>

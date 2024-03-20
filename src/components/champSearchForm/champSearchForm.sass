@@ -1,3 +1,7 @@
+/* Button on-click style animation */
+.button-active
+    color: #010101
+    transition-duration: 0.2s
 
 .search-section
     margin-bottom: 57px
@@ -104,6 +108,18 @@
         height: 100%
         display: flex
         align-items: center
+        flex-direction: column
+        &-bottom-line
+            position: relative
+            width: 0rem
+            height: 0.15rem
+            background-color: #c2902d
+            transition-duration: 0.4s
+        &:hover
+            .roles__general-bottom-line
+                width: 1rem
+                background-color: #c2902d
+                transition-duration: 0.2s
 
 .button
     height: 100%
