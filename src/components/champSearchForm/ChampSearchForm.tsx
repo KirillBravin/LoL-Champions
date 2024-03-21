@@ -1,4 +1,4 @@
-import { MouseEventHandler, useState } from "react";
+import { MouseEventHandler, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 
 import "./champSearchForm.css";
@@ -12,9 +12,20 @@ const champions = [
   { champion: "Vi", id: 6 },
 ];
 
+const roles = [
+  "all",
+  "assassins",
+  "fighters",
+  "mages",
+  "marksmen",
+  "supports",
+  "tanks",
+];
+
 export function ChampSearchForm() {
   const [searchItem, setSearchItem] = useState("");
   const [filteredChamps, setFilteredChamps] = useState(champions);
+  const [activeButton, setActiveButton] = useState<number | null>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const searchTerm = e.target.value;
@@ -29,30 +40,36 @@ export function ChampSearchForm() {
     setFilteredChamps(filteredItems);
   };
 
-  const buttonActive: MouseEventHandler<HTMLButtonElement> = (e) => {
-    const buttons = document.querySelectorAll(
-      ".button"
-    ) as NodeListOf<HTMLElement>;
-    const bottomLines = document.querySelectorAll(
-      ".roles__general-bottom-line"
-    ) as NodeListOf<HTMLElement>;
-
-    const oneLine = (e.target as HTMLElement).nextElementSibling;
-
-    buttons.forEach((button) => {
-      button.classList.remove("active");
-    });
-
-    (e.target as HTMLElement).classList.add("active");
-
-    bottomLines.forEach((line) => {
-      line.classList.remove("clicked");
-    });
-
-    if (oneLine != null) {
-      oneLine.classList.add("clicked");
-    }
+  const roleButton = (i: number) => {
+    setActiveButton(i === activeButton ? null : i);
   };
+
+  function renderRoles(arr: string[]) {
+    const items = arr.map((item: string, i: number) => {
+      return (
+        <li
+          className={
+            i === activeButton ? "roles__general active" : "roles__general"
+          }
+          tabIndex={0}
+          key={i}
+        >
+          <button
+            className="button"
+            onClick={() => {
+              roleButton(i);
+            }}
+          >
+            {item}
+          </button>
+          <div className="roles__general-bottom-line"></div>
+        </li>
+      );
+    });
+    return <ul className="roles">{items}</ul>;
+  }
+
+  const items = renderRoles(roles);
 
   return (
     <>
@@ -80,73 +97,7 @@ export function ChampSearchForm() {
                 </div>
               </div>
               <div className="col-8">
-                <div className="roles__wrapper">
-                  <ul className="roles">
-                    <li className="roles__general">
-                      <button
-                        onClick={buttonActive}
-                        className="button button_all"
-                      >
-                        all
-                      </button>
-                      <div className="roles__general-bottom-line"></div>
-                    </li>
-                    <li className="roles__general">
-                      <button
-                        onClick={buttonActive}
-                        className="button button_assassins"
-                      >
-                        assassins
-                      </button>
-                      <div className="roles__general-bottom-line"></div>
-                    </li>
-                    <li className="roles__general">
-                      <button
-                        onClick={buttonActive}
-                        className="button button_fighters"
-                      >
-                        fighters
-                      </button>
-                      <div className="roles__general-bottom-line"></div>
-                    </li>
-                    <li className="roles__general">
-                      <button
-                        onClick={buttonActive}
-                        className="button button_mages"
-                      >
-                        mages
-                      </button>
-                      <div className="roles__general-bottom-line"></div>
-                    </li>
-                    <li className="roles__general">
-                      <button
-                        onClick={buttonActive}
-                        className="button button_marksmen"
-                      >
-                        marksmen
-                      </button>
-                      <div className="roles__general-bottom-line"></div>
-                    </li>
-                    <li className="roles__general">
-                      <button
-                        onClick={buttonActive}
-                        className="button button_supports"
-                      >
-                        supports
-                      </button>
-                      <div className="roles__general-bottom-line"></div>
-                    </li>
-                    <li className="roles__general">
-                      <button
-                        onClick={buttonActive}
-                        className="button button_tanks"
-                      >
-                        tanks
-                      </button>
-                      <div className="roles__general-bottom-line"></div>
-                    </li>
-                  </ul>
-                </div>
+                <div className="roles__wrapper">{items}</div>
               </div>
               <div className="col">
                 <div className="difficulties">all difficulties</div>

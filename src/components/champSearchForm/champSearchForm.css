@@ -149,10 +149,12 @@
   transition-duration: 0.2s;
 }
 
-.active {
+.active .button {
   color: black;
 }
-
-.clicked {
+.active .roles__general-bottom-line {
+  width: 100%;
+}
+.active .roles__general-bottom-line:hover {
   width: 100%;
 }/*# sourceMappingURL=champSearchForm.css.map */
