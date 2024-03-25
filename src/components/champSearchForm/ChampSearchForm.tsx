@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 import "./champSearchForm.css";
 
+import magnifyingGlass from "/icons/magnifying-glass.svg";
+
 const champions = [
   { champion: "Ahri", id: 1 },
   { champion: "Aatrox", id: 2 },
@@ -81,7 +83,7 @@ export function ChampSearchForm() {
                 <div className="search-bar">
                   <div className="search-bar__wrapper">
                     <img
-                      src="/icons/magnifying-glass.svg"
+                      src={magnifyingGlass}
                       alt="search"
                       className="search-bar__icon"
                     />
@@ -100,7 +102,39 @@ export function ChampSearchForm() {
                 <div className="roles__wrapper">{items}</div>
               </div>
               <div className="col">
-                <div className="difficulties">all difficulties</div>
+                <div className="difficulties">
+                  <div className="difficulties__wrapper">
+                    <select className="difficulties__form form-select">
+                      <option className="difficulties__default" selected>
+                        all dificulties
+                      </option>
+                      <option
+                        className="difficulties__easy"
+                        arial-label="easy-difficulty"
+                      >
+                        <span className="difficulties__filled-bar"></span>
+                        <span className="difficulties__empty-bar"></span>
+                        <span className="difficulties__empty-bar"></span>
+                      </option>
+                      <option
+                        className="difficulties__medium"
+                        arial-label="medium-difficulty"
+                      >
+                        <span className="difficulties__filled-bar"></span>
+                        <span className="difficulties__filled-bar"></span>
+                        <span className="difficulties__empty-bar"></span>
+                      </option>
+                      <option
+                        className="difficulties__hard"
+                        arial-label="hard-difficulty"
+                      >
+                        <span className="difficulties__filled-bar"></span>
+                        <span className="difficulties__filled-bar"></span>
+                        <span className="difficulties__filled-bar"></span>
+                      </option>
+                    </select>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

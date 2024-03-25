@@ -115,7 +115,7 @@
             height: 0.15rem
             background-color: #c2902d
             transition-duration: 0.4s
-        &:hover
+        &:hover:not(.active)
             .roles__general-bottom-line
                 width: 1rem
                 background-color: #c2902d
@@ -140,5 +140,10 @@
         color: black
     .roles__general-bottom-line
         width: 100%
-        &:hover
+        .roles__general-bottom-line:hover
             width: 100%
+
+.difficulties
+    &__wrapper
+
+    &__form
