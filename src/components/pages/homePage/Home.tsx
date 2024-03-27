@@ -2,7 +2,7 @@ import { SkinDiscounts } from "../../skinDiscounts/SkinDiscounts";
 import { ChampSearchForm } from "../../champSearchForm/ChampSearchForm";
 
 import "animate.css";
-import "./home.sass";
+import "./home.scss";
 
 export function Home() {
   return (

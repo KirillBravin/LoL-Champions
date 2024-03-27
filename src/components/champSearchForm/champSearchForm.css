@@ -58,12 +58,12 @@
   height: 3.1rem;
   cursor: pointer;
 }
-.search-bar__wrapper:hover .search-bar__line-right {
+.search-bar:hover .search-bar__line-right {
   top: 0rem;
   height: 4rem;
   transition-duration: 0.2s;
 }
-.search-bar__wrapper:hover .search-bar__icon {
+.search-bar .search-bar__icon {
   transform: translateX(-5px);
   transition-duration: 0.2s;
 }

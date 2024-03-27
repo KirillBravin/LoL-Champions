@@ -1,4 +1,4 @@
-import { MouseEventHandler, useState, useRef } from "react";
+import { MouseEventHandler, useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./champSearchForm.css";
@@ -104,7 +104,7 @@ export function ChampSearchForm() {
               <div className="col">
                 <div className="difficulties">
                   <div className="difficulties__wrapper">
-                    <select className="difficulties__form form-select">
+                    <select className="form-select difficulties__form">
                       <option className="difficulties__default" selected>
                         all dificulties
                       </option>
