@@ -1,7 +1,7 @@
-@import "../../../node_modules/bootstrap/scss/functions";
+/* @import "../../../node_modules/bootstrap/scss/functions";
 @import "../../../node_modules/bootstrap/scss/variables";
 @import "../../../node_modules/bootstrap/scss/mixins";
-@import "../../../node_modules/bootstrap/scss/forms";
+@import "../../../node_modules/bootstrap/scss/forms"; */
 
 /* Button on-click style animation */
 .button-active{
@@ -29,9 +29,8 @@
 
     position: relative;
     background-color: transparent;
-    overflow: hidden;
-    clip-path: polygon(1rem 0, 100% 0, 100% 0, 100% 2.1rem, 81.4rem 100%, 0 100%, 0 100%, 0 1rem);
-    &:before{
+    /* clip-path: polygon(1rem 0, 100% 0, 100% 0, 100% 2.1rem, 81.4rem 100%, 0 100%, 0 100%, 0 1rem); */
+/*     &:before{
         content: "";
         position: absolute;
         left: -0.6rem;
@@ -54,7 +53,7 @@
         background-color: #ffffff;
         border-left: 1px solid;
         border-color: #c1c1c1;
-    }
+    } */
 }
 .search-bar{
     &__wrapper{
@@ -65,16 +64,17 @@
         cursor: pointer;
     }
     &:hover{
-        .search-bar__line-right{
+        .search-bar__line-left{
             top: 0rem;
-            height: 4rem;
+            height: 3.1rem;
+            transition-duration: 0.2s;
+        }
+        .search-bar__icon{
+            transform: translateX(-5px);
             transition-duration: 0.2s;
         }
     }
-    .search-bar__icon{
-        transform: translateX(-5px);
-        transition-duration: 0.2s;
-    }
+
 &__input{
     position: relative;
     width: 4rem;
@@ -101,7 +101,7 @@
     z-index: 1;
 }
 
-&__line-right{
+&__line-left{
     position: absolute;
     width: 0.06rem;
     height: 1.6rem;
@@ -177,11 +177,3 @@
 }
 
 //Difficulties dropdown menu
-
-$form-select-border-color: red;
-
-.difficulties{
-    &__wrapper{}
-
-    &__form{}
-}

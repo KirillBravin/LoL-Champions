@@ -94,7 +94,7 @@ export function ChampSearchForm() {
                       className="search-bar__input"
                     />
                     <label className="search-bar__placeholder">search</label>
-                    <div className="search-bar__line-right"></div>
+                    <div className="search-bar__line-left"></div>
                   </div>
                 </div>
               </div>
@@ -102,38 +102,20 @@ export function ChampSearchForm() {
                 <div className="roles__wrapper">{items}</div>
               </div>
               <div className="col">
-                <div className="difficulties">
-                  <div className="difficulties__wrapper">
-                    <select className="form-select difficulties__form">
-                      <option className="difficulties__default" selected>
-                        all dificulties
-                      </option>
-                      <option
-                        className="difficulties__easy"
-                        arial-label="easy-difficulty"
-                      >
-                        <span className="difficulties__filled-bar"></span>
-                        <span className="difficulties__empty-bar"></span>
-                        <span className="difficulties__empty-bar"></span>
-                      </option>
-                      <option
-                        className="difficulties__medium"
-                        arial-label="medium-difficulty"
-                      >
-                        <span className="difficulties__filled-bar"></span>
-                        <span className="difficulties__filled-bar"></span>
-                        <span className="difficulties__empty-bar"></span>
-                      </option>
-                      <option
-                        className="difficulties__hard"
-                        arial-label="hard-difficulty"
-                      >
-                        <span className="difficulties__filled-bar"></span>
-                        <span className="difficulties__filled-bar"></span>
-                        <span className="difficulties__filled-bar"></span>
-                      </option>
-                    </select>
-                  </div>
+                <div className="dropdown difficulties__dropdown">
+                  <button
+                    className="btn btn-secondary dropdown-toggle difficulties__dropdown-btn-main"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    all difficulties
+                  </button>
+                  <ul className="dropdown-menu">
+                    <li className="dropdown-item">Easy</li>
+                    <li className="dropdown-item">Medium</li>
+                    <li className="dropdown-item">Hard</li>
+                  </ul>
                 </div>
               </div>
             </div>
