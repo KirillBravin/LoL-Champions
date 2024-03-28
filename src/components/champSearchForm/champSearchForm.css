@@ -25,6 +25,8 @@
   flex-direction: row;
   border: 1px solid;
   border-color: #c1c1c1;
+  padding-right: 0;
+  padding-left: 0;
   position: relative;
   background-color: transparent;
   /* clip-path: polygon(1rem 0, 100% 0, 100% 0, 100% 2.1rem, 81.4rem 100%, 0 100%, 0 100%, 0 1rem); */
@@ -57,16 +59,16 @@
 .search-bar__wrapper {
   display: flex;
   justify-content: center;
-  width: 8rem;
+  width: 9rem;
   height: 3.1rem;
   cursor: pointer;
 }
-.search-bar:hover .search-bar__line-left {
+.search-bar__wrapper:hover .search-bar__line-left {
   top: 0rem;
   height: 3.1rem;
   transition-duration: 0.2s;
 }
-.search-bar:hover .search-bar__icon {
+.search-bar__wrapper:hover .search-bar__icon {
   transform: translateX(-5px);
   transition-duration: 0.2s;
 }
@@ -95,11 +97,11 @@
 }
 .search-bar__line-left {
   position: absolute;
-  width: 0.06rem;
+  width: 0.1rem;
   height: 1.6rem;
   background-color: #c1c1c1;
   top: 0.7rem;
-  left: 8.63rem;
+  left: 9rem;
   transition-duration: 0.2s;
 }
 

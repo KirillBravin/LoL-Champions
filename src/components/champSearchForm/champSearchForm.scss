@@ -20,12 +20,15 @@
     color: black;
 }
 
+
 .style-wrapper{
     --notch-size: 20px;
     display: flex;
     flex-direction: row;
     border: 1px solid;
     border-color: #c1c1c1;
+    padding-right: 0;
+    padding-left: 0;
 
     position: relative;
     background-color: transparent;
@@ -59,21 +62,22 @@
     &__wrapper{
         display: flex;
         justify-content: center;
-        width: 8rem;
+        width: 9rem;
         height: 3.1rem;
         cursor: pointer;
-    }
-    &:hover{
-        .search-bar__line-left{
-            top: 0rem;
-            height: 3.1rem;
-            transition-duration: 0.2s;
+        &:hover{
+            .search-bar__line-left{
+                top: 0rem;
+                height: 3.1rem;
+                transition-duration: 0.2s;
+            }
+            .search-bar__icon{
+                transform: translateX(-5px);
+                transition-duration: 0.2s;
+            }
         }
-        .search-bar__icon{
-            transform: translateX(-5px);
-            transition-duration: 0.2s;
-        }
     }
+
 
 &__input{
     position: relative;
@@ -103,11 +107,11 @@
 
 &__line-left{
     position: absolute;
-    width: 0.06rem;
+    width: 0.1rem;
     height: 1.6rem;
     background-color: #c1c1c1;
     top: 0.7rem;
-    left: 8.63rem;
+    left: 9rem;
     transition-duration: 0.2s;
 }
 }
