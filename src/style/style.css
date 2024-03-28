@@ -21,29 +21,29 @@
 }
 @font-face {
   font-family: "Spiegel-Regular";
-  src: url("../public/fonts/Spiegel-RegularItalic.eot?#iefix");
-  src: url("../public/fonts/Spiegel-RegularItalic.eot?#iefix") format("eot"), url("../public/fonts/Spiegel-RegularItalic.woff") format("woff"), url("../public/fonts/Spiegel-RegularItalic.ttf") format("truetype"), url("../public/fonts/Spiegel-RegularItalic.svg#") format("svg");
+  src: url("../../public/fonts/Spiegel-RegularItalic.eot?#iefix");
+  src: url("../../public/fonts/Spiegel-RegularItalic.eot?#iefix") format("eot"), url("../../public/fonts/Spiegel-RegularItalic.woff") format("woff"), url("../../public/fonts/Spiegel-RegularItalic.ttf") format("truetype"), url("../../public/fonts/Spiegel-RegularItalic.svg#") format("svg");
   font-weight: 400;
   font-style: italic;
 }
 @font-face {
   font-family: "Spiegel";
-  src: url("../public/fonts/Spiegel-Regular.eot?#iefix");
-  src: url("../public/fonts/Spiegel-Regular.eot?#iefix") format("eot"), url("../public/fonts/Spiegel-Regular.woff") format("woff"), url("../public/fonts/Spiegel-Regular.ttf") format("truetype"), url("../public/fonts/Spiegel-Regular.svg#") format("svg");
+  src: url("../../public/fonts/Spiegel-Regular.eot?#iefix");
+  src: url("../../public/fonts/Spiegel-Regular.eot?#iefix") format("eot"), url("../../public/fonts/Spiegel-Regular.woff") format("woff"), url("../../public/fonts/Spiegel-Regular.ttf") format("truetype"), url("../../public/fonts/Spiegel-Regular.svg#") format("svg");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Spiegel-SemiBold";
-  src: url("../public/fonts/Spiegel-SemiBold.eot?#iefix");
-  src: url("../public/fonts/Spiegel-SemiBold.eot?#iefix") format("eot"), url("../public/fonts/Spiegel-SemiBold.woff") format("woff"), url("../public/fonts/Spiegel-SemiBold.ttf") format("truetype"), url("../public/fonts/Spiegel-SemiBold.svg#") format("svg");
+  src: url("../../public/fonts/Spiegel-SemiBold.eot?#iefix");
+  src: url("../../public/fonts/Spiegel-SemiBold.eot?#iefix") format("eot"), url("../../public/fonts/Spiegel-SemiBold.woff") format("woff"), url("../../public/fonts/Spiegel-SemiBold.ttf") format("truetype"), url("../../public/fonts/Spiegel-SemiBold.svg#") format("svg");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "Poppins";
-  src: url("../public/fonts/Poppins-Regular.eot");
-  src: url("../public/fonts/Poppins-Regular.eot?#iefix") format("embedded-opentype"), url("../public/fonts/Poppins-Regular.woff2") format("woff2"), url(".../public/fonts/Poppins-Regular.woff") format("woff"), url("../Poppins-Regular.ttf") format("truetype");
+  src: url("../../public/fonts/Poppins-Regular.eot");
+  src: url("../../public/fonts/Poppins-Regular.eot?#iefix") format("embedded-opentype"), url("../../public/fonts/Poppins-Regular.woff2") format("woff2"), url("../../public/fonts/Poppins-Regular.woff") format("woff"), url("../../Poppins-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;

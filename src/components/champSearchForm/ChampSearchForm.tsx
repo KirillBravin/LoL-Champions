@@ -102,9 +102,9 @@ export function ChampSearchForm() {
                 <div className="roles__wrapper">{items}</div>
               </div>
               <div className="col">
-                <div className="dropdown difficulties__dropdown">
+                <div className="dropdown difficulties">
                   <button
-                    className="btn btn-secondary dropdown-toggle difficulties__dropdown-btn-main"
+                    className="btn btn-secondary dropdown-toggle difficulties__btn-main"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"

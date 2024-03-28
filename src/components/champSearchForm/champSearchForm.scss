@@ -1,7 +1,4 @@
-/* @import "../../../node_modules/bootstrap/scss/functions";
-@import "../../../node_modules/bootstrap/scss/variables";
-@import "../../../node_modules/bootstrap/scss/mixins";
-@import "../../../node_modules/bootstrap/scss/forms"; */
+
 
 /* Button on-click style animation */
 .button-active{
@@ -181,3 +178,39 @@
 }
 
 //Difficulties dropdown menu
+
+.difficulties{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    &__btn-main{
+        width: 9rem;
+        text-transform: uppercase;
+        background-color: transparent;
+        color: black;
+        white-space: nowrap;
+        font-family: Spiegel-SemiBold;
+        font-size: 0.6rem;
+        line-height: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.1rem;
+        border-style: none;
+        &:hover{
+            background-color: transparent;
+            color: black;
+        }
+        &:active{
+            background-color: transparent;
+            color: black;
+        }
+        &:focus-visible{
+            background-color: transparent;
+            color: black;
+        }
+        &:first-child:active{
+            background-color: transparent;
+            color: black;
+        }
+    }
+}

@@ -1,7 +1,3 @@
-/* @import "../../../node_modules/bootstrap/scss/functions";
-@import "../../../node_modules/bootstrap/scss/variables";
-@import "../../../node_modules/bootstrap/scss/mixins";
-@import "../../../node_modules/bootstrap/scss/forms"; */
 /* Button on-click style animation */
 .button-active {
   color: #010101;
@@ -162,4 +158,40 @@
 }
 .active .roles__general-bottom-line .roles__general-bottom-line:hover {
   width: 100%;
+}
+
+.difficulties {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+}
+.difficulties__btn-main {
+  width: 9rem;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: black;
+  white-space: nowrap;
+  font-family: Spiegel-SemiBold;
+  font-size: 0.6rem;
+  line-height: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  border-style: none;
+}
+.difficulties__btn-main:hover {
+  background-color: transparent;
+  color: black;
+}
+.difficulties__btn-main:active {
+  background-color: transparent;
+  color: black;
+}
+.difficulties__btn-main:focus-visible {
+  background-color: transparent;
+  color: black;
+}
+.difficulties__btn-main:first-child:active {
+  background-color: transparent;
+  color: black;
 }/*# sourceMappingURL=champSearchForm.css.map */
