@@ -42,6 +42,8 @@ export function ChampSearchForm() {
     setFilteredChamps(filteredItems);
   };
 
+  //Roles
+
   const roleButton = (i: number) => {
     setActiveButton(i === activeButton ? null : i);
   };
@@ -53,7 +55,6 @@ export function ChampSearchForm() {
           className={
             i === activeButton ? "roles__general active" : "roles__general"
           }
-          tabIndex={0}
           key={i}
         >
           <button
@@ -72,6 +73,16 @@ export function ChampSearchForm() {
   }
 
   const items = renderRoles(roles);
+
+  // Difficulties
+
+  /*   function renderDifficulties(arr: string[]) {
+    const items = arr.map((item: string) => {
+      return (
+        
+      )
+    })
+  } */
 
   return (
     <>
@@ -103,6 +114,7 @@ export function ChampSearchForm() {
               </div>
               <div className="col">
                 <div className="dropdown difficulties">
+                  <div className="difficulties__line-right"></div>
                   <button
                     className="btn btn-secondary dropdown-toggle difficulties__btn-main"
                     type="button"
