@@ -14,16 +14,6 @@ const champions = [
   { champion: "Vi", id: 6 },
 ];
 
-const roles = [
-  "all",
-  "assassins",
-  "fighters",
-  "mages",
-  "marksmen",
-  "supports",
-  "tanks",
-];
-
 export function ChampSearchForm() {
   const [searchItem, setSearchItem] = useState("");
   const [filteredChamps, setFilteredChamps] = useState(champions);
@@ -43,6 +33,16 @@ export function ChampSearchForm() {
   };
 
   //Roles
+
+  const roles = [
+    "all",
+    "assassins",
+    "fighters",
+    "mages",
+    "marksmen",
+    "supports",
+    "tanks",
+  ];
 
   const roleButton = (i: number) => {
     setActiveButton(i === activeButton ? null : i);
@@ -69,20 +69,87 @@ export function ChampSearchForm() {
         </li>
       );
     });
-    return <ul className="roles">{items}</ul>;
+    return (
+      <div className="roles__wrapper">
+        <ul className="roles">{items}</ul>
+      </div>
+    );
   }
 
-  const items = renderRoles(roles);
+  const roleItems = renderRoles(roles);
 
   // Difficulties
+  const difficulties = ["easy", "medium", "hard"];
 
-  /*   function renderDifficulties(arr: string[]) {
-    const items = arr.map((item: string) => {
-      return (
-        
-      )
-    })
-  } */
+  interface difficultyObj {
+    id: number;
+    name: string;
+    render: () => JSX.Element;
+  }
+
+  const difficultyObj: difficultyObj[] = [
+    {
+      id: 1,
+      name: "Easy",
+      render: function () {
+        return (
+          <a className="dropdown-item style" href="#">
+            <span className="parallelogramFilled"></span>
+            <span className="parallelogramEmpty"></span>
+            <span className="parallelogramEmpty"></span>
+          </a>
+        );
+      },
+    },
+    {
+      id: 2,
+      name: "Medium",
+      render: function () {
+        return (
+          <a className="dropdown-item style" href="#">
+            <span className="parallelogramFilled"></span>
+            <span className="parallelogramFilled"></span>
+            <span className="parallelogramEmpty"></span>
+          </a>
+        );
+      },
+    },
+    {
+      id: 3,
+      name: "Hard",
+      render: function () {
+        return (
+          <a className="dropdown-item style" href="#">
+            <span className="parallelogramFilled"></span>
+            <span className="parallelogramFilled"></span>
+            <span className="parallelogramFilled"></span>
+          </a>
+        );
+      },
+    },
+  ];
+
+  function renderDifficulties(arr: difficultyObj[]) {
+    const items = arr.map((item) => {
+      return <li>{item.render()}</li>;
+    });
+    return (
+      <div className="dropdown difficulties">
+        <div className="difficulties__line-right"></div>
+        <button
+          className="btn btn-secondary dropdown-toggle difficulties__btn-main"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          all difficulties
+        </button>
+        <ul className="dropdown-menu">{items}</ul>
+      </div>
+    );
+  }
+
+  const difficultieItems = renderDifficulties(difficultyObj);
 
   return (
     <>
@@ -109,27 +176,8 @@ export function ChampSearchForm() {
                   </div>
                 </div>
               </div>
-              <div className="col-8">
-                <div className="roles__wrapper">{items}</div>
-              </div>
-              <div className="col">
-                <div className="dropdown difficulties">
-                  <div className="difficulties__line-right"></div>
-                  <button
-                    className="btn btn-secondary dropdown-toggle difficulties__btn-main"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    all difficulties
-                  </button>
-                  <ul className="dropdown-menu">
-                    <li className="dropdown-item">Easy</li>
-                    <li className="dropdown-item">Medium</li>
-                    <li className="dropdown-item">Hard</li>
-                  </ul>
-                </div>
-              </div>
+              <div className="col-8">{roleItems}</div>
+              <div className="col">{difficultieItems}</div>
             </div>
           </div>
         </div>

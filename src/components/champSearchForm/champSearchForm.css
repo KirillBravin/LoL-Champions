@@ -234,4 +234,29 @@
 
 .dropdown-menu {
   --bs-dropdown-min-width: 9rem;
+}
+
+.dropdown-menu :active {
+  --bs-dropdown-link-active-bg: transparent;
+}
+
+.style {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.parallelogramEmpty {
+  width: 35px;
+  height: 10px;
+  transform: skew(-20deg);
+  background: #e0e0e0;
+}
+
+.parallelogramFilled {
+  width: 35px;
+  height: 10px;
+  transform: skew(-20deg);
+  background: #08d7f7;
 }/*# sourceMappingURL=champSearchForm.css.map */
