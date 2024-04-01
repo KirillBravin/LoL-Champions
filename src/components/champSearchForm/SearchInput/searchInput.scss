@@ -1,0 +1,62 @@
+@import "../../../../node_modules/bootstrap/scss/functions";
+@import "../../../style/variables.scss";
+@import "../../../../node_modules/bootstrap/scss/variables";
+
+.search-bar{
+    &__wrapper{
+        display: flex;
+        justify-content: center;
+        width: 9rem;
+        height: 3.1rem;
+        cursor: pointer;
+        &:hover{
+            .search-bar__line-left{
+                top: 0rem;
+                height: 3.1rem;
+                transition-duration: 0.2s;
+            }
+            .search-bar__icon{
+                transform: translateX(-5px);
+                transition-duration: 0.2s;
+            }
+        }
+    }
+
+
+&__input{
+    position: relative;
+    width: 4rem;
+    height: 1.6rem;
+    top: 0.7rem;
+    left: 1.3rem;
+    cursor: pointer;
+    border: none;
+}
+
+&__placeholder{
+    position: relative;
+    bottom: -2em;
+    left: -2.6em;
+    height: 1rem;
+    cursor: pointer;
+}
+
+&__icon{
+    width: 1.5rem;
+    position: relative;
+    left: 3.5em;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    z-index: 1;
+}
+
+&__line-left{
+    position: absolute;
+    width: 0.1rem;
+    height: 1.6rem;
+    background-color: #c1c1c1;
+    top: 0.7rem;
+    left: 9rem;
+    transition-duration: 0.2s;
+}
+}

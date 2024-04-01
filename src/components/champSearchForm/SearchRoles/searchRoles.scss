@@ -1,0 +1,65 @@
+@import "../../../../node_modules/bootstrap/scss/functions";
+@import "../../../style/variables.scss";
+@import "../../../../node_modules/bootstrap/scss/variables";
+
+.roles__wrapper{
+    height: 100%;
+    width: 100%;
+}
+.roles{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    &__general{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        &-bottom-line{
+            position: relative;
+            width: 0rem;
+            height: 0.15rem;
+            background-color: $golden-color;
+            transition-duration: 0.4s;
+        }
+        &:hover:not(.active){
+            .roles__general-bottom-line{
+                width: 1rem;
+                background-color: $golden-color;
+                transition-duration: 0.2s;
+            }
+        }
+    }
+}
+
+.button{
+    height: 100%;
+    font-size: 0.6rem;
+    line-height: 0.7rem;
+    text-transform: uppercase;
+    color: #cacaca;
+    letter-spacing: 0.1rem;
+    border: 0px;
+    background-color: transparent;
+    transition-duration: 0.2s;
+    &:hover{
+        color: black;
+        transition-duration: 0.2s;
+    }
+}
+
+.active{
+    .button{
+        color: black;
+    }
+    .roles__general-bottom-line{
+        width: 100%;
+        .roles__general-bottom-line:hover{
+            width: 100%;
+        }
+    }
+}
