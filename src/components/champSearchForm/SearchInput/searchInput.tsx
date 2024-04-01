@@ -10,6 +10,22 @@ const champions = [
   { champion: "Caitlyn", id: 4 },
   { champion: "Jinx", id: 5 },
   { champion: "Vi", id: 6 },
+  { champion: "Pantheon", id: 7 },
+  { champion: "Zoe", id: 8 },
+  { champion: "Ekko", id: 9 },
+  { champion: "Zac", id: 10 },
+  { champion: "Amumu", id: 11 },
+  { champion: "Rammus", id: 12 },
+  { champion: "Rammus", id: 12 },
+  { champion: "Rammus", id: 12 },
+  { champion: "Rammus", id: 12 },
+  { champion: "Rammus", id: 12 },
+  { champion: "Rammus", id: 12 },
+  { champion: "Rammus", id: 12 },
+  { champion: "Rammus", id: 12 },
+  { champion: "Rammus", id: 12 },
+  { champion: "Rammus", id: 12 },
+  { champion: "Rammus", id: 12 },
 ];
 
 interface Champions {
