@@ -58,14 +58,13 @@ export function SearchInput() {
             alt="search"
             className="search-bar__icon"
           />
-          <button
-            className="btn btn-secondary dropdown-toggle search-bar__btn-input"
-            type="button"
+          <input
+            type="search"
+            className="btn btn-secondary dropdown-toggle search-bar__input"
             data-bs-toggle="dropdown"
             aria-expanded="false"
-          >
-            search
-          </button>
+            placeholder="search"
+          />
           {championItems}
         </div>
         <div className="search-bar__line-left"></div>
