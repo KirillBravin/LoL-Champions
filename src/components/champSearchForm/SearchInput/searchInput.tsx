@@ -12,34 +12,46 @@ const champions = [
   { champion: "Vi", id: 6 },
 ];
 
+interface Champions {
+  champion: string;
+  id: number;
+}
+
 export function SearchInput() {
-  const [searchItem, setSearchItem] = useState("");
-  const [filteredChamps, setFilteredChamps] = useState(champions);
+  const [searchItem, setSearchItem] = useState(champions);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const searchTerm = e.target.value;
-    setSearchItem(searchTerm);
+  function renderChampions(arr: Champions[]) {
+    const items = arr.map((item) => {
+      return (
+        <a href="#" className="dropdown-item search-bar__dropdown-item">
+          <li>{item.champion}</li>
+        </a>
+      );
+    });
+    return <ul className="dropdown-menu search-bar__dropdown-menu">{items}</ul>;
+  }
 
-    const filteredItems = champions.filter((champ) =>
-      champ.champion
-        .toLocaleLowerCase()
-        .includes(searchTerm.toLocaleLowerCase())
-    );
-
-    setFilteredChamps(filteredItems);
-  };
+  const championItems = renderChampions(searchItem);
 
   return (
     <div className="search-bar">
       <div className="search-bar__wrapper">
-        <img src={magnifyingGlass} alt="search" className="search-bar__icon" />
-        <input
-          type="text"
-          value={searchItem}
-          onChange={handleInputChange}
-          className="search-bar__input"
-        />
-        <label className="search-bar__placeholder">search</label>
+        <div className="dropdown search-bar__dropdown">
+          <img
+            src={magnifyingGlass}
+            alt="search"
+            className="search-bar__icon"
+          />
+          <button
+            className="btn btn-secondary dropdown-toggle search-bar__btn-input"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            search
+          </button>
+          {championItems}
+        </div>
         <div className="search-bar__line-left"></div>
       </div>
     </div>
