@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLeagueService } from "../../../services/LeagueService";
 
 import magnifyingGlass from "../../../../public/icons/magnifying-glass.svg";
 import "./searchInput.scss";
@@ -35,6 +36,21 @@ interface Champions {
 
 export function SearchInput() {
   const [searchItem, setSearchItem] = useState(champions);
+  const [championList, setChampionList] = useState([]);
+
+  const { getAllChampions } = useLeagueService();
+
+  useEffect(() => {
+    onRequest();
+  }, []);
+
+  const onRequest = () => {
+    getAllChampions().then(onChampionsLoaded);
+  };
+
+  const onChampionsLoaded = (newChampionList: string[]) => {
+    setChampionList([...championList, ...newChampionList]);
+  };
 
   function renderChampions(arr: Champions[]) {
     const items = arr.map((item) => {

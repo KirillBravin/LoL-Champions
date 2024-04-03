@@ -13,6 +13,10 @@ interface IChampion {
   skins: string;
 }
 
+interface IAllChampions {
+  name: string;
+}
+
 type TSpells = {
   id: string;
   name: string;
@@ -44,25 +48,34 @@ type TChampionData = {
   skins: TSkins[];
 };
 
+type TAllChampionData = {
+  name: string;
+};
+
 export const useLeagueService = () => {
   const { request } = useHttp();
 
   // Base paths
-  const version: string = "14.4.1";
+  const version: string = "14.7.1";
   const _apiBase: string = "https://ddragon.leagueoflegends.com/cdn/";
   //img
   const _skinLoading: string = "img/champion/loading/";
   const _splashLoading: string = "img/champion/splash/";
   //champs data
-  const _champion: string = "/data/en_US/champion/";
+  const _champion: string = "/data/en_US/champion";
 
   const getChampionLoading = (name: string) => {
     return `${_apiBase + _skinLoading + name}`;
   };
 
   const getChampion = async (name = "Ahri") => {
-    const res = await request(`${_apiBase}${version}${_champion}${name}.json`);
+    const res = await request(`${_apiBase + version + _champion}/${name}.json`);
     return _transformChampion(res.data.name);
+  };
+
+  const getAllChampions = async () => {
+    const res = await request(`${_apiBase + version + _champion}.json`);
+    return res.data.map(allChampions);
   };
 
   const _transformChampion = (
@@ -86,8 +99,15 @@ export const useLeagueService = () => {
     };
   };
 
+  const allChampions = (data: TAllChampionData): IAllChampions => {
+    return {
+      name: data.name,
+    };
+  };
+
   return {
     getChampionLoading,
     getChampion,
+    getAllChampions,
   };
 };
