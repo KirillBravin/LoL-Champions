@@ -4,7 +4,7 @@ import { useLeagueService } from "../../../services/LeagueService";
 import magnifyingGlass from "../../../../public/icons/magnifying-glass.svg";
 import "./searchInput.scss";
 
-const champions = [
+let champions = [
   { champion: "Ahri", id: 1 },
   { champion: "Aatrox", id: 2 },
   { champion: "Jax", id: 3 },
@@ -37,10 +37,11 @@ interface Champions {
 export function SearchInput() {
   const [searchItem, setSearchItem] = useState(champions);
   const [championList, setChampionList] = useState([]);
+  const [item, setItem] = useState(["Name1", "Name2", "Name3"]);
 
   const { getAllChampions } = useLeagueService();
 
-  useEffect(() => {
+  /*   useEffect(() => {
     onRequest();
   }, []);
 
@@ -50,24 +51,36 @@ export function SearchInput() {
 
   const onChampionsLoaded = (newChampionList: string[]) => {
     setChampionList([...championList, ...newChampionList]);
-  };
+  }; */
 
-  function renderChampions(arr: Champions[]) {
+  function renderChampions(arr) {
     const items = arr.map((item) => {
       return (
         <a href="#" className="dropdown-item search-bar__dropdown-item">
-          <li>{item.champion}</li>
+          <li key={item}>{item}</li>
         </a>
       );
     });
     return <ul className="dropdown-menu search-bar__dropdown-menu">{items}</ul>;
   }
 
-  const championItems = renderChampions(searchItem);
+  let championItems = renderChampions(item);
+
+  function handleClick() {
+    fetch("http://localhost:5000/users")
+      .then((res) => {
+        return res.json();
+      })
+      .then((val) => {
+        setItem(val);
+      })
+      .catch((error) => console.error("Error fetching champions:", error));
+  }
 
   return (
     <div className="search-bar">
       <div className="search-bar__wrapper">
+        <button onClick={handleClick}>Update champions</button>
         <div className="dropdown search-bar__dropdown">
           <img
             src={magnifyingGlass}
