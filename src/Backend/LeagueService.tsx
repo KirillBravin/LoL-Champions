@@ -60,7 +60,7 @@ export const useLeagueService = () => {
   const _apiBase: string = "https://ddragon.leagueoflegends.com/cdn/";
   //img
   const _skinLoading: string = "img/champion/loading/";
-  const _splashLoading: string = "img/champion/splash/";
+  // const _splashLoading: string = "img/champion/splash/";
   //champs data
   const _champion: string = "/data/en_US/champion";
 
@@ -76,6 +76,11 @@ export const useLeagueService = () => {
   const getAllChampions = async () => {
     const res = await request(`${_apiBase + version + _champion}.json`);
     return res.data.map(allChampions);
+  };
+
+  const getChampionNames = async () => {
+    const res = await request("http://localhost:5000/champions");
+    return res;
   };
 
   const _transformChampion = (
@@ -109,5 +114,6 @@ export const useLeagueService = () => {
     getChampionLoading,
     getChampion,
     getAllChampions,
+    getChampionNames,
   };
 };

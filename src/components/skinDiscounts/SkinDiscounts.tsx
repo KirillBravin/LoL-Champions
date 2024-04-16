@@ -1,5 +1,5 @@
 import { Container } from "react-bootstrap";
-import { useLeagueService } from "../../services/LeagueService";
+import { useLeagueService } from "../../Backend/LeagueService";
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
