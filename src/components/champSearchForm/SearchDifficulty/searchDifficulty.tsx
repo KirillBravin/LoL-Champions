@@ -1,6 +1,9 @@
+import { useState } from "react";
 import "./searchDifficulty.scss";
 
 export function SearchDifficulty() {
+  const [difficulty, setDifficulty] = useState("default");
+
   interface difficultyObj {
     id: number;
     name: string;

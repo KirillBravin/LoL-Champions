@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "src/Backend/http.hook.tsx", "src/Backend/LeagueService.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
