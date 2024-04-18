@@ -6,10 +6,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "animate.css";
 import "../skinDiscounts/skinDiscount.css";
+const _imgPath = `src/assets/icons/RP_icon.webp`;
 
 export function SkinDiscounts() {
   const { getChampionLoading } = useLeagueService();
-  const _imgPath = `/icons/RP_icon.webp`;
 
   const settings = {
     dots: true,

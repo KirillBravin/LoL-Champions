@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 import { SearchInput } from "./SearchInput/searchInput";
 import { SearchRoles } from "./SearchRoles/searchRoles";
 import { SearchDifficulty } from "./SearchDifficulty/searchDifficulty";

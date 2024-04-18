@@ -194,12 +194,11 @@ export function SearchInput() {
   useEffect(() => {
     getChampionNames().then((res) => {
       setChampionList(res);
-      console.log("championList: ", championList);
     });
   }, []);
 
   const renderChampions = (arr: Champions) => {
-    const items: ReactNode[] = arr.map((item: ChampionName, id: number) => {
+    const items = arr.map((item: ChampionName, id: number) => {
       return (
         <a
           href="#"
