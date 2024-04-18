@@ -4,7 +4,7 @@ import { SearchDifficulty } from "./SearchDifficulty/searchDifficulty";
 
 import "./champSearchForm.css";
 
-export function ChampSearchForm() {
+export function ChampSearchForm({ championList }) {
   return (
     <>
       <div className="search-section">
@@ -12,7 +12,7 @@ export function ChampSearchForm() {
           <div className="row">
             <div className="style-wrapper">
               <div className="col">
-                <SearchInput />
+                <SearchInput championList={championList} />
               </div>
               <div className="col-8">
                 <SearchRoles />

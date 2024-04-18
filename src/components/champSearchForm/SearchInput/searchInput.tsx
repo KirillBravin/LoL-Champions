@@ -186,17 +186,7 @@ interface Champions {
   Zyra: ChampionName;
 }
 
-export function SearchInput() {
-  const [championList, setChampionList] = useState([]);
-
-  const { getChampionNames } = useLeagueService();
-
-  useEffect(() => {
-    getChampionNames().then((res) => {
-      setChampionList(res);
-    });
-  }, []);
-
+export function SearchInput({ championList }) {
   const renderChampions = (arr: Champions) => {
     const items = arr.map((item: ChampionName, id: number) => {
       return (
