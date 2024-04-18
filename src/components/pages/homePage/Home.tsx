@@ -1,5 +1,6 @@
 import { SkinDiscounts } from "../../skinDiscounts/SkinDiscounts";
 import { ChampSearchForm } from "../../champSearchForm/ChampSearchForm";
+import { ChampionCards } from "../../ChampionCard/championCard";
 
 import "animate.css";
 import "./home.scss";
@@ -21,6 +22,7 @@ export function Home() {
         </span>
       </h1>
       <ChampSearchForm />
+      <ChampionCards />
     </>
   );
 }
