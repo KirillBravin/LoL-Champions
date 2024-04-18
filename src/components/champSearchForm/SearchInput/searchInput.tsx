@@ -1,7 +1,4 @@
-import { ReactNode, useEffect, useState } from "react";
-
 import magnifyingGlass from "../../../assets/icons/magnifying-glass.svg";
-import { useLeagueService } from "../../../Backend/LeagueService";
 import "./searchInput.scss";
 
 interface ChampionName {
@@ -195,7 +192,7 @@ export function SearchInput({ championList }) {
           key={id}
           className="dropdown-item search-bar__dropdown-item"
         >
-          <li>{item}</li>
+          <li>{item.name}</li>
         </a>
       );
     });

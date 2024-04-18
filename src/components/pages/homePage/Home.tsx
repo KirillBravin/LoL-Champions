@@ -193,11 +193,12 @@ interface Champions {
 export function Home() {
   const [championList, setChampionList] = useState([]);
 
-  const { getChampionNames } = useLeagueService();
+  const { getAllChampions } = useLeagueService();
 
   useEffect(() => {
-    getChampionNames().then((res) => {
+    getAllChampions().then((res) => {
       setChampionList(res);
+      console.log(res);
     });
   }, []);
 

@@ -183,6 +183,9 @@ interface Champions {
 }
 
 function ChampionCard({ championList }) {
+  if (championList === "Fiddlesticks") {
+    championList = "FiddleSticks";
+  }
   return (
     <>
       <div className="champion-card">
@@ -203,9 +206,8 @@ function ChampionCard({ championList }) {
 
 export function ChampionCards({ championList }) {
   const renderChampions = (arr: Champions) => {
-    const items = arr.map((item: ChampionName, id: number) => {
-      console.log(item);
-      return <ChampionCard championList={item} />;
+    const items = arr.map((item: ChampionName) => {
+      return <ChampionCard championList={item.id} />;
     });
     return <div className="cards-style">{items}</div>;
   };

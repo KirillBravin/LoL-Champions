@@ -10,10 +10,8 @@ app.get("/champions", async (req, res) => {
     const response = await axios.get(
       "https://ddragon.leagueoflegends.com/cdn/14.7.1/data/en_US/champion.json"
     );
-    const championNames = Object.keys(response.data.data).map(
-      (key) => response.data.data[key].name
-    );
-    res.json(championNames);
+    const championInfo = response.data.data;
+    res.json(championInfo);
   } catch (error) {
     console.error("Error fetching champion names:", error);
     res.status(500).json({ error: "Internal Server Error" });
