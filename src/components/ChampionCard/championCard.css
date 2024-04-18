@@ -1,14 +1,20 @@
+.champion-cards {
+  padding-bottom: 10rem;
+}
+
+.cards-style {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .champion-card {
   display: flex;
   position: relative;
-  width: 16rem;
+  width: 15rem;
   height: 23rem;
-  margin-top: 2rem;
-  margin-right: 2rem;
+  margin-top: 1rem;
+  margin-right: 1rem;
   overflow: hidden;
-}
-.champion-card__section {
-  padding-bottom: 10rem;
 }
 .champion-card__wrapper {
   width: 100%;

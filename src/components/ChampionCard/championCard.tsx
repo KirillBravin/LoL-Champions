@@ -22,9 +22,14 @@ function ChampionCard() {
 export function ChampionCards() {
   return (
     <>
-      <div className="champion-card__section">
+      <div className="champion-cards">
         <div className="container">
-          <ChampionCard />
+          <div className="cards-style">
+            {" "}
+            <ChampionCard /> <ChampionCard /> <ChampionCard /> <ChampionCard />{" "}
+            <ChampionCard /> <ChampionCard /> <ChampionCard /> <ChampionCard />{" "}
+            <ChampionCard /> <ChampionCard />
+          </div>
         </div>
       </div>
     </>
