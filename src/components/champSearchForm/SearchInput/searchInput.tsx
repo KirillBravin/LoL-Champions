@@ -1,7 +1,4 @@
-import { ReactNode, useEffect, useState } from "react";
-
 import magnifyingGlass from "../../../assets/icons/magnifying-glass.svg";
-import { useLeagueService } from "../../../Backend/LeagueService";
 import "./searchInput.scss";
 
 interface ChampionName {
@@ -186,17 +183,7 @@ interface Champions {
   Zyra: ChampionName;
 }
 
-export function SearchInput() {
-  const [championList, setChampionList] = useState([]);
-
-  const { getChampionNames } = useLeagueService();
-
-  useEffect(() => {
-    getChampionNames().then((res) => {
-      setChampionList(res);
-    });
-  }, []);
-
+export function SearchInput({ championList }) {
   const renderChampions = (arr: Champions) => {
     const items = arr.map((item: ChampionName, id: number) => {
       return (
@@ -205,7 +192,7 @@ export function SearchInput() {
           key={id}
           className="dropdown-item search-bar__dropdown-item"
         >
-          <li>{item}</li>
+          <li>{item.name}</li>
         </a>
       );
     });
