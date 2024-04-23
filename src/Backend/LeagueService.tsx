@@ -56,7 +56,7 @@ type TChampionData = {
 }; */
 
 export const useLeagueService = () => {
-  const { request } = useHttp();
+  const { request, loading, error, process, clearError } = useHttp();
 
   // Base paths
   const version: string = "14.7.1";
@@ -122,5 +122,9 @@ export const useLeagueService = () => {
     getChampionLoading,
     getChampion,
     getAllChampions,
+    loading,
+    error,
+    process,
+    clearError,
   };
 };

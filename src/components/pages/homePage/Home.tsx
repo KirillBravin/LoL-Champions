@@ -190,7 +190,7 @@ interface Champions {
   Zyra: ChampionName;
 }
 
-export function Home() {
+export default function Home() {
   const [championList, setChampionList] = useState([]);
 
   const { getAllChampions } = useLeagueService();

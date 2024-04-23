@@ -1,4 +1,6 @@
 import "./championCard.scss";
+import { Spinner } from "../Spinner/Spinner";
+import { useLeagueService } from "../../Backend/LeagueService";
 
 interface ChampionName {
   name: string;
@@ -183,8 +185,12 @@ interface Champions {
 }
 
 function ChampionCard({ championList }) {
+  let championName: string = championList;
   if (championList === "Fiddlesticks") {
     championList = "FiddleSticks";
+  }
+  if (championName === "MonkeyKing") {
+    championName = "Wukong";
   }
   return (
     <>
@@ -196,7 +202,7 @@ function ChampionCard({ championList }) {
             className="champion-card__thumbnail"
           />
           <div className="champion-card__label">
-            <span>{championList}</span>
+            <span>{championName}</span>
           </div>
         </div>
       </div>
@@ -205,6 +211,9 @@ function ChampionCard({ championList }) {
 }
 
 export function ChampionCards({ championList }) {
+  const { loading } = useLeagueService();
+  const spinner = loading ? <Spinner /> : null;
+
   const renderChampions = (arr: Champions) => {
     const items = arr.map((item: ChampionName) => {
       return <ChampionCard championList={item.id} />;
@@ -217,7 +226,10 @@ export function ChampionCards({ championList }) {
   return (
     <>
       <div className="champion-cards">
-        <div className="container">{cards}</div>
+        <div className="container">
+          {spinner}
+          {cards}
+        </div>
       </div>
     </>
   );
