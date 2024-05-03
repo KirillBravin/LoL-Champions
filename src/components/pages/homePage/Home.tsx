@@ -8,16 +8,17 @@ import "./home.scss";
 import { useEffect, useState } from "react";
 import { useLeagueService } from "../../../Backend/LeagueService";
 
-type JSONValue =
-  | string
-  | number
-  | boolean
-  | null
-  | { [x: string]: JSONValue }
-  | Array<JSONValue>;
+interface SingleChampionData {
+  id: string;
+  name: string;
+  key: string;
+  title: string;
+  tags: string;
+  info: number;
+}
 
 export default function Home() {
-  const [championList, setChampionList] = useState<JSONValue>([]);
+  const [championList, setChampionList] = useState([]);
 
   const { getAllChampions } = useLeagueService();
 
