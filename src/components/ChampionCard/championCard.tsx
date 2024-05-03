@@ -8,16 +8,24 @@ interface SingleChampionData {
   key: string;
   title: string;
   tags: string;
-  info: number;
+  difficulty: number;
 }
 
-export function ChampionCards(props) {
+interface ChampionCardsProps {
+  championList: SingleChampionData[];
+}
+
+interface ChampionCardProps {
+  champion: string;
+}
+
+export function ChampionCards(props: ChampionCardsProps) {
   const { loading } = useLeagueService();
   const spinner = loading ? <Spinner /> : null;
 
-  const renderChampions = (arr) => {
+  const renderChampions = (arr: SingleChampionData[]) => {
     const items = arr.map((item) => {
-      return <ChampionCard championList={item.id} />;
+      return <ChampionCard key={item.id} champion={item.id} />;
     });
     return <div className="cards-style">{items}</div>;
   };
@@ -36,8 +44,8 @@ export function ChampionCards(props) {
   );
 }
 
-function ChampionCard(props) {
-  let championId: string = props.championList;
+function ChampionCard(props: ChampionCardProps) {
+  let championId: string = props.champion;
   let championName: string = championId;
 
   if (championId === "Fiddlesticks") {

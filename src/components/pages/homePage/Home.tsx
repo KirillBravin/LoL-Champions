@@ -14,11 +14,11 @@ interface SingleChampionData {
   key: string;
   title: string;
   tags: string;
-  info: number;
+  difficulty: number;
 }
 
 export default function Home() {
-  const [championList, setChampionList] = useState([]);
+  const [championList, setChampionList] = useState<SingleChampionData[]>([]);
 
   const { getAllChampions } = useLeagueService();
 
