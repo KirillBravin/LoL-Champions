@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./searchDifficulty.scss";
 
 export function SearchDifficulty() {
   const [difficulty, setDifficulty] = useState("default");
+  const [lineHeight, setLineHeight] = useState<boolean>(false);
 
   interface difficultyObj {
     id: number;
@@ -52,22 +53,46 @@ export function SearchDifficulty() {
     },
   ];
 
+  const handleWrapperClick = () => {
+    setLineHeight(!lineHeight);
+  };
+
+  const handleDocumentClick = (event) => {
+    if (!event.target.closest(".difficulties__wrapper")) {
+      setLineHeight(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleDocumentClick);
+
+    return () => {
+      document.removeEventListener("click", handleDocumentClick);
+    };
+  }, []);
+
   function renderDifficulties(arr: difficultyObj[]) {
     const items = arr.map((item) => {
       return <li>{item.render()}</li>;
     });
     return (
       <div className="dropdown difficulties">
-        <div className="difficulties__line-right"></div>
-        <button
-          className="btn btn-secondary dropdown-toggle difficulties__btn-main"
-          type="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          all difficulties
-        </button>
-        <ul className="dropdown-menu">{items}</ul>
+        <div className="difficulties__wrapper" onClick={handleWrapperClick}>
+          <div
+            className={`difficulties__line-right ${
+              lineHeight ? "line-full-height" : ""
+            }`}
+          ></div>
+          <button
+            className="btn btn-secondary dropdown-toggle difficulties__btn-main"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            all difficulties
+          </button>
+          <ul className="dropdown-menu">{items}</ul>
+        </div>
       </div>
     );
   }

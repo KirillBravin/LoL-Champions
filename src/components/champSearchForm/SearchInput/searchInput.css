@@ -83,9 +83,6 @@
 .search-bar__input::after {
   display: none;
 }
-.search-bar__input:focus::after {
-  left: 0.4rem;
-}
 .search-bar__input:focus::placeholder {
   opacity: 0.65;
 }

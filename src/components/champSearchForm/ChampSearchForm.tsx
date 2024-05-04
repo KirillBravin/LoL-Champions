@@ -4,7 +4,20 @@ import { SearchDifficulty } from "./SearchDifficulty/searchDifficulty";
 
 import "./champSearchForm.css";
 
-export function ChampSearchForm({ championList }) {
+interface SingleChampionData {
+  id: string;
+  name: string;
+  key: string;
+  title: string;
+  tags: string;
+  difficulty: number;
+}
+
+interface ChampionFormProps {
+  championList: SingleChampionData[];
+}
+
+export function ChampSearchForm({ championList }: ChampionFormProps) {
   return (
     <>
       <div className="search-section">

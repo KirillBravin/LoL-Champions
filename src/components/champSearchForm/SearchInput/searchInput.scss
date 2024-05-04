@@ -94,9 +94,6 @@
         display: none;
     }
     &:focus{
-        &::after{
-            left: 0.4rem;
-        }
         &::placeholder{
             opacity: 0.65;
         }
