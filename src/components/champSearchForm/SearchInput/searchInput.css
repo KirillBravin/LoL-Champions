@@ -88,4 +88,11 @@
 }
 .search-bar__input::placeholder {
   opacity: 1;
+}
+.search-bar .img__active {
+  transform: translateX(-5px);
+}
+.search-bar .search-bar__active {
+  top: 0rem;
+  height: 3.1rem;
 }/*# sourceMappingURL=searchInput.css.map */

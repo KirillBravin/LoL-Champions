@@ -72,9 +72,10 @@ export function SearchDifficulty() {
   }, []);
 
   function renderDifficulties(arr: difficultyObj[]) {
-    const items = arr.map((item) => {
-      return <li>{item.render()}</li>;
+    const items = arr.map((item, i) => {
+      return <li key={i}>{item.render()}</li>;
     });
+
     return (
       <div className="dropdown difficulties">
         <div className="difficulties__wrapper" onClick={handleWrapperClick}>

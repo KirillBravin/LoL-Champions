@@ -17,6 +17,7 @@ interface ChampionInputProps {
 
 export function SearchInput({ championList }: ChampionInputProps) {
   const [wrapperActive, setWrapperActive] = useState(false);
+  const [filter, setFilter] = useState("");
 
   const handleWrapperClick = () => {
     setWrapperActive(!wrapperActive);
@@ -36,22 +37,35 @@ export function SearchInput({ championList }: ChampionInputProps) {
     };
   }, []);
 
-  const renderChampions = (arr: SingleChampionData[]) => {
-    const items = arr.map((item, id) => {
-      return (
-        <a
-          href="#"
-          key={id}
-          className="dropdown-item search-bar__dropdown-item"
-        >
-          <li>{item.name}</li>
-        </a>
-      );
+  const alphabeticalChampionNames = (arr: SingleChampionData[]) => {
+    const names: string[] = arr.map((item) => {
+      return item.name;
     });
+
+    const sortedNames: string[] = names.sort();
+    return sortedNames;
+  };
+
+  const sortedChampionNames = alphabeticalChampionNames(championList);
+
+  const renderChampions = (arr: string[]) => {
+    const items = arr
+      .filter((f) => f.toLocaleLowerCase().includes(filter) || filter === "")
+      .map((item, id) => {
+        return (
+          <a
+            href="#"
+            key={id}
+            className="dropdown-item search-bar__dropdown-item"
+          >
+            <li>{item}</li>
+          </a>
+        );
+      });
     return <ul className="dropdown-menu search-bar__dropdown-menu">{items}</ul>;
   };
 
-  const champions = renderChampions(championList);
+  const champions = renderChampions(sortedChampionNames);
 
   return (
     <div className="search-bar">
@@ -63,11 +77,15 @@ export function SearchInput({ championList }: ChampionInputProps) {
             className={`search-bar__icon ${wrapperActive ? "img__active" : ""}`}
           />
           <input
-            type="search"
+            type="text"
+            name="search-filter"
+            id="search-filter"
             className="btn btn-secondary dropdown-toggle search-bar__input"
             data-bs-toggle="dropdown"
             aria-expanded="false"
             placeholder="search"
+            value={filter}
+            onChange={(event) => setFilter(event.target.value)}
           />
           {champions}
         </div>
