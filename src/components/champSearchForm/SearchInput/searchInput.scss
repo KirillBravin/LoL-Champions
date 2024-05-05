@@ -102,4 +102,13 @@
         opacity: 1;
     }
 }
+
+    .img__active{
+        transform: translateX(-5px);
+    }
+
+    .search-bar__active{
+        top: 0rem;
+        height: 3.1rem;
+    }
 }

@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import magnifyingGlass from "../../../assets/icons/magnifying-glass.svg";
 import "./searchInput.scss";
 
@@ -15,6 +16,26 @@ interface ChampionInputProps {
 }
 
 export function SearchInput({ championList }: ChampionInputProps) {
+  const [wrapperActive, setWrapperActive] = useState(false);
+
+  const handleWrapperClick = () => {
+    setWrapperActive(!wrapperActive);
+  };
+
+  const handleDocumentClick = (event) => {
+    if (!event.target.closest(".search-bar__wrapper")) {
+      setWrapperActive(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleDocumentClick);
+
+    return () => {
+      document.removeEventListener("click", handleDocumentClick);
+    };
+  }, []);
+
   const renderChampions = (arr: SingleChampionData[]) => {
     const items = arr.map((item, id) => {
       return (
@@ -34,12 +55,12 @@ export function SearchInput({ championList }: ChampionInputProps) {
 
   return (
     <div className="search-bar">
-      <div className="search-bar__wrapper">
+      <div className="search-bar__wrapper" onClick={handleWrapperClick}>
         <div className="dropdown search-bar__dropdown">
           <img
             src={magnifyingGlass}
             alt="search"
-            className="search-bar__icon"
+            className={`search-bar__icon ${wrapperActive ? "img__active" : ""}`}
           />
           <input
             type="search"
@@ -50,7 +71,11 @@ export function SearchInput({ championList }: ChampionInputProps) {
           />
           {champions}
         </div>
-        <div className="search-bar__line-left"></div>
+        <div
+          className={`search-bar__line-left ${
+            wrapperActive ? "search-bar__active" : ""
+          }`}
+        ></div>
       </div>
     </div>
   );
