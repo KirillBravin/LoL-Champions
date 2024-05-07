@@ -23,8 +23,8 @@ export function SearchInput({ championList }: ChampionInputProps) {
     setWrapperActive(!wrapperActive);
   };
 
-  const handleDocumentClick = (event) => {
-    if (!event.target.closest(".search-bar__wrapper")) {
+  const handleDocumentClick = (event: MouseEvent) => {
+    if (!(event.target as HTMLElement).closest(".search-bar__wrapper")) {
       setWrapperActive(false);
     }
   };
@@ -67,7 +67,7 @@ export function SearchInput({ championList }: ChampionInputProps) {
 
   const champions = renderChampions(sortedChampionNames);
 
-  const inputToLowerCase = (e) => {
+  const inputToLowerCase = (e: React.ChangeEvent<HTMLInputElement>) => {
     const input = e.target.value;
     return input.toLowerCase();
   };
