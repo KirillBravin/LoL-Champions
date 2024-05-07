@@ -67,6 +67,11 @@ export function SearchInput({ championList }: ChampionInputProps) {
 
   const champions = renderChampions(sortedChampionNames);
 
+  const inputToLowerCase = (e) => {
+    const input = e.target.value;
+    return input.toLowerCase();
+  };
+
   return (
     <div className="search-bar">
       <div className="search-bar__wrapper" onClick={handleWrapperClick}>
@@ -85,7 +90,7 @@ export function SearchInput({ championList }: ChampionInputProps) {
             aria-expanded="false"
             placeholder="search"
             value={filter}
-            onChange={(event) => setFilter(event.target.value)}
+            onChange={(event) => setFilter(inputToLowerCase(event))}
           />
           {champions}
         </div>
