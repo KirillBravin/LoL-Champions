@@ -20,6 +20,7 @@ export function SearchInput({
   getChampionSelected,
 }: ChampionInputProps) {
   const [wrapperActive, setWrapperActive] = useState(false);
+  const [filterActive, setFilterActive] = useState(false);
   const [filter, setFilter] = useState("");
 
   const handleWrapperClick = () => {
@@ -57,6 +58,7 @@ export function SearchInput({
       .map((item, id) => {
         const assignChampionNameToInputValue = () => {
           setFilter(item);
+          setFilterActive(true);
           getChampionSelected(item);
         };
         return (
@@ -79,6 +81,11 @@ export function SearchInput({
     return input.toLowerCase();
   };
 
+  const resetFilter = () => {
+    setFilter("");
+    setFilterActive(false);
+  };
+
   return (
     <div className="search-bar">
       <div className="search-bar__wrapper" onClick={handleWrapperClick}>
@@ -99,6 +106,12 @@ export function SearchInput({
             value={filter}
             onChange={(event) => setFilter(inputToLowerCase(event))}
           />
+          <button
+            type="button"
+            className={`btn-close ${filterActive ? "" : "button__hidden"}`}
+            aria-label="Close"
+            onClick={resetFilter}
+          ></button>
           {champions}
         </div>
         <div

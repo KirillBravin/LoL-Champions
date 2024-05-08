@@ -111,4 +111,14 @@
         top: 0rem;
         height: 3.1rem;
     }
+
+    .button__hidden{
+        display:none;
+    }
+    
+    .btn-close{
+        position: relative;
+        bottom: 2.7rem;
+        left: 8rem;
+    }
 }
