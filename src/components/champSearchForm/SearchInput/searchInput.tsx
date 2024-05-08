@@ -52,14 +52,17 @@ export function SearchInput({ championList }: ChampionInputProps) {
     const items = arr
       .filter((f) => f.toLocaleLowerCase().includes(filter) || filter === "")
       .map((item, id) => {
+        const assignChampionNameToInputValue = () => {
+          setFilter(item);
+        };
         return (
-          <a
-            href="#"
+          <div
             key={id}
             className="dropdown-item search-bar__dropdown-item"
+            onClick={assignChampionNameToInputValue}
           >
             <li>{item}</li>
-          </a>
+          </div>
         );
       });
     return <ul className="dropdown-menu search-bar__dropdown-menu">{items}</ul>;
