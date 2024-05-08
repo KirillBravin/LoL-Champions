@@ -2,7 +2,6 @@ import "./championCard.scss";
 import "animate.css";
 import { Spinner } from "../Spinner/Spinner";
 import { useLeagueService } from "../../Backend/LeagueService";
-import { useEffect } from "react";
 
 interface SingleChampionData {
   id: string;
@@ -29,18 +28,18 @@ export function ChampionCards({
   const { loading } = useLeagueService();
   const spinner = loading ? <Spinner /> : null;
 
-  useEffect(() => {
-    championSelected;
-    console.log(championSelected);
-  }, [championSelected]);
-
   const renderChampions = (arr: SingleChampionData[]) => {
+    console.log("rendering");
     const items = arr.map((item) => {
-      if (item.name === championSelected) {
-        return <ChampionCard key={item.id} champion={item.id} />;
-      } else if (championSelected === "") {
-        return <ChampionCard key={item.id} champion={item.id} />;
+      if (item.name === championSelected || championSelected === "") {
+        return (
+          <ChampionCard
+            key={`${item.id}-${championSelected}`}
+            champion={item.id}
+          />
+        );
       }
+      return null;
     });
     return <div className="cards-style">{items}</div>;
   };

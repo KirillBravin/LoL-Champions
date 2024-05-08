@@ -25,6 +25,7 @@
   padding-left: 1rem;
   line-height: 1.5rem;
   width: 8rem;
+  cursor: pointer;
 }
 .search-bar__icon {
   width: 1.5rem;
@@ -95,4 +96,12 @@
 .search-bar .search-bar__active {
   top: 0rem;
   height: 3.1rem;
+}
+.search-bar .button__hidden {
+  display: none;
+}
+.search-bar .btn-close {
+  position: relative;
+  bottom: 2.7rem;
+  left: 8rem;
 }/*# sourceMappingURL=searchInput.css.map */
