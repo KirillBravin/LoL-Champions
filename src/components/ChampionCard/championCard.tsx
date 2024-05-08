@@ -1,4 +1,5 @@
 import "./championCard.scss";
+import "animate.css";
 import { Spinner } from "../Spinner/Spinner";
 import { useLeagueService } from "../../Backend/LeagueService";
 import { useEffect } from "react";
@@ -74,7 +75,7 @@ function ChampionCard(championList: ChampionCardProps) {
   }
   return (
     <>
-      <div className="champion-card">
+      <div className="champion-card animate__animated animate__fadeIn">
         <div className="champion-card__wrapper">
           <img
             src={`https://ddragon.leagueoflegends.com/cdn/img/champion/centered/${championId}_0.jpg`}
