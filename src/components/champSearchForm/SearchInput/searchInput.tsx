@@ -15,7 +15,10 @@ interface ChampionInputProps {
   championList: SingleChampionData[];
 }
 
-export function SearchInput({ championList }: ChampionInputProps) {
+export function SearchInput({
+  championList,
+  getChampionSelected,
+}: ChampionInputProps) {
   const [wrapperActive, setWrapperActive] = useState(false);
   const [filter, setFilter] = useState("");
 
@@ -54,6 +57,7 @@ export function SearchInput({ championList }: ChampionInputProps) {
       .map((item, id) => {
         const assignChampionNameToInputValue = () => {
           setFilter(item);
+          getChampionSelected(item);
         };
         return (
           <div

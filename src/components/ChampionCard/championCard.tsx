@@ -1,6 +1,7 @@
 import "./championCard.scss";
 import { Spinner } from "../Spinner/Spinner";
 import { useLeagueService } from "../../Backend/LeagueService";
+import { useEffect } from "react";
 
 interface SingleChampionData {
   id: string;
@@ -13,24 +14,37 @@ interface SingleChampionData {
 
 interface ChampionCardsProps {
   championList: SingleChampionData[];
+  championSelected: string;
 }
 
 interface ChampionCardProps {
   champion: string;
 }
 
-export function ChampionCards(props: ChampionCardsProps) {
+export function ChampionCards({
+  championList,
+  championSelected,
+}: ChampionCardsProps) {
   const { loading } = useLeagueService();
   const spinner = loading ? <Spinner /> : null;
 
+  useEffect(() => {
+    championSelected;
+    console.log(championSelected);
+  }, [championSelected]);
+
   const renderChampions = (arr: SingleChampionData[]) => {
     const items = arr.map((item) => {
-      return <ChampionCard key={item.id} champion={item.id} />;
+      if (item.id === championSelected) {
+        return <ChampionCard key={item.id} champion={item.id} />;
+      } else if (championSelected === "") {
+        return <ChampionCard key={item.id} champion={item.id} />;
+      }
     });
     return <div className="cards-style">{items}</div>;
   };
 
-  const cards = renderChampions(props.championList);
+  const cards = renderChampions(championList);
 
   return (
     <>
@@ -44,8 +58,8 @@ export function ChampionCards(props: ChampionCardsProps) {
   );
 }
 
-function ChampionCard(props: ChampionCardProps) {
-  let championId: string = props.champion;
+function ChampionCard(championList: ChampionCardProps) {
+  let championId: string = championList.champion;
   let championName: string = championId;
 
   if (championId === "Fiddlesticks") {

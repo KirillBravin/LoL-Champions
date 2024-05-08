@@ -15,9 +15,13 @@ interface SingleChampionData {
 
 interface ChampionFormProps {
   championList: SingleChampionData[];
+  getChampionSelected: string;
 }
 
-export function ChampSearchForm({ championList }: ChampionFormProps) {
+export function ChampSearchForm({
+  championList,
+  getChampionSelected,
+}: ChampionFormProps) {
   return (
     <>
       <div className="search-section">
@@ -25,7 +29,10 @@ export function ChampSearchForm({ championList }: ChampionFormProps) {
           <div className="row">
             <div className="style-wrapper">
               <div className="col">
-                <SearchInput championList={championList} />
+                <SearchInput
+                  championList={championList}
+                  getChampionSelected={getChampionSelected}
+                />
               </div>
               <div className="col-8">
                 <SearchRoles />

@@ -19,6 +19,7 @@ interface SingleChampionData {
 
 export default function Home() {
   const [championList, setChampionList] = useState<SingleChampionData[]>([]);
+  const [championSelected, setChampionSelected] = useState<string>("");
 
   const { getAllChampions } = useLeagueService();
 
@@ -27,6 +28,10 @@ export default function Home() {
       setChampionList(res);
     });
   }, []);
+
+  function handleChampionSelected(data: string) {
+    setChampionSelected(data);
+  }
 
   return (
     <>
@@ -43,8 +48,14 @@ export default function Home() {
           playstyle. Master one, or master them all.
         </span>
       </h1>
-      <ChampSearchForm championList={championList} />
-      <ChampionCards championList={championList} />
+      <ChampSearchForm
+        championList={championList}
+        getChampionSelected={handleChampionSelected}
+      />
+      <ChampionCards
+        championList={championList}
+        championSelected={championSelected}
+      />
     </>
   );
 }
