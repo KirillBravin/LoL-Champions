@@ -35,7 +35,7 @@ export function ChampionCards({
 
   const renderChampions = (arr: SingleChampionData[]) => {
     const items = arr.map((item) => {
-      if (item.id === championSelected) {
+      if (item.name === championSelected) {
         return <ChampionCard key={item.id} champion={item.id} />;
       } else if (championSelected === "") {
         return <ChampionCard key={item.id} champion={item.id} />;
@@ -68,6 +68,9 @@ function ChampionCard(championList: ChampionCardProps) {
 
   if (championName === "MonkeyKing") {
     championName = "Wukong";
+  }
+  if (championName === "Nunu") {
+    championName = "Nunu & Willump";
   }
   return (
     <>

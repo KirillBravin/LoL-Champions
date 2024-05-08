@@ -84,6 +84,7 @@ export function SearchInput({
   const resetFilter = () => {
     setFilter("");
     setFilterActive(false);
+    getChampionSelected("");
   };
 
   return (
