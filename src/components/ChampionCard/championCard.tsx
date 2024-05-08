@@ -74,7 +74,7 @@ function ChampionCard(championList: ChampionCardProps) {
   }
   return (
     <>
-      <div className="champion-card animate__animated animate__fadeIn">
+      <div className="champion-card animate__animated animate__fadeIn animate__slow">
         <div className="champion-card__wrapper">
           <img
             src={`https://ddragon.leagueoflegends.com/cdn/img/champion/centered/${championId}_0.jpg`}
