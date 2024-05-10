@@ -5,7 +5,9 @@ interface SingleChampionData {
   name: string;
   key: string;
   title: string;
-  tags: string;
+  tags: {
+    [name: string]: string;
+  };
   difficulty: number;
 }
 
@@ -32,8 +34,7 @@ interface AllChampionsBody {
     h: number;
   };
   tags: {
-    0: string;
-    1: string;
+    [name: string]: string;
   };
   partype: string;
   stats: {
@@ -262,7 +263,7 @@ export const useLeagueService = () => {
       name: champ.name,
       key: champ.key,
       title: champ.title,
-      tags: champ.tags[0],
+      tags: champ.tags,
       difficulty: champ.info.difficulty,
     }));
   };

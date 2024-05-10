@@ -2,21 +2,26 @@ import { useState } from "react";
 
 import "./searchRoles.scss";
 
-export function SearchRoles() {
+export function SearchRoles({ getRoleSelected }) {
   const [activeButton, setActiveButton] = useState<number | null>(null);
 
   const roles = [
-    "all",
-    "assassins",
-    "fighters",
-    "mages",
-    "marksmen",
-    "supports",
-    "tanks",
+    "All",
+    "Assassins",
+    "Fighters",
+    "Mages",
+    "Marksmen",
+    "Supports",
+    "Tanks",
   ];
 
-  const roleButton = (i: number) => {
+  const roleButton = (arg: string, i: number) => {
     setActiveButton(i === activeButton ? null : i);
+    if (arg === "All") {
+      getRoleSelected("");
+    } else {
+      getRoleSelected(arg);
+    }
   };
 
   function renderRoles(arr: string[]) {
@@ -31,7 +36,7 @@ export function SearchRoles() {
           <button
             className="button"
             onClick={() => {
-              roleButton(i);
+              roleButton(item, i);
             }}
           >
             {item}

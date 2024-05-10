@@ -2,6 +2,7 @@ import "./championCard.scss";
 import "animate.css";
 import { Spinner } from "../Spinner/Spinner";
 import { useLeagueService } from "../../Backend/LeagueService";
+import { useEffect, useState } from "react";
 
 interface SingleChampionData {
   id: string;
@@ -15,6 +16,7 @@ interface SingleChampionData {
 interface ChampionCardsProps {
   championList: SingleChampionData[];
   championSelected: string;
+  roleSelected: string;
 }
 
 interface ChampionCardProps {
@@ -24,24 +26,63 @@ interface ChampionCardProps {
 export function ChampionCards({
   championList,
   championSelected,
+  roleSelected,
 }: ChampionCardsProps) {
+  const [currentRole, setCurrentRole] = useState<string>("");
+
   const { loading } = useLeagueService();
   const spinner = loading ? <Spinner /> : null;
 
+  function roleCorrection(role: string) {
+    if (role === "Assassins") {
+      setCurrentRole("Assassin");
+    } else if (role === "Fighters") {
+      setCurrentRole("Fighter");
+    } else if (role === "Mages") {
+      setCurrentRole("Mage");
+    } else if (role === "Marksmen") {
+      setCurrentRole("Marksman");
+    } else if (role === "Supports") {
+      setCurrentRole("Support");
+    } else if (role === "Tanks") {
+      setCurrentRole("Tank");
+    } else {
+      setCurrentRole("");
+    }
+  }
+
+  useEffect(() => {
+    roleCorrection(roleSelected);
+  }, [roleSelected]);
+
   const renderChampions = (arr: SingleChampionData[]) => {
-    console.log("rendering");
-    const items = arr.map((item) => {
-      if (item.name === championSelected || championSelected === "") {
-        return (
-          <ChampionCard
-            key={`${item.id}-${championSelected}`}
-            champion={item.id}
-          />
-        );
-      }
-      return null;
-    });
-    return <div className="cards-style">{items}</div>;
+    if (currentRole === "") {
+      const items = arr.map((item) => {
+        if (item.name === championSelected || championSelected === "") {
+          return (
+            <ChampionCard
+              key={`${item.id}-${championSelected}`}
+              champion={item.id}
+            />
+          );
+        }
+        return null;
+      });
+      return <div className="cards-style">{items}</div>;
+    } else if (currentRole !== "") {
+      const items = arr.map((item) => {
+        if (item.tags[0] === currentRole || item.tags[1] === currentRole) {
+          return (
+            <ChampionCard
+              key={`${item.id}-${championSelected}`}
+              champion={item.id}
+            />
+          );
+        }
+        return null;
+      });
+      return <div className="cards-style">{items}</div>;
+    }
   };
 
   const cards = renderChampions(championList);

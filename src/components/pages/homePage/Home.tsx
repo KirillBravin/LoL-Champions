@@ -13,13 +13,16 @@ interface SingleChampionData {
   name: string;
   key: string;
   title: string;
-  tags: string;
+  tags: {
+    [name: string]: string;
+  };
   difficulty: number;
 }
 
 export default function Home() {
   const [championList, setChampionList] = useState<SingleChampionData[]>([]);
   const [championSelected, setChampionSelected] = useState<string>("");
+  const [roleSelected, setRoleSelected] = useState<string>("");
 
   const { getAllChampions } = useLeagueService();
 
@@ -31,6 +34,10 @@ export default function Home() {
 
   function handleChampionSelected(data: string) {
     setChampionSelected(data);
+  }
+
+  function handleRoleSelected(data: string) {
+    setRoleSelected(data);
   }
 
   return (
@@ -51,11 +58,20 @@ export default function Home() {
       <ChampSearchForm
         championList={championList}
         getChampionSelected={handleChampionSelected}
+        getRoleSelected={handleRoleSelected}
       />
       <ChampionCards
         championList={championList}
         championSelected={championSelected}
+        roleSelected={roleSelected}
       />
     </>
   );
 }
+
+/* (
+  (item.name === championSelected &&
+    (item.tags[0] === currentRole || item.tags[1] === currentRole)) ||
+  ((item.tags[0] === currentRole || item.tags[1] === currentRole) &&
+    championSelected === "")
+)  */

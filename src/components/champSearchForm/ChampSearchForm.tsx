@@ -16,11 +16,13 @@ interface SingleChampionData {
 interface ChampionFormProps {
   championList: SingleChampionData[];
   getChampionSelected: string;
+  getRoleSelected: string;
 }
 
 export function ChampSearchForm({
   championList,
   getChampionSelected,
+  getRoleSelected,
 }: ChampionFormProps) {
   return (
     <>
@@ -35,7 +37,7 @@ export function ChampSearchForm({
                 />
               </div>
               <div className="col-8">
-                <SearchRoles />
+                <SearchRoles getRoleSelected={getRoleSelected} />
               </div>
               <div className="col">
                 <SearchDifficulty />
