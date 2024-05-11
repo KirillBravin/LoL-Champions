@@ -1,53 +1,80 @@
 import { useEffect, useState } from "react";
 import "./searchDifficulty.scss";
 
-export function SearchDifficulty() {
-  const [difficulty, setDifficulty] = useState("default");
-  const [lineHeight, setLineHeight] = useState<boolean>(false);
+interface difficultyObj {
+  id: number;
+  difficulty: number[];
+  render: () => JSX.Element;
+}
 
-  interface difficultyObj {
-    id: number;
-    name: string;
-    render: () => JSX.Element;
-  }
+interface SingleChampionData {
+  id: string;
+  name: string;
+  key: string;
+  title: string;
+  tags: string;
+  difficulty: number[];
+}
+
+interface ChampionDifficultyProps {
+  getDifficulty: SingleChampionData[];
+}
+
+export function SearchDifficulty({ getDifficulty }) {
+  const [lineHeight, setLineHeight] = useState<boolean>(false);
 
   const difficultyObj: difficultyObj[] = [
     {
       id: 1,
-      name: "Easy",
+      difficulty: [0, 1, 2, 3],
       render: function () {
         return (
-          <a className="dropdown-item style" href="#">
+          <div
+            className="dropdown-item style"
+            onClick={() => {
+              getDifficulty(this.difficulty);
+            }}
+          >
             <span className="parallelogramFilled"></span>
             <span className="parallelogramEmpty"></span>
             <span className="parallelogramEmpty"></span>
-          </a>
+          </div>
         );
       },
     },
     {
       id: 2,
-      name: "Medium",
+      difficulty: [4, 5, 6, 7],
       render: function () {
         return (
-          <a className="dropdown-item style" href="#">
+          <div
+            className="dropdown-item style"
+            onClick={() => {
+              getDifficulty(this.difficulty);
+            }}
+          >
             <span className="parallelogramFilled"></span>
             <span className="parallelogramFilled"></span>
             <span className="parallelogramEmpty"></span>
-          </a>
+          </div>
         );
       },
     },
     {
       id: 3,
-      name: "Hard",
+      difficulty: [8, 9, 10],
       render: function () {
         return (
-          <a className="dropdown-item style" href="#">
+          <div
+            className="dropdown-item style"
+            onClick={() => {
+              getDifficulty(this.difficulty);
+            }}
+          >
             <span className="parallelogramFilled"></span>
             <span className="parallelogramFilled"></span>
             <span className="parallelogramFilled"></span>
-          </a>
+          </div>
         );
       },
     },

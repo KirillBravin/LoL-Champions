@@ -23,6 +23,7 @@ export default function Home() {
   const [championList, setChampionList] = useState<SingleChampionData[]>([]);
   const [championSelected, setChampionSelected] = useState<string>("");
   const [roleSelected, setRoleSelected] = useState<string>("");
+  const [difficultySelected, setDifficultySelected] = useState<number[]>([]);
 
   const { getAllChampions } = useLeagueService();
 
@@ -38,6 +39,10 @@ export default function Home() {
 
   function handleRoleSelected(data: string) {
     setRoleSelected(data);
+  }
+
+  function handleDifficulty(data: number) {
+    setDifficultySelected(data);
   }
 
   return (
@@ -59,19 +64,14 @@ export default function Home() {
         championList={championList}
         getChampionSelected={handleChampionSelected}
         getRoleSelected={handleRoleSelected}
+        getDifficulty={handleDifficulty}
       />
       <ChampionCards
         championList={championList}
         championSelected={championSelected}
         roleSelected={roleSelected}
+        difficultySelected={difficultySelected}
       />
     </>
   );
 }
-
-/* (
-  (item.name === championSelected &&
-    (item.tags[0] === currentRole || item.tags[1] === currentRole)) ||
-  ((item.tags[0] === currentRole || item.tags[1] === currentRole) &&
-    championSelected === "")
-)  */

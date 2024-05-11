@@ -7,6 +7,12 @@
   flex-wrap: wrap;
 }
 
+.cards-empty {
+  display: flex;
+  justify-content: center;
+  font-family: Spiegel;
+}
+
 .champion-card {
   display: flex;
   position: relative;

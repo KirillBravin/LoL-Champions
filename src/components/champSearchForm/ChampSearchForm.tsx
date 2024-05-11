@@ -10,19 +10,21 @@ interface SingleChampionData {
   key: string;
   title: string;
   tags: string;
-  difficulty: number;
+  difficulty: number[];
 }
 
 interface ChampionFormProps {
   championList: SingleChampionData[];
-  getChampionSelected: string;
-  getRoleSelected: string;
+  getChampionSelected: SingleChampionData[];
+  getRoleSelected: SingleChampionData[];
+  getDifficulty: SingleChampionData[];
 }
 
 export function ChampSearchForm({
   championList,
   getChampionSelected,
   getRoleSelected,
+  getDifficulty,
 }: ChampionFormProps) {
   return (
     <>
@@ -40,7 +42,7 @@ export function ChampSearchForm({
                 <SearchRoles getRoleSelected={getRoleSelected} />
               </div>
               <div className="col">
-                <SearchDifficulty />
+                <SearchDifficulty getDifficulty={getDifficulty} />
               </div>
             </div>
           </div>

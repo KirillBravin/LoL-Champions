@@ -17,6 +17,7 @@ interface ChampionCardsProps {
   championList: SingleChampionData[];
   championSelected: string;
   roleSelected: string;
+  difficultySelected: number[];
 }
 
 interface ChampionCardProps {
@@ -27,8 +28,10 @@ export function ChampionCards({
   championList,
   championSelected,
   roleSelected,
+  difficultySelected,
 }: ChampionCardsProps) {
   const [currentRole, setCurrentRole] = useState<string>("");
+  const [currentDifficulty, setCurrentDifficulty] = useState<string>("");
 
   const { loading } = useLeagueService();
   const spinner = loading ? <Spinner /> : null;
@@ -51,12 +54,29 @@ export function ChampionCards({
     }
   }
 
+  function difficultyTransform(difficulty: number[]) {
+    if (difficulty.length != 0) {
+      const newDifficulty: number = difficulty.reduce(
+        (sum, current) => sum + current
+      );
+      if (newDifficulty <= 6) {
+        setCurrentDifficulty("Easy");
+      } else if (newDifficulty <= 22 && newDifficulty > 6) {
+        setCurrentDifficulty("Medium");
+      } else if (newDifficulty <= 27 && newDifficulty > 22) {
+        setCurrentDifficulty("Hard");
+      }
+    }
+  }
+
   useEffect(() => {
     roleCorrection(roleSelected);
-  }, [roleSelected]);
+    difficultyTransform(difficultySelected);
+  }, [roleSelected, difficultySelected]);
 
   const renderChampions = (arr: SingleChampionData[]) => {
-    if (currentRole === "") {
+    //If no filters are selected
+    if (currentRole === "" && currentDifficulty === "") {
       const items = arr.map((item) => {
         if (item.name === championSelected || championSelected === "") {
           return (
@@ -69,9 +89,16 @@ export function ChampionCards({
         return null;
       });
       return <div className="cards-style">{items}</div>;
-    } else if (currentRole !== "") {
+      //If role is selected + any champion
+    }
+    if (currentRole !== "") {
       const items = arr.map((item) => {
-        if (item.tags[0] === currentRole || item.tags[1] === currentRole) {
+        if (
+          (item.name === championSelected &&
+            (item.tags[0] === currentRole || item.tags[1] === currentRole)) ||
+          ((item.tags[0] === currentRole || item.tags[1] === currentRole) &&
+            championSelected === "")
+        ) {
           return (
             <ChampionCard
               key={`${item.id}-${championSelected}`}
@@ -81,12 +108,65 @@ export function ChampionCards({
         }
         return null;
       });
-      return <div className="cards-style">{items}</div>;
+      if (items.every((item) => item === null)) {
+        return (
+          <div className="cards-empty">
+            No champions match the filter criteria.
+          </div>
+        );
+      } else {
+        return <div className="cards-style">{items}</div>;
+      }
+      //If difficulty is selected
+    }
+    if (currentDifficulty !== "") {
+      const items = arr.map((item) => {
+        if (
+          (championSelected === "" &&
+            currentDifficulty === "Easy" &&
+            item.difficulty <= 3) ||
+          (item.name === championSelected &&
+            currentDifficulty === "Easy" &&
+            item.difficulty <= 3) ||
+          (championSelected === "" &&
+            currentDifficulty === "Medium" &&
+            item.difficulty <= 7 &&
+            item.difficulty >= 4) ||
+          (item.name === championSelected &&
+            currentDifficulty === "Medium" &&
+            item.difficulty <= 7 &&
+            item.difficulty >= 4) ||
+          (championSelected === "" &&
+            currentDifficulty === "Hard" &&
+            item.difficulty <= 10 &&
+            item.difficulty >= 8) ||
+          (item.name === championSelected &&
+            currentDifficulty === "Hard" &&
+            item.difficulty <= 10 &&
+            item.difficulty >= 8)
+        ) {
+          return (
+            <ChampionCard
+              key={`${item.id}-${championSelected}`}
+              champion={item.id}
+            />
+          );
+        }
+        return null;
+      });
+      if (items.every((item) => item === null)) {
+        return (
+          <div className="cards-empty">
+            No champions match the filter criteria.
+          </div>
+        );
+      } else {
+        return <div className="cards-style">{items}</div>;
+      }
     }
   };
 
   const cards = renderChampions(championList);
-
   return (
     <>
       <div className="champion-cards">
