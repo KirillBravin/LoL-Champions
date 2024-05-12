@@ -91,7 +91,7 @@ export function ChampionCards({
       return <div className="cards-style">{items}</div>;
       //If role is selected + any champion
     }
-    if (currentRole !== "") {
+    if (currentRole !== "" && currentDifficulty === "") {
       const items = arr.map((item) => {
         if (
           (item.name === championSelected &&
@@ -117,9 +117,9 @@ export function ChampionCards({
       } else {
         return <div className="cards-style">{items}</div>;
       }
-      //If difficulty is selected
+      //If difficulty is selected, but role is not
     }
-    if (currentDifficulty !== "") {
+    if (currentRole === "" && currentDifficulty !== "") {
       const items = arr.map((item) => {
         if (
           (championSelected === "" &&
@@ -144,6 +144,57 @@ export function ChampionCards({
             currentDifficulty === "Hard" &&
             item.difficulty <= 10 &&
             item.difficulty >= 8)
+        ) {
+          return (
+            <ChampionCard
+              key={`${item.id}-${championSelected}`}
+              champion={item.id}
+            />
+          );
+        }
+        return null;
+      });
+      if (items.every((item) => item === null)) {
+        return (
+          <div className="cards-empty">
+            No champions match the filter criteria.
+          </div>
+        );
+      } else {
+        return <div className="cards-style">{items}</div>;
+      }
+    }
+    if (currentRole !== "" && currentDifficulty !== "") {
+      const items = arr.map((item) => {
+        if (
+          (championSelected === "" &&
+            currentDifficulty === "Easy" &&
+            item.difficulty <= 3 &&
+            (item.tags[0] === currentRole || item.tags[1] === currentRole)) ||
+          (item.name === championSelected &&
+            currentDifficulty === "Easy" &&
+            item.difficulty <= 3 &&
+            (item.tags[0] === currentRole || item.tags[1] === currentRole)) ||
+          (championSelected === "" &&
+            currentDifficulty === "Medium" &&
+            item.difficulty <= 7 &&
+            item.difficulty >= 4 &&
+            (item.tags[0] === currentRole || item.tags[1] === currentRole)) ||
+          (item.name === championSelected &&
+            currentDifficulty === "Medium" &&
+            item.difficulty <= 7 &&
+            item.difficulty >= 4 &&
+            (item.tags[0] === currentRole || item.tags[1] === currentRole)) ||
+          (championSelected === "" &&
+            currentDifficulty === "Hard" &&
+            item.difficulty <= 10 &&
+            item.difficulty >= 8 &&
+            (item.tags[0] === currentRole || item.tags[1] === currentRole)) ||
+          (item.name === championSelected &&
+            currentDifficulty === "Hard" &&
+            item.difficulty <= 10 &&
+            item.difficulty >= 8 &&
+            (item.tags[0] === currentRole || item.tags[1] === currentRole))
         ) {
           return (
             <ChampionCard
