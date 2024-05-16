@@ -7,21 +7,28 @@ interface difficultyObj {
   render: () => JSX.Element;
 }
 
-interface SingleChampionData {
-  id: string;
-  name: string;
-  key: string;
-  title: string;
-  tags: string;
-  difficulty: number[];
-}
-
 interface ChampionDifficultyProps {
-  getDifficulty: SingleChampionData[];
+  getDifficulty: (data: number[]) => void;
 }
 
-export function SearchDifficulty({ getDifficulty }) {
+export function SearchDifficulty({ getDifficulty }: ChampionDifficultyProps) {
   const [lineHeight, setLineHeight] = useState<boolean>(false);
+  const [difficultyId, setDifficultyId] = useState<number>(0);
+
+  useEffect(() => {
+    document.addEventListener("click", handleDocumentClick);
+
+    return () => {
+      document.removeEventListener("click", handleDocumentClick);
+    };
+  }, []);
+
+  console.log(difficultyId);
+
+  const handleDifficultyClick = (arg: number[], i: number) => {
+    getDifficulty(arg);
+    setDifficultyId(i);
+  };
 
   const difficultyObj: difficultyObj[] = [
     {
@@ -31,9 +38,7 @@ export function SearchDifficulty({ getDifficulty }) {
         return (
           <div
             className="dropdown-item style"
-            onClick={() => {
-              getDifficulty(this.difficulty);
-            }}
+            onClick={handleDifficultyClick.bind(null, this.difficulty, this.id)}
           >
             <span className="parallelogramFilled"></span>
             <span className="parallelogramEmpty"></span>
@@ -49,9 +54,7 @@ export function SearchDifficulty({ getDifficulty }) {
         return (
           <div
             className="dropdown-item style"
-            onClick={() => {
-              getDifficulty(this.difficulty);
-            }}
+            onClick={handleDifficultyClick.bind(null, this.difficulty, this.id)}
           >
             <span className="parallelogramFilled"></span>
             <span className="parallelogramFilled"></span>
@@ -67,9 +70,7 @@ export function SearchDifficulty({ getDifficulty }) {
         return (
           <div
             className="dropdown-item style"
-            onClick={() => {
-              getDifficulty(this.difficulty);
-            }}
+            onClick={handleDifficultyClick.bind(null, this.difficulty, this.id)}
           >
             <span className="parallelogramFilled"></span>
             <span className="parallelogramFilled"></span>
@@ -84,28 +85,35 @@ export function SearchDifficulty({ getDifficulty }) {
     setLineHeight(!lineHeight);
   };
 
-  const handleDocumentClick = (event) => {
-    if (!event.target.closest(".difficulties__wrapper")) {
+  const handleDocumentClick = (event: MouseEvent) => {
+    if (!(event.target as HTMLElement).closest(".difficulties__wrapper")) {
       setLineHeight(false);
     }
   };
-
-  useEffect(() => {
-    document.addEventListener("click", handleDocumentClick);
-
-    return () => {
-      document.removeEventListener("click", handleDocumentClick);
-    };
-  }, []);
 
   function renderDifficulties(arr: difficultyObj[]) {
     const items = arr.map((item, i) => {
       return <li key={i}>{item.render()}</li>;
     });
 
+    const displayDifficulties = () => {
+      if (difficultyId === 1) {
+        return items[0];
+      } else if (difficultyId === 2) {
+        return items[1];
+      } else if (difficultyId === 3) {
+        return items[2];
+      } else return "All difficulties";
+    };
+
     return (
       <div className="dropdown difficulties">
-        <div className="difficulties__wrapper" onClick={handleWrapperClick}>
+        <div
+          className={`difficulties__wrapper ${
+            difficultyId !== 0 ? "difficulties__wrapper-active" : ""
+          }`}
+          onClick={handleWrapperClick}
+        >
           <div
             className={`difficulties__line-right ${
               lineHeight ? "line-full-height" : ""
@@ -117,7 +125,7 @@ export function SearchDifficulty({ getDifficulty }) {
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            all difficulties
+            {displayDifficulties()}
           </button>
           <ul className="dropdown-menu">{items}</ul>
         </div>

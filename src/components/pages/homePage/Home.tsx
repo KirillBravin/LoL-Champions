@@ -14,7 +14,7 @@ interface SingleChampionData {
   key: string;
   title: string;
   tags: {
-    [name: string]: string;
+    [name: number]: string;
   };
   difficulty: number;
 }
@@ -33,15 +33,15 @@ export default function Home() {
     });
   }, []);
 
-  function handleChampionSelected(data: string) {
+  function handleChampionSelected(data: string): void {
     setChampionSelected(data);
   }
 
-  function handleRoleSelected(data: string) {
+  function handleRoleSelected(data: string): void {
     setRoleSelected(data);
   }
 
-  function handleDifficulty(data: number) {
+  function handleDifficulty(data: number[]): void {
     setDifficultySelected(data);
   }
 

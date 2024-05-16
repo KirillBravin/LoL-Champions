@@ -7,12 +7,15 @@ interface SingleChampionData {
   name: string;
   key: string;
   title: string;
-  tags: string;
+  tags: {
+    [name: number]: string;
+  };
   difficulty: number;
 }
 
 interface ChampionInputProps {
   championList: SingleChampionData[];
+  getChampionSelected: (data: string) => void;
 }
 
 export function SearchInput({

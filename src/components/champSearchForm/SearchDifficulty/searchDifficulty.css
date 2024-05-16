@@ -15,6 +15,10 @@
   height: 3.1rem;
   transition-duration: 0.2s;
 }
+.difficulties__wrapper-active {
+  width: 100%;
+  justify-content: space-between;
+}
 .difficulties__btn-main {
   width: 9rem;
   text-transform: uppercase;
@@ -63,17 +67,17 @@
   left: 0.4rem;
 }
 .difficulties__line-right {
-  position: absolute;
+  /* position: absolute; */
   width: 0.06rem;
   height: 1.6rem;
   background-color: #c1c1c1;
-  top: 0.7rem;
-  right: 9rem;
+  /* top: 0.7rem;
+  right: 9rem; */
   transition-duration: 0.2s;
 }
 
 .line-full-height {
-  top: 0rem;
+  /* top: 0rem; */
   height: 3.1rem;
 }
 
@@ -104,4 +108,8 @@
   height: 10px;
   transform: skew(-20deg);
   background: #08d7f7;
+}
+
+li {
+  list-style: none;
 }/*# sourceMappingURL=searchDifficulty.css.map */

@@ -9,15 +9,17 @@ interface SingleChampionData {
   name: string;
   key: string;
   title: string;
-  tags: string;
-  difficulty: number[];
+  tags: {
+    [name: number]: string;
+  };
+  difficulty: number;
 }
 
 interface ChampionFormProps {
   championList: SingleChampionData[];
-  getChampionSelected: SingleChampionData[];
-  getRoleSelected: SingleChampionData[];
-  getDifficulty: SingleChampionData[];
+  getChampionSelected: (data: string) => void;
+  getRoleSelected: (data: string) => void;
+  getDifficulty: (data: number[]) => void;
 }
 
 export function ChampSearchForm({

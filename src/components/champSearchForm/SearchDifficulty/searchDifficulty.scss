@@ -20,6 +20,10 @@
                 transition-duration: 0.2s;
             }
         }
+        &-active{
+            width:100%;
+            justify-content: space-between;
+        }
     }
 
     &__btn-main{
@@ -36,6 +40,9 @@
         border-style: none;
         --bs-btn-active-bg: white;
         --bs-btn-active-color: black;
+        &-active{
+            width: 11rem;
+        }
         &:hover{
             background-color: transparent;
             color: black;
@@ -72,18 +79,18 @@
         }
     }
     &__line-right{
-        position: absolute;
+        /* position: absolute; */
         width: 0.06rem;
         height: 1.6rem;
         background-color: #c1c1c1;
-        top: 0.7rem;
-        right: 9rem;
+        /* top: 0.7rem;
+        right: 9rem; */
         transition-duration: 0.2s;
     }
 }
 
 .line-full-height{
-    top: 0rem;
+    /* top: 0rem; */
     height: 3.1rem;
 }
 
@@ -116,4 +123,8 @@
     height: 10px;
     transform: skew(-20deg);
     background: #08d7f7;
+}
+
+li {
+    list-style: none;
 }
