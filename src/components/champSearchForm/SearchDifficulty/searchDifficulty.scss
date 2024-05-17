@@ -42,6 +42,7 @@
         --bs-btn-active-color: black;
         &-active{
             width: 11rem;
+            display: flex;
         }
         &:hover{
             background-color: transparent;
@@ -127,4 +128,8 @@
 
 li {
     list-style: none;
+}
+
+.button__hidden{
+    display: none;
 }

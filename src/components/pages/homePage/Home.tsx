@@ -25,6 +25,8 @@ export default function Home() {
   const [roleSelected, setRoleSelected] = useState<string>("");
   const [difficultySelected, setDifficultySelected] = useState<number[]>([]);
 
+  console.log("render");
+
   const { getAllChampions } = useLeagueService();
 
   useEffect(() => {

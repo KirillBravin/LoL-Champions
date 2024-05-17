@@ -13,6 +13,7 @@ interface ChampionDifficultyProps {
 
 export function SearchDifficulty({ getDifficulty }: ChampionDifficultyProps) {
   const [lineHeight, setLineHeight] = useState<boolean>(false);
+  const [difficultySelected, setDifficultySelected] = useState<boolean>(false);
   const [difficultyId, setDifficultyId] = useState<number>(0);
 
   useEffect(() => {
@@ -23,11 +24,15 @@ export function SearchDifficulty({ getDifficulty }: ChampionDifficultyProps) {
     };
   }, []);
 
-  console.log(difficultyId);
-
   const handleDifficultyClick = (arg: number[], i: number) => {
     getDifficulty(arg);
     setDifficultyId(i);
+    setDifficultySelected(true);
+  };
+
+  const resetButton = () => {
+    setDifficultyId(0);
+    setDifficultySelected(false);
   };
 
   const difficultyObj: difficultyObj[] = [
@@ -120,13 +125,23 @@ export function SearchDifficulty({ getDifficulty }: ChampionDifficultyProps) {
             }`}
           ></div>
           <button
-            className="btn btn-secondary dropdown-toggle difficulties__btn-main"
+            className={`btn btn-secondary dropdown-toggle difficulties__btn-main ${
+              difficultySelected ? "difficulties__btn-main-active" : ""
+            }`}
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
             {displayDifficulties()}
           </button>
+          <button
+            type="button"
+            className={`btn-close ${
+              difficultySelected ? "" : "button__hidden"
+            }`}
+            aria-label="Close"
+            onClick={resetButton}
+          ></button>
           <ul className="dropdown-menu">{items}</ul>
         </div>
       </div>

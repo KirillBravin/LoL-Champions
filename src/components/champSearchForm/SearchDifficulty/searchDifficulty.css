@@ -34,6 +34,10 @@
   --bs-btn-active-bg: white;
   --bs-btn-active-color: black;
 }
+.difficulties__btn-main-active {
+  width: 11rem;
+  display: flex;
+}
 .difficulties__btn-main:hover {
   background-color: transparent;
   color: black;
@@ -112,4 +116,8 @@
 
 li {
   list-style: none;
+}
+
+.button__hidden {
+  display: none;
 }/*# sourceMappingURL=searchDifficulty.css.map */
