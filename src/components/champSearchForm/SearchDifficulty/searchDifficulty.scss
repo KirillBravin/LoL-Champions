@@ -7,13 +7,25 @@
     justify-content: flex-end;
     width: 100%;
     height: 100%;
-    &:hover{
-        .difficulties__line-right{
-            top: 0rem;
-            height: 3.1rem;
-            transition-duration: 0.2s;
+
+    &__wrapper{
+        width: 9rem;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        &:hover{
+            .difficulties__line-right{
+                top: 0rem;
+                height: 3.1rem;
+                transition-duration: 0.2s;
+            }
+        }
+        &-active{
+            width:100%;
+            justify-content: space-between;
         }
     }
+
     &__btn-main{
         width: 9rem;
         text-transform: uppercase;
@@ -28,6 +40,11 @@
         border-style: none;
         --bs-btn-active-bg: white;
         --bs-btn-active-color: black;
+        &-active{
+            width: 12rem;
+            display: flex;
+            justify-content: space-between;
+        }
         &:hover{
             background-color: transparent;
             color: black;
@@ -39,10 +56,6 @@
         &:active{
             background-color: transparent;
             color: black;
-            &::after{
-                left: 0.4rem;
-                transition-duration: 0.2s;
-            }
         }
         &:focus-visible{
             background-color: transparent;
@@ -68,19 +81,36 @@
         }
     }
     &__line-right{
-        position: absolute;
-        width: 0.06rem;
+        position: relative;
+        width: 0.07rem;
         height: 1.6rem;
         background-color: #c1c1c1;
         top: 0.7rem;
-        right: 9rem;
+        right: 2rem;
         transition-duration: 0.2s;
     }
+}
+
+.line-full-height{
+    top: 0rem;
+    height: 3.1rem;
+}
+
+.difficulties__line-active{
+    right: 0rem;
 }
 
 .dropdown-menu{
     --bs-dropdown-min-width: 9rem;
 }
+
+.dropdown-menu-active {
+    transform: translate(1px, 52px) !important;
+    --bs-dropdown-min-width: 13.8rem;
+    --bs-dropdown-item-padding-x: 3rem;
+
+}
+
 
 .dropdown-menu{
     :active{
@@ -90,9 +120,19 @@
 
 .style{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
     padding-top:0.5rem;
     padding-bottom: 0.5rem;
+}
+
+.dropdown-menu-selected {
+    background-color: #015192da !important;
+}
+
+.item-selected{
+    justify-content: space-around;
+    padding-left: 1.6rem;
 }
 
 .parallelogramEmpty {
@@ -107,4 +147,12 @@
     height: 10px;
     transform: skew(-20deg);
     background: #08d7f7;
+}
+
+li {
+    list-style: none;
+}
+
+.button__hidden{
+    display: none;
 }

@@ -1,10 +1,19 @@
 .champion-cards{
     padding-bottom: 10rem;
 }
+
 .cards-style{
     display: flex;
     flex-wrap: wrap;
+    margin-left: 16px;
 }
+
+.cards-empty {
+    display: flex;
+    justify-content: center;
+    font-family: Spiegel;
+}
+
 .champion-card{
     display: flex;
     position: relative;

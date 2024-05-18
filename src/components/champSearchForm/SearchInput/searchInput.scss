@@ -34,6 +34,7 @@
     padding-left: 1rem;
     line-height: 1.5rem;
     width: 8rem;
+    cursor: pointer;
 }
 
 &__icon{
@@ -94,9 +95,6 @@
         display: none;
     }
     &:focus{
-        &::after{
-            left: 0.4rem;
-        }
         &::placeholder{
             opacity: 0.65;
         }
@@ -105,4 +103,23 @@
         opacity: 1;
     }
 }
+
+    .img__active{
+        transform: translateX(-5px);
+    }
+
+    .search-bar__active{
+        top: 0rem;
+        height: 3.1rem;
+    }
+
+    .button__hidden{
+        display:none;
+    }
+    
+    .btn-close{
+        position: relative;
+        bottom: 2.7rem;
+        left: 8rem;
+    }
 }

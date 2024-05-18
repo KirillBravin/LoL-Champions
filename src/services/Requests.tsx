@@ -1,6 +1,6 @@
 export const Requests = () => {
   const championNames = async () => {
-    return fetch("http://localhost:5000/users")
+    return fetch("http://localhost:5000/champions")
       .then(async (res) => {
         if (!res.ok) {
           throw new Error("Failed to fetch champions");

@@ -1,225 +1,128 @@
+import { useEffect, useState } from "react";
 import magnifyingGlass from "../../../assets/icons/magnifying-glass.svg";
 import "./searchInput.scss";
 
-interface ChampionName {
-  name: string;
-  title: string;
+interface SingleChampionData {
   id: string;
+  name: string;
+  key: string;
+  title: string;
+  tags: {
+    [name: number]: string;
+  };
+  difficulty: number;
 }
 
-interface Champions {
-  map(
-    arg0: (
-      item: ChampionName,
-      id: number
-    ) => import("react/jsx-runtime").JSX.Element
-  ): unknown;
-  Aatrox: ChampionName;
-  Ahri: ChampionName;
-  Akali: ChampionName;
-  Akshan: ChampionName;
-  Alistar: ChampionName;
-  Amumu: ChampionName;
-  Anivia: ChampionName;
-  Annie: ChampionName;
-  Aphelios: ChampionName;
-  Ashe: ChampionName;
-  AurelionSol: ChampionName;
-  Azir: ChampionName;
-  Bard: ChampionName;
-  Belveth: ChampionName;
-  Blitzcrank: ChampionName;
-  Brand: ChampionName;
-  Braum: ChampionName;
-  Briar: ChampionName;
-  Caitlyn: ChampionName;
-  Camille: ChampionName;
-  Cassiopeia: ChampionName;
-  Chogath: ChampionName;
-  Corki: ChampionName;
-  Darius: ChampionName;
-  Diana: ChampionName;
-  Draven: ChampionName;
-  DrMundo: ChampionName;
-  Ekko: ChampionName;
-  Elise: ChampionName;
-  Evelynn: ChampionName;
-  Ezreal: ChampionName;
-  Fiddlesticks: ChampionName;
-  Fiora: ChampionName;
-  Fizz: ChampionName;
-  Galio: ChampionName;
-  Gangplank: ChampionName;
-  Garen: ChampionName;
-  Gnar: ChampionName;
-  Gragas: ChampionName;
-  Graves: ChampionName;
-  Gwen: ChampionName;
-  Hecarim: ChampionName;
-  Heimerdinger: ChampionName;
-  Hwei: ChampionName;
-  Illao: ChampionName;
-  Irelia: ChampionName;
-  Ivern: ChampionName;
-  Janna: ChampionName;
-  JarvanIV: ChampionName;
-  Jax: ChampionName;
-  Jayce: ChampionName;
-  Jhin: ChampionName;
-  Jinx: ChampionName;
-  Kaisa: ChampionName;
-  Kalista: ChampionName;
-  Karma: ChampionName;
-  Karthus: ChampionName;
-  Kassadin: ChampionName;
-  Katarina: ChampionName;
-  Kayle: ChampionName;
-  Kayn: ChampionName;
-  Kennen: ChampionName;
-  Khazix: ChampionName;
-  Kindred: ChampionName;
-  Kled: ChampionName;
-  KogMaw: ChampionName;
-  KSante: ChampionName;
-  Leblanc: ChampionName;
-  LeeSin: ChampionName;
-  Leona: ChampionName;
-  Lillia: ChampionName;
-  Lissandra: ChampionName;
-  Lucian: ChampionName;
-  Lulu: ChampionName;
-  Lux: ChampionName;
-  Malphite: ChampionName;
-  Malzahar: ChampionName;
-  Maokai: ChampionName;
-  MasterYi: ChampionName;
-  Milio: ChampionName;
-  MissFortune: ChampionName;
-  MonkeyKing: ChampionName;
-  Mordekaiser: ChampionName;
-  Morgana: ChampionName;
-  Naafiri: ChampionName;
-  Nami: ChampionName;
-  Nasus: ChampionName;
-  Nautilus: ChampionName;
-  Neeko: ChampionName;
-  Nidalee: ChampionName;
-  Nilah: ChampionName;
-  Nocturne: ChampionName;
-  Nunu: ChampionName;
-  Olaf: ChampionName;
-  Orianna: ChampionName;
-  Ornn: ChampionName;
-  Pantheon: ChampionName;
-  Poppy: ChampionName;
-  Pyke: ChampionName;
-  Qiyana: ChampionName;
-  Quinn: ChampionName;
-  Rakan: ChampionName;
-  Rammus: ChampionName;
-  RekSai: ChampionName;
-  Rell: ChampionName;
-  Renata: ChampionName;
-  Renekton: ChampionName;
-  Rengar: ChampionName;
-  Riven: ChampionName;
-  Rumble: ChampionName;
-  Ryze: ChampionName;
-  Samira: ChampionName;
-  Sejuani: ChampionName;
-  Senna: ChampionName;
-  Seraphine: ChampionName;
-  Sett: ChampionName;
-  Shaco: ChampionName;
-  Shen: ChampionName;
-  Shyvana: ChampionName;
-  Singed: ChampionName;
-  Sion: ChampionName;
-  Sivir: ChampionName;
-  Skarner: ChampionName;
-  Smolder: ChampionName;
-  Sona: ChampionName;
-  Soraka: ChampionName;
-  Swain: ChampionName;
-  Sylas: ChampionName;
-  Syndra: ChampionName;
-  TahmKench: ChampionName;
-  Taliyah: ChampionName;
-  Talon: ChampionName;
-  Taric: ChampionName;
-  Teemo: ChampionName;
-  Thresh: ChampionName;
-  Tristana: ChampionName;
-  Trundle: ChampionName;
-  Tryndamere: ChampionName;
-  TwistedFate: ChampionName;
-  Twitch: ChampionName;
-  Udyr: ChampionName;
-  Urgot: ChampionName;
-  Varus: ChampionName;
-  Vayne: ChampionName;
-  Veigar: ChampionName;
-  Velkoz: ChampionName;
-  Vex: ChampionName;
-  Vi: ChampionName;
-  Viego: ChampionName;
-  Viktor: ChampionName;
-  Vladimir: ChampionName;
-  Volibear: ChampionName;
-  Warwick: ChampionName;
-  Xayah: ChampionName;
-  Xerath: ChampionName;
-  XinZhao: ChampionName;
-  Yasuo: ChampionName;
-  Yone: ChampionName;
-  Yorick: ChampionName;
-  Yuumi: ChampionName;
-  Zac: ChampionName;
-  Zed: ChampionName;
-  Zeri: ChampionName;
-  Ziggs: ChampionName;
-  Zilean: ChampionName;
-  Zoe: ChampionName;
-  Zyra: ChampionName;
+interface ChampionInputProps {
+  championList: SingleChampionData[];
+  getChampionSelected: (data: string) => void;
 }
 
-export function SearchInput({ championList }) {
-  const renderChampions = (arr: Champions) => {
-    const items = arr.map((item: ChampionName, id: number) => {
-      return (
-        <a
-          href="#"
-          key={id}
-          className="dropdown-item search-bar__dropdown-item"
-        >
-          <li>{item.name}</li>
-        </a>
-      );
+export function SearchInput({
+  championList,
+  getChampionSelected,
+}: ChampionInputProps) {
+  const [wrapperActive, setWrapperActive] = useState(false);
+  const [filterActive, setFilterActive] = useState(false);
+  const [filter, setFilter] = useState("");
+
+  const handleWrapperClick = () => {
+    setWrapperActive(!wrapperActive);
+  };
+
+  const handleDocumentClick = (event: MouseEvent) => {
+    if (!(event.target as HTMLElement).closest(".search-bar__wrapper")) {
+      setWrapperActive(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleDocumentClick);
+
+    return () => {
+      document.removeEventListener("click", handleDocumentClick);
+    };
+  }, []);
+
+  const alphabeticalChampionNames = (arr: SingleChampionData[]) => {
+    const names: string[] = arr.map((item) => {
+      return item.name;
     });
+
+    const sortedNames: string[] = names.sort();
+    return sortedNames;
+  };
+
+  const sortedChampionNames = alphabeticalChampionNames(championList);
+
+  const renderChampions = (arr: string[]) => {
+    const items = arr
+      .filter((f) => f.toLocaleLowerCase().includes(filter) || filter === "")
+      .map((item, id) => {
+        const assignChampionNameToInputValue = () => {
+          setFilter(item);
+          setFilterActive(true);
+          getChampionSelected(item);
+        };
+        return (
+          <div
+            key={id}
+            className="dropdown-item search-bar__dropdown-item"
+            onClick={assignChampionNameToInputValue}
+          >
+            <li>{item}</li>
+          </div>
+        );
+      });
     return <ul className="dropdown-menu search-bar__dropdown-menu">{items}</ul>;
   };
 
-  const champions = renderChampions(championList);
+  const champions = renderChampions(sortedChampionNames);
+
+  const inputToLowerCase = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const input = e.target.value;
+    return input.toLowerCase();
+  };
+
+  const resetFilter = () => {
+    setFilter("");
+    setFilterActive(false);
+    getChampionSelected("");
+  };
 
   return (
     <div className="search-bar">
-      <div className="search-bar__wrapper">
+      <div className="search-bar__wrapper" onClick={handleWrapperClick}>
         <div className="dropdown search-bar__dropdown">
           <img
             src={magnifyingGlass}
             alt="search"
-            className="search-bar__icon"
+            className={`search-bar__icon ${wrapperActive ? "img__active" : ""}`}
           />
           <input
-            type="search"
+            type="text"
+            name="search-filter"
+            id="search-filter"
             className="btn btn-secondary dropdown-toggle search-bar__input"
             data-bs-toggle="dropdown"
             aria-expanded="false"
             placeholder="search"
+            value={filter}
+            onChange={(event) => setFilter(inputToLowerCase(event))}
           />
+          <button
+            type="button"
+            className={`btn-close ${filterActive ? "" : "button__hidden"}`}
+            aria-label="Close"
+            onClick={resetFilter}
+          ></button>
           {champions}
         </div>
-        <div className="search-bar__line-left"></div>
+        <div
+          className={`search-bar__line-left ${
+            wrapperActive ? "search-bar__active" : ""
+          }`}
+        ></div>
       </div>
     </div>
   );
