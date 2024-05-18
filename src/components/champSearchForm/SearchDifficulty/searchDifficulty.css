@@ -35,7 +35,7 @@
   --bs-btn-active-color: black;
 }
 .difficulties__btn-main-active {
-  width: 11rem;
+  width: 12rem;
   display: flex;
   justify-content: space-between;
 }
@@ -88,7 +88,6 @@
 
 .difficulties__line-active {
   right: 0rem;
-  transition-duration: 0.2s;
 }
 
 .dropdown-menu {
@@ -101,19 +100,25 @@
   --bs-dropdown-item-padding-x: 3rem;
 }
 
-.dropdown-menu-selected {
-  background-color: rgba(1, 81, 146, 0.8549019608) !important;
-}
-
 .dropdown-menu :active {
   --bs-dropdown-link-active-bg: transparent;
 }
 
 .style {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.dropdown-menu-selected {
+  background-color: rgba(1, 81, 146, 0.8549019608) !important;
+}
+
+.item-selected {
+  justify-content: space-around;
+  padding-left: 1.6rem;
 }
 
 .parallelogramEmpty {

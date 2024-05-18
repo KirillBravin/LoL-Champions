@@ -41,7 +41,7 @@
         --bs-btn-active-bg: white;
         --bs-btn-active-color: black;
         &-active{
-            width: 11rem;
+            width: 12rem;
             display: flex;
             justify-content: space-between;
         }
@@ -98,7 +98,6 @@
 
 .difficulties__line-active{
     right: 0rem;
-    transition-duration: 0.2s;
 }
 
 .dropdown-menu{
@@ -112,9 +111,6 @@
 
 }
 
-.dropdown-menu-selected {
-    background-color: #015192da !important;
-}
 
 .dropdown-menu{
     :active{
@@ -124,9 +120,19 @@
 
 .style{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
     padding-top:0.5rem;
     padding-bottom: 0.5rem;
+}
+
+.dropdown-menu-selected {
+    background-color: #015192da !important;
+}
+
+.item-selected{
+    justify-content: space-around;
+    padding-left: 1.6rem;
 }
 
 .parallelogramEmpty {

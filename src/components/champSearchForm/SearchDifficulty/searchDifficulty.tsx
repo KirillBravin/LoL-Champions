@@ -114,7 +114,7 @@ export function SearchDifficulty({ getDifficulty }: ChampionDifficultyProps) {
     const displayDifficulties = () => {
       if (difficultyId === 1) {
         return (
-          <div className="dropdown-item style">
+          <div className="dropdown-item style item-selected">
             <span className="parallelogramFilled"></span>
             <span className="parallelogramEmpty"></span>
             <span className="parallelogramEmpty"></span>
@@ -122,7 +122,7 @@ export function SearchDifficulty({ getDifficulty }: ChampionDifficultyProps) {
         );
       } else if (difficultyId === 2) {
         return (
-          <div className="dropdown-item style">
+          <div className="dropdown-item style item-selected">
             <span className="parallelogramFilled"></span>
             <span className="parallelogramFilled"></span>
             <span className="parallelogramEmpty"></span>
@@ -130,7 +130,7 @@ export function SearchDifficulty({ getDifficulty }: ChampionDifficultyProps) {
         );
       } else if (difficultyId === 3) {
         return (
-          <div className="dropdown-item style">
+          <div className="dropdown-item style item-selected">
             <span className="parallelogramFilled"></span>
             <span className="parallelogramFilled"></span>
             <span className="parallelogramFilled"></span>
