@@ -39,9 +39,6 @@
   display: flex;
   justify-content: space-between;
 }
-.difficulties__btn-main-active .difficulties__lists {
-  width: 7rem;
-}
 .difficulties__btn-main:hover {
   background-color: transparent;
   color: black;
@@ -75,22 +72,37 @@
   left: 0.4rem;
 }
 .difficulties__line-right {
-  /* position: absolute; */
-  width: 0.06rem;
+  position: relative;
+  width: 0.07rem;
   height: 1.6rem;
   background-color: #c1c1c1;
-  /* top: 0.7rem;
-  right: 9rem; */
+  top: 0.7rem;
+  right: 2rem;
   transition-duration: 0.2s;
 }
 
 .line-full-height {
-  /* top: 0rem; */
+  top: 0rem;
   height: 3.1rem;
+}
+
+.difficulties__line-active {
+  right: 0rem;
+  transition-duration: 0.2s;
 }
 
 .dropdown-menu {
   --bs-dropdown-min-width: 9rem;
+}
+
+.dropdown-menu-active {
+  transform: translate(1px, 52px) !important;
+  --bs-dropdown-min-width: 13.8rem;
+  --bs-dropdown-item-padding-x: 3rem;
+}
+
+.dropdown-menu-selected {
+  background-color: rgba(1, 81, 146, 0.8549019608) !important;
 }
 
 .dropdown-menu :active {

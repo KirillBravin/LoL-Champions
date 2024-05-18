@@ -44,9 +44,6 @@
             width: 11rem;
             display: flex;
             justify-content: space-between;
-            .difficulties__lists{
-                width: 7rem;
-            }
         }
         &:hover{
             background-color: transparent;
@@ -99,12 +96,24 @@
     height: 3.1rem;
 }
 
+.difficulties__line-active{
+    right: 0rem;
+    transition-duration: 0.2s;
+}
+
 .dropdown-menu{
     --bs-dropdown-min-width: 9rem;
 }
 
 .dropdown-menu-active {
-    --bs-dropdown-min-width: 9rem;
+    transform: translate(1px, 52px) !important;
+    --bs-dropdown-min-width: 13.8rem;
+    --bs-dropdown-item-padding-x: 3rem;
+
+}
+
+.dropdown-menu-selected {
+    background-color: #015192da !important;
 }
 
 .dropdown-menu{

@@ -42,7 +42,9 @@ export function SearchDifficulty({ getDifficulty }: ChampionDifficultyProps) {
       render: function () {
         return (
           <div
-            className="dropdown-item style"
+            className={`dropdown-item style ${
+              difficultyId === 1 ? "dropdown-menu-selected" : ""
+            } `}
             onClick={handleDifficultyClick.bind(null, this.difficulty, this.id)}
           >
             <span className="parallelogramFilled"></span>
@@ -58,7 +60,9 @@ export function SearchDifficulty({ getDifficulty }: ChampionDifficultyProps) {
       render: function () {
         return (
           <div
-            className="dropdown-item style"
+            className={`dropdown-item style ${
+              difficultyId === 2 ? "dropdown-menu-selected" : ""
+            } `}
             onClick={handleDifficultyClick.bind(null, this.difficulty, this.id)}
           >
             <span className="parallelogramFilled"></span>
@@ -74,7 +78,9 @@ export function SearchDifficulty({ getDifficulty }: ChampionDifficultyProps) {
       render: function () {
         return (
           <div
-            className="dropdown-item style"
+            className={`dropdown-item style ${
+              difficultyId === 3 ? "dropdown-menu-selected" : ""
+            } `}
             onClick={handleDifficultyClick.bind(null, this.difficulty, this.id)}
           >
             <span className="parallelogramFilled"></span>
@@ -107,11 +113,29 @@ export function SearchDifficulty({ getDifficulty }: ChampionDifficultyProps) {
 
     const displayDifficulties = () => {
       if (difficultyId === 1) {
-        return items[0];
+        return (
+          <div className="dropdown-item style">
+            <span className="parallelogramFilled"></span>
+            <span className="parallelogramEmpty"></span>
+            <span className="parallelogramEmpty"></span>
+          </div>
+        );
       } else if (difficultyId === 2) {
-        return items[1];
+        return (
+          <div className="dropdown-item style">
+            <span className="parallelogramFilled"></span>
+            <span className="parallelogramFilled"></span>
+            <span className="parallelogramEmpty"></span>
+          </div>
+        );
       } else if (difficultyId === 3) {
-        return items[2];
+        return (
+          <div className="dropdown-item style">
+            <span className="parallelogramFilled"></span>
+            <span className="parallelogramFilled"></span>
+            <span className="parallelogramFilled"></span>
+          </div>
+        );
       } else return "All difficulties";
     };
 
@@ -126,7 +150,7 @@ export function SearchDifficulty({ getDifficulty }: ChampionDifficultyProps) {
           <div
             className={`difficulties__line-right ${
               lineHeight ? "line-full-height" : ""
-            }`}
+            } ${difficultySelected ? "difficulties__line-active" : ""}`}
           ></div>
           <button
             className={`btn btn-secondary dropdown-toggle difficulties__btn-main ${
@@ -146,7 +170,13 @@ export function SearchDifficulty({ getDifficulty }: ChampionDifficultyProps) {
             aria-label="Close"
             onClick={resetButton}
           ></button>
-          <ul className="dropdown-menu">{items}</ul>
+          <ul
+            className={`dropdown-menu ${
+              difficultySelected ? "dropdown-menu-active" : ""
+            }`}
+          >
+            {items}
+          </ul>
         </div>
       </div>
     );
