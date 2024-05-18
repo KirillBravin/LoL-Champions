@@ -43,6 +43,10 @@
         &-active{
             width: 11rem;
             display: flex;
+            justify-content: space-between;
+            .difficulties__lists{
+                width: 7rem;
+            }
         }
         &:hover{
             background-color: transparent;
@@ -80,22 +84,26 @@
         }
     }
     &__line-right{
-        /* position: absolute; */
-        width: 0.06rem;
+        position: relative;
+        width: 0.07rem;
         height: 1.6rem;
         background-color: #c1c1c1;
-        /* top: 0.7rem;
-        right: 9rem; */
+        top: 0.7rem;
+        right: 2rem;
         transition-duration: 0.2s;
     }
 }
 
 .line-full-height{
-    /* top: 0rem; */
+    top: 0rem;
     height: 3.1rem;
 }
 
 .dropdown-menu{
+    --bs-dropdown-min-width: 9rem;
+}
+
+.dropdown-menu-active {
     --bs-dropdown-min-width: 9rem;
 }
 

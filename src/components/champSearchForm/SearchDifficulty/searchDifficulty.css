@@ -37,6 +37,10 @@
 .difficulties__btn-main-active {
   width: 11rem;
   display: flex;
+  justify-content: space-between;
+}
+.difficulties__btn-main-active .difficulties__lists {
+  width: 7rem;
 }
 .difficulties__btn-main:hover {
   background-color: transparent;

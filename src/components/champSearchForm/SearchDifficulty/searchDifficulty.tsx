@@ -98,7 +98,11 @@ export function SearchDifficulty({ getDifficulty }: ChampionDifficultyProps) {
 
   function renderDifficulties(arr: difficultyObj[]) {
     const items = arr.map((item, i) => {
-      return <li key={i}>{item.render()}</li>;
+      return (
+        <li key={i} className="difficulties__lists">
+          {item.render()}
+        </li>
+      );
     });
 
     const displayDifficulties = () => {
