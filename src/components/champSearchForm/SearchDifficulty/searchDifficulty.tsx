@@ -164,7 +164,7 @@ export function SearchDifficulty({ getDifficulty }: ChampionDifficultyProps) {
           </button>
           <button
             type="button"
-            className={`btn-close ${
+            className={`btn-close btn-close__difficulties ${
               difficultySelected ? "" : "button__hidden"
             }`}
             aria-label="Close"

@@ -118,8 +118,13 @@
     }
     
     .btn-close{
-        position: relative;
-        bottom: 2.7rem;
-        left: 8rem;
+        &__search-input{
+            position: relative;
+            bottom: 2.7rem;
+            left: 8rem;
+            &:focus {
+                box-shadow: none;
+              }
+        }
     }
 }

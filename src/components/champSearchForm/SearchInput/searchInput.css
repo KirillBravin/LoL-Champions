@@ -100,8 +100,11 @@
 .search-bar .button__hidden {
   display: none;
 }
-.search-bar .btn-close {
+.search-bar .btn-close__search-input {
   position: relative;
   bottom: 2.7rem;
   left: 8rem;
+}
+.search-bar .btn-close__search-input:focus {
+  box-shadow: none;
 }/*# sourceMappingURL=searchInput.css.map */
