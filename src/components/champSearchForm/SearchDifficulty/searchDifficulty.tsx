@@ -33,6 +33,7 @@ export function SearchDifficulty({ getDifficulty }: ChampionDifficultyProps) {
   const resetButton = () => {
     setDifficultyId(0);
     setDifficultySelected(false);
+    getDifficulty([]);
   };
 
   const difficultyObj: difficultyObj[] = [
