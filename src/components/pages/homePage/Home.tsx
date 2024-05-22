@@ -37,6 +37,7 @@ export default function Home() {
   }, [getAllChampions]);
 
   useEffect(() => {
+    console.log("home - effect render");
     fetchChampions();
   }, [fetchChampions]);
 

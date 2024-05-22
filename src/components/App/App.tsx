@@ -4,9 +4,9 @@ import { Spinner } from "../Spinner/Spinner";
 
 const Home = lazy(() => import("../pages/homePage/Home"));
 const SingleChampionLayout = lazy(
-  () => import("../pages/SingleChampionLayout")
+  () => import("../pages/SingleChampionLayout/SingleChampionLayout")
 );
-const Page404 = lazy(() => import("../pages/Page404"));
+const Page404 = lazy(() => import("../pages/Page404/Page404"));
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
         }
       />
       <Route
-        path={`/championName`}
+        path={`/champion/Ahri`}
         element={
           <Suspense fallback={<Spinner />}>
             <SingleChampionLayout />
