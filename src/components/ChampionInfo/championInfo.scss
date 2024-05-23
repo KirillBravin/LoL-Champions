@@ -11,6 +11,7 @@
         width: 100%;
         height: 50rem;
         z-index: -1;
+
         &::after{
             content: "";
             position: absolute;
@@ -19,9 +20,41 @@
             backdrop-filter: brightness(50%) blur(5px);
         }
     }
+    
+    &__black-background{
+        background: linear-gradient(rgba(0, 0, 0, 0), #000913 53%);
+        position: relative;
+        padding-top: 36rem;
+        margin-top: -29rem;
+        z-index: -1;
+    }
+
     &__main-picture{
         padding-top: 3rem;
         width: 98%;
         padding-left: 6rem;
+        z-index: -1;
+    }
+
+    &__short-info__wrapper{
+        display:flex;
+    }
+
+    &__short-info{
+        display: flex;
+    }
+
+    &__roles{
+        display: flex;
+        flex-direction: column;
+
+        &__icon{
+            color: #d0a85c;
+        }
+    }
+
+    &__difficulties{
+        display:flex;
+        flex-direction: column;
     }
 }

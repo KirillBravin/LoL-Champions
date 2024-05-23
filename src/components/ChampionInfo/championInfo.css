@@ -18,8 +18,33 @@
   height: 100%;
   backdrop-filter: brightness(50%) blur(5px);
 }
+.championInfo__black-background {
+  background: linear-gradient(rgba(0, 0, 0, 0), #000913 53%);
+  position: relative;
+  padding-top: 36rem;
+  margin-top: -29rem;
+  z-index: -1;
+}
 .championInfo__main-picture {
   padding-top: 3rem;
   width: 98%;
   padding-left: 6rem;
+  z-index: -1;
+}
+.championInfo__short-info__wrapper {
+  display: flex;
+}
+.championInfo__short-info {
+  display: flex;
+}
+.championInfo__roles {
+  display: flex;
+  flex-direction: column;
+}
+.championInfo__roles__icon {
+  color: #d0a85c;
+}
+.championInfo__difficulties {
+  display: flex;
+  flex-direction: column;
 }/*# sourceMappingURL=championInfo.css.map */
