@@ -42,11 +42,13 @@ export function ChampionInfo() {
               </div>
             </div>
             <div className="championInfo__dividing-line"></div>
-            <div className="championInfo__short-description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quos
-              cupiditate, sit numquam suscipit soluta facilis, ad, neque
-              eligendi ipsam accusamus sed saepe maxime quis in labore officiis.
-              Excepturi, asperiores?
+            <div className="championInfo__description-wrapper">
+              <div className="championInfo__short-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
+                quos cupiditate, sit numquam suscipit soluta facilis, ad, neque
+                eligendi ipsam accusamus sed saepe maxime quis in labore
+                officiis. Excepturi, asperiores?
+              </div>
             </div>
           </div>
         </div>
