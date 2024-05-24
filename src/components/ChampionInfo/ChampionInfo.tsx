@@ -24,15 +24,19 @@ export function ChampionInfo() {
                 <img
                   src="https://www.leagueoflegends.com/_next/static/node_modules/@riotgames/blades-ui/dist/skins/common/assets/roleMage.svg"
                   alt="Role Icon"
-                  className="roles__icon"
+                  className="championInfo__roles__icon"
                 />
-                <p className="roles__general">Role</p>
-                <p className="roles__specific-role">Mage</p>
+                <p className="championInfo__roles__general">Role</p>
+                <p className="championInfo__roles__specific-role">Mage</p>
               </div>
               <div className="championInfo__difficulties">
-                <div className="difficulties__icon"></div>
-                <p className="difficulties__general">Difficulty</p>
-                <p className="difficulties__specific-difficultie">Moderate</p>
+                <div className="championInfo__difficulties__icon"></div>
+                <p className="championInfo__difficulties__general">
+                  Difficulty
+                </p>
+                <p className="championInfo__difficulties__specific-difficulties">
+                  Moderate
+                </p>
               </div>
             </div>
             <div className="championInfo__dividing-line"></div>

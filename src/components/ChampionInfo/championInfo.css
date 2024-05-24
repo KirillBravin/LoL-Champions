@@ -3,6 +3,9 @@
   flex-direction: column;
 }
 
+.championInfo {
+  font-family: Spiegel;
+}
 .championInfo__background {
   position: absolute;
   min-width: 100%;
@@ -33,18 +36,57 @@
 }
 .championInfo__short-info__wrapper {
   display: flex;
+  width: 92rem;
+  justify-content: space-around;
 }
 .championInfo__short-info {
   display: flex;
+  width: 79rem;
+  padding-left: 6rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 0.625rem;
+  letter-spacing: 0.15em;
 }
 .championInfo__roles {
   display: flex;
   flex-direction: column;
+  position: relative;
+  left: 3rem;
 }
 .championInfo__roles__icon {
+  height: 32px;
+  width: 32px;
+  filter: invert(74%) sepia(18%) saturate(845%) hue-rotate(2deg) brightness(92%) contrast(86%);
+}
+.championInfo__roles__general {
+  color: white;
+  margin-bottom: 0;
+  margin-top: 1rem;
+  cursor: default;
+}
+.championInfo__roles__specific-role {
   color: #d0a85c;
+  margin-bottom: 0;
+  cursor: default;
 }
 .championInfo__difficulties {
   display: flex;
   flex-direction: column;
+  position: relative;
+  right: 3rem;
+}
+.championInfo__difficulties__general {
+  color: white;
+  cursor: default;
+  margin-bottom: 0;
+}
+.championInfo__difficulties__specific-difficulties {
+  color: #d0a85c;
+  cursor: default;
+  margin-bottom: 0;
+}
+.championInfo__short-description {
+  color: white;
+  cursor: default;
 }/*# sourceMappingURL=championInfo.css.map */

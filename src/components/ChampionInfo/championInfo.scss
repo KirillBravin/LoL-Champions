@@ -4,6 +4,8 @@
 }
 
 .championInfo {
+    font-family: Spiegel;
+
     &__background{
         position:absolute;
         min-width: 100%;
@@ -38,23 +40,69 @@
 
     &__short-info__wrapper{
         display:flex;
+        width: 92rem;
+        justify-content: space-around;
     }
 
     &__short-info{
         display: flex;
+        width: 79rem;
+        padding-left: 6rem;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 0.625rem;
+        letter-spacing: 0.15em;
     }
 
     &__roles{
         display: flex;
         flex-direction: column;
+        position: relative;
+        left: 3rem;
 
         &__icon{
-            color: #d0a85c;
+            height: 32px;
+            width: 32px;
+            filter: invert(74%) sepia(18%) saturate(845%) hue-rotate(2deg) brightness(92%) contrast(86%);
+        }
+
+        &__general{
+            color: white;
+            margin-bottom: 0;
+            margin-top: 1rem;
+            cursor: default;
+        }
+
+        &__specific-role{
+            color:#d0a85c;
+            margin-bottom: 0;
+            cursor: default;
+
         }
     }
 
     &__difficulties{
         display:flex;
         flex-direction: column;
+        position: relative;
+        right: 3rem;
+
+        &__general{
+            color: white;
+            cursor: default;
+            margin-bottom: 0;
+        }
+
+        &__specific-difficulties{
+            color:#d0a85c;
+            cursor: default;
+            margin-bottom: 0;
+        }
+    }
+
+    &__short-description{
+        color: white;
+        cursor: default;
+
     }
 }
