@@ -1,5 +1,7 @@
 import "./championInfo.css";
 
+import { ChampionInfoDifficulty } from "./championInfoDifficulty/ChampionInfoDifficulty";
+
 export function ChampionInfo() {
   const backgroundStyle = {
     background:
@@ -30,7 +32,7 @@ export function ChampionInfo() {
                 <p className="championInfo__roles__specific-role">Mage</p>
               </div>
               <div className="championInfo__difficulties">
-                <div className="championInfo__difficulties__icon"></div>
+                <ChampionInfoDifficulty />
                 <p className="championInfo__difficulties__general">
                   Difficulty
                 </p>
