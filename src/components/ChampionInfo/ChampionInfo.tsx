@@ -22,6 +22,7 @@ export function ChampionInfo() {
   return (
     <div className="championInfo">
       <div className="championInfo__background" style={backgroundStyle}></div>
+      <div className="championInfo__overview">Overview</div>
       <div className="container">
         <div className="wrapper">
           <img
@@ -56,9 +57,9 @@ export function ChampionInfo() {
               <div className="championInfo__short-description">
                 {showMore
                   ? descriptionText
-                  : `${descriptionText.substring(0, 250)}`}
+                  : `${descriptionText.substring(0, 250)}...`}
                 <p
-                  className={`btn btn__show-more ${showMore ? "hidden" : ""}`}
+                  className={`btn__show-more ${showMore ? "hidden" : ""}`}
                   onClick={btnShowMoreClick}
                 >
                   See more
@@ -67,6 +68,19 @@ export function ChampionInfo() {
             </div>
           </div>
         </div>
+        <div className="bottom-dividing-line"></div>
+        <div className="websites-links-wrapper">
+          <a href="#" className="website-links">
+            op.gg
+          </a>
+          <a href="#" className="website-links">
+            u.gg
+          </a>
+          <a href="#" className="website-links">
+            probuilds.net
+          </a>
+        </div>
+        <div className="website-links__bottom-line"></div>
       </div>
       <div className="championInfo__black-background"></div>
     </div>

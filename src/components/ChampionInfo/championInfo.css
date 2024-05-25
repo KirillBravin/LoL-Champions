@@ -28,6 +28,24 @@
   margin-top: -29rem;
   z-index: -1;
 }
+.championInfo__overview {
+  position: absolute;
+  top: 18rem;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.625rem;
+  letter-spacing: 0.25em;
+  font-weight: bold;
+  transform: rotate(-90deg) translate(-100%, -50%);
+}
+.championInfo__overview::after {
+  content: "";
+  display: inline-block;
+  width: 1.4em;
+  height: 1px;
+  margin-left: 0.5em;
+  background-color: currentColor;
+}
 .championInfo__main-picture {
   padding-top: 3rem;
   width: 98%;
@@ -95,7 +113,7 @@
 }
 .championInfo__short-description {
   width: 29rem;
-  margin: 0 5rem;
+  margin: 0 5rem 0 4rem;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -105,6 +123,53 @@
   font-size: 0.875rem;
   letter-spacing: 0.08em;
   line-height: 1.28571;
+}
+.championInfo__dividing-line {
+  background-color: #333a42;
+  width: 1px;
+  height: 8rem;
+  margin-top: 1rem;
+}
+
+.btn__show-more {
+  display: contents;
+  padding: 0px;
+  text-transform: uppercase;
+  color: rgb(208, 168, 92);
+  font-size: 0.625rem;
+  line-height: 1.15;
+  cursor: pointer;
+}
+
+.bottom-dividing-line {
+  background-color: #333a42;
+  height: 1px;
+  width: 83%;
+  margin-top: 2rem;
+  position: relative;
+  left: 8rem;
+}
+
+.websites-links-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.website-links {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  margin: 1rem 1rem 0rem 1rem;
+  font-size: 0.625rem;
+  letter-spacing: 0.15em;
+  line-height: 1.15;
+}
+.website-links__wrapper {
+  display: flex;
+  justify-content: center;
+}
+.website-links:hover {
+  text-decoration: underline;
 }
 
 .hidden {
