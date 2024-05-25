@@ -1,13 +1,23 @@
+import { useState } from "react";
 import "./championInfo.css";
 
 import { ChampionInfoDifficulty } from "./championInfoDifficulty/ChampionInfoDifficulty";
 
 export function ChampionInfo() {
+  const [showMore, setShowMore] = useState(false);
+
   const backgroundStyle = {
     background:
       "url('https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_0.jpg') no-repeat center center ",
     backgroundSize: "cover",
   };
+
+  const btnShowMoreClick = () => {
+    setShowMore(true);
+  };
+
+  const descriptionText =
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quos cupiditate, sit numquam suscipit soluta facilis, ad, neque eligendi ipsam accusamus sed saepe maxime quis in labore officiis. Excepturi, asperiores? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus temporibus dolor voluptate maiores dolore iusto rerum culpa sint atque? Vero repellat earum facere natus commodi aspernatur consequatur deleniti vel mollitia.";
 
   return (
     <div className="championInfo">
@@ -44,10 +54,15 @@ export function ChampionInfo() {
             <div className="championInfo__dividing-line"></div>
             <div className="championInfo__description-wrapper">
               <div className="championInfo__short-description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-                quos cupiditate, sit numquam suscipit soluta facilis, ad, neque
-                eligendi ipsam accusamus sed saepe maxime quis in labore
-                officiis. Excepturi, asperiores?
+                {showMore
+                  ? descriptionText
+                  : `${descriptionText.substring(0, 250)}`}
+                <p
+                  className={`btn btn__show-more ${showMore ? "hidden" : ""}`}
+                  onClick={btnShowMoreClick}
+                >
+                  See more
+                </p>
               </div>
             </div>
           </div>

@@ -44,7 +44,6 @@
   width: 79rem;
   height: 9rem;
   padding-left: 6rem;
-  text-transform: uppercase;
   text-align: center;
   font-size: 0.625rem;
   letter-spacing: 0.15em;
@@ -95,11 +94,19 @@
   padding: 1px;
 }
 .championInfo__short-description {
+  width: 29rem;
+  margin: 0 5rem;
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  margin: 0 5rem;
+  text-align: start;
   color: white;
   cursor: default;
-  text-align: start;
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  line-height: 1.28571;
+}
+
+.hidden {
+  display: none;
 }/*# sourceMappingURL=championInfo.css.map */
