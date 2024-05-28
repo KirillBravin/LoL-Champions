@@ -1,5 +1,11 @@
-import { ChampionInfo } from "../../ChampionInfo/ChampionInfo";
+import { ChampionOverview } from "../../ChampionInfo/ChampionOverview/ChampionOverview";
+import { ChampionAbilities } from "../../ChampionInfo/ChampionInfoAbilities/ChampionInfoAbilities";
 
 export default function SingleChampionLayout() {
-  return <ChampionInfo />;
+  return (
+    <>
+      <ChampionOverview />
+      <ChampionAbilities />
+    </>
+  );
 }

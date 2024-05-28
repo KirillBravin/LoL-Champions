@@ -3,6 +3,33 @@
   flex-direction: column;
 }
 
+.headers {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 51rem;
+  top: 38rem;
+  font-family: BeaufortforLOL-BoldItalic, sans-serif;
+  text-transform: uppercase;
+}
+.headers__champion-name {
+  word-break: break-word;
+  font-weight: 900;
+  font-size: 100px;
+  font-style: italic;
+  line-height: 1;
+  color: white;
+}
+.headers__champion-title {
+  word-break: break-word;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 35px;
+  font-style: italic;
+  color: #d0a85c;
+}
+
 .championInfo {
   font-family: Spiegel;
 }
@@ -215,4 +242,4 @@
 
 .hidden {
   display: none;
-}/*# sourceMappingURL=championInfo.css.map */
+}/*# sourceMappingURL=championOverview.css.map */

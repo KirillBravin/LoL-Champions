@@ -1,12 +1,12 @@
 import { useState } from "react";
-import "./championInfo.css";
+import "./championOverview.css";
 
-import icon from "../../assets/icons/swift-146-svgrepo-com.svg";
-import championIcon from "../../assets/icons/champion-icon.svg";
+import icon from "../../../assets/icons/swift-146-svgrepo-com.svg";
+import championIcon from "../../../assets/icons/champion-icon.svg";
 
-import { ChampionInfoDifficulty } from "./championInfoDifficulty/ChampionInfoDifficulty";
+import { ChampionInfoDifficulty } from "../championInfoDifficulty/ChampionInfoDifficulty";
 
-export function ChampionInfo() {
+export function ChampionOverview() {
   const [showMore, setShowMore] = useState(false);
 
   const backgroundStyle = {
@@ -44,6 +44,10 @@ export function ChampionInfo() {
             alt="Ahri splash art"
           />
           {/* Short info of champion*/}
+          <div className="headers">
+            <h1 className="headers__champion-name">Ahri</h1>
+            <h2 className="headers__champion-title">the Nine-Tailed Fox</h2>
+          </div>
           <div className="championInfo__short-info">
             <div className="championInfo__short-info__wrapper">
               <div className="championInfo__roles">
