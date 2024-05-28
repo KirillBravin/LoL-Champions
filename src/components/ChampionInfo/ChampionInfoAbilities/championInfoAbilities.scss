@@ -1,0 +1,43 @@
+
+
+.championAbilities-style{
+
+    &__background{
+        width: 100%;
+        height: 35rem;;
+        background-color: #000913;
+    }
+
+    &__icon{
+        position:absolute;
+        width: 40rem;
+        left:50%;
+        top: 65rem;
+        transform: translateX(-50%);
+        filter: invert(10%) sepia(39%) saturate(616%) hue-rotate(162deg) brightness(67%) contrast(103%);
+    }
+
+    &__abilities{
+        position:absolute;
+        top: 66rem;
+
+        color: white;
+        text-transform: uppercase;
+        font-size: 0.625rem;
+        letter-spacing: 0.25em;
+        font-weight: bold;
+        transform: rotate(-90deg) translate(-100%, -50%);
+        &::after{
+            content: "";
+            display: inline-block;
+            width: 1.4em;
+            height: 1px;
+            margin-left: 0.5em;
+            background-color: currentColor;
+        }
+    }
+
+    &__header{
+        
+    }
+}
