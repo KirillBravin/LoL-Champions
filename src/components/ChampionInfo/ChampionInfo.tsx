@@ -1,6 +1,9 @@
 import { useState } from "react";
 import "./championInfo.css";
 
+import icon from "../../assets/icons/swift-146-svgrepo-com.svg";
+import championIcon from "../../assets/icons/champion-icon.svg";
+
 import { ChampionInfoDifficulty } from "./championInfoDifficulty/ChampionInfoDifficulty";
 
 export function ChampionInfo() {
@@ -23,6 +26,16 @@ export function ChampionInfo() {
     <div className="championInfo">
       <div className="championInfo__background" style={backgroundStyle}></div>
       <div className="championInfo__overview">Overview</div>
+      <a
+        className="btn btn-dark championInfo__champion-list-wrapper"
+        href="http://localhost:5173/"
+      >
+        <div className="championInfo__champion-list">Champion list</div>
+        <img
+          className="championInfo__champions-button-icon"
+          src={championIcon}
+        />
+      </a>
       <div className="container">
         <div className="wrapper">
           <img
@@ -70,17 +83,25 @@ export function ChampionInfo() {
         </div>
         <div className="bottom-dividing-line"></div>
         <div className="websites-links-wrapper">
-          <a href="#" className="website-links">
+          <p className="websites-links__champion-mastery">Champion mastery</p>
+          <a href="#" className="website-link">
             op.gg
           </a>
-          <a href="#" className="website-links">
+          <a href="#" className="website-link">
             u.gg
           </a>
-          <a href="#" className="website-links">
+          <a href="#" className="website-link">
             probuilds.net
           </a>
         </div>
-        <div className="website-links__bottom-line"></div>
+        <div className="championInfo__bottom-wrapper">
+          <div className="championInfo__bottom-line-ending"></div>
+          <img
+            src={icon}
+            className="championInfo__bottom-line-icon"
+            alt="icon"
+          />
+        </div>
       </div>
       <div className="championInfo__black-background"></div>
     </div>

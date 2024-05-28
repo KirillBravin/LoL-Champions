@@ -24,11 +24,34 @@
     }
     
     &__black-background{
-        background: linear-gradient(rgba(0, 0, 0, 0), #000913 53%);
+        background: linear-gradient(rgba(0, 0, 0, 0), #000913 30%);
         position: relative;
         padding-top: 36rem;
         margin-top: -29rem;
         z-index: -1;
+    }
+
+    &__champion-list-wrapper{
+        display: flex;
+        position: absolute;
+        justify-content: space-between;
+        align-items: center;
+        right: 4rem;
+        top: 3rem;
+        width: 9rem;
+    }
+
+    &__champion-list{
+        color:white;
+        text-transform: uppercase;
+        font-size: 10px;
+        letter-spacing: 0.16em;
+        line-height: 1;
+    }
+
+    &__champions-button-icon{
+        width: 14px;
+        filter: invert(97%) sepia(11%) saturate(187%) hue-rotate(133deg) brightness(114%) contrast(100%);
     }
 
     &__overview{
@@ -60,7 +83,7 @@
 
     &__short-info__wrapper{
         display:flex;
-        width: 92rem;
+        width: 34.5rem;
         justify-content: space-around;
     }
 
@@ -145,10 +168,28 @@
     }
 
     &__dividing-line{
-        background-color: #333a42;
         width: 1px;
         height: 8rem;
         margin-top: 1rem;
+        background-color: #333a42;
+    }
+
+    &__bottom-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top:2rem;
+    }
+
+    &__bottom-line-ending{
+        position: relative;
+        background-color: #333a42;
+        width: 1px;
+        height: 2rem;
+    }
+
+    &__bottom-line-icon{
+        width: 14px;
     }
 }
 
@@ -177,7 +218,17 @@
     justify-content: center;
 }
 
-.website-links{
+.websites-links__champion-mastery{
+    text-transform: uppercase;
+    margin: 1rem 1rem 0rem 1rem;
+    color: rgb(93, 97, 102);
+    font-size: 0.625rem;
+    letter-spacing: 0.2em;
+    line-height: 1.15;
+    cursor: default;
+}
+
+.website-link{
     text-decoration: none;
     text-transform: uppercase;
     color: white;
@@ -186,11 +237,6 @@
     font-size: 0.625rem;
     letter-spacing: 0.15em;
     line-height: 1.15;
-
-    &__wrapper{
-        display: flex;
-        justify-content: center;
-    }
 
     &:hover{
     text-decoration: underline;
