@@ -1,17 +1,20 @@
 .championAbilities-style__background {
+  position: absolute;
   width: 100%;
   height: 35rem;
   background-color: #000913;
+  z-index: -1;
 }
 .championAbilities-style__icon {
   position: absolute;
   width: 40rem;
   left: 50%;
-  top: 65rem;
+  bottom: 1rem;
   transform: translateX(-50%);
   filter: invert(10%) sepia(39%) saturate(616%) hue-rotate(162deg) brightness(67%) contrast(103%);
+  z-index: -1;
 }
-.championAbilities-style__abilities {
+.championAbilities-style__abilities-sideText {
   position: absolute;
   top: 66rem;
   color: white;
@@ -21,11 +24,43 @@
   font-weight: bold;
   transform: rotate(-90deg) translate(-100%, -50%);
 }
-.championAbilities-style__abilities::after {
+.championAbilities-style__abilities-sideText::after {
   content: "";
   display: inline-block;
   width: 1.4em;
   height: 1px;
   margin-left: 0.5em;
   background-color: currentColor;
+}
+.championAbilities-style__wrapper {
+  display: flex;
+}
+.championAbilities-style__header {
+  text-transform: uppercase;
+  color: white;
+  font-family: BeaufortforLOL-BoldItalic, sans-serif;
+  font-weight: 800;
+  font-size: 3.75rem;
+  font-style: italic;
+  line-height: 1;
+}
+.championAbilities-style__ability-icons-wrapper {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-between;
+  width: 27rem;
+}
+.championAbilities-style__ability-icon {
+  position: relative;
+  filter: brightness(50%);
+  transition-duration: 0.6s;
+}
+.championAbilities-style__ability-icon:hover {
+  transition-duration: 0.3s;
+  transform: translateY(-10%);
+}
+.championAbilities-style__diving-line {
+  height: 1px;
+  width: 10rem;
+  background-color: #394048;
 }/*# sourceMappingURL=championInfoAbilities.css.map */
