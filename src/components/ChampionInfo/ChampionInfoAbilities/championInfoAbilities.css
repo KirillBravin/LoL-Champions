@@ -63,4 +63,8 @@
   height: 1px;
   width: 10rem;
   background-color: #394048;
+}
+
+.ability-icon_active {
+  filter: brightness(100%);
 }/*# sourceMappingURL=championInfoAbilities.css.map */
