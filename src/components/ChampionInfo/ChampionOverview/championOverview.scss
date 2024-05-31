@@ -21,6 +21,8 @@
         font-style: italic;
         line-height: 1;
         color: white;
+        cursor:default;
+
     }
 
     &__champion-title{
@@ -30,6 +32,8 @@
         line-height: 35px;
         font-style: italic;
         color:#d0a85c;
+        cursor:default;
+
     }
 
 }
@@ -95,6 +99,8 @@
         letter-spacing: 0.25em;
         font-weight: bold;
         transform: rotate(-90deg) translate(-100%, -50%);
+        cursor:default;
+
         &::after{
             content: "";
             display: inline-block;
