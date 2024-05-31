@@ -28,21 +28,35 @@ export function ChampionAbilities() {
   };
 
   const abilityIcons = (arg: Abilities[]) => {
+    const handleDrag = (event: React.DragEvent<HTMLImageElement>) => {
+      event.preventDefault();
+    };
+
     const items = arg.map((item, index) => {
       return (
-        <img
-          key={index}
-          onClick={() => {
-            iconClicked(index);
-          }}
-          className={`championAbilities-style__ability-icon ${
-            index === iconIsActive ? "ability-icon_active" : ""
-          }`}
-          src={`https://ddragon.leagueoflegends.com/cdn/14.10.1/img/${getImagePath(
-            item
-          )}/${item.name}.png`}
-          alt=""
-        />
+        <div className="icon-wrapper">
+          <img
+            key={index}
+            onClick={() => {
+              iconClicked(index);
+            }}
+            className={`championAbilities-style__ability-icon ${
+              index === iconIsActive ? "ability-icon-active" : ""
+            }`}
+            src={`https://ddragon.leagueoflegends.com/cdn/14.10.1/img/${getImagePath(
+              item
+            )}/${item.name}.png`}
+            alt={item.name}
+            draggable="false"
+            onDragStart={handleDrag}
+          />
+          <div
+            className={`icon-wrapper__style-dot ${
+              index === iconIsActive ? "dot-active" : ""
+            }`}
+          ></div>
+          {index === iconIsActive ? <div className="active-circle"></div> : ""}
+        </div>
       );
     });
     return (
