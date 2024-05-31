@@ -67,4 +67,9 @@
 
 .ability-icon_active {
   filter: brightness(100%);
+  transition-duration: 0.3s;
+  transform: translateY(-20%);
+}
+.ability-icon_active:hover {
+  transform: translateY(-20%);
 }/*# sourceMappingURL=championInfoAbilities.css.map */
