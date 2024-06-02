@@ -5,8 +5,6 @@ interface AbilitySelected {
 }
 
 export function ChampionAbilityPreview({ abilitySelected }: AbilitySelected) {
-  console.log(abilitySelected);
-
   const videoPaths = [
     {
       name: "Passive",

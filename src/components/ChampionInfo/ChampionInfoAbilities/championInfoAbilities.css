@@ -78,10 +78,7 @@
   width: 44rem;
   height: 30rem;
   right: 12rem;
-}
-.championAbilities-style__videos {
-  width: 100%;
-  height: 100%;
+  border: 2px solid #d0a85c;
 }
 
 .icon-wrapper {
