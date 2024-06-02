@@ -100,7 +100,9 @@ export function ChampionAbilities() {
             <h2 className="championAbilities-style__header">Abilities</h2>
             {iconsRender}
             <div className="championAbilities-style__diving-line"></div>
-            <ChampionInfoAbilityDescriptions />
+            <ChampionInfoAbilityDescriptions
+              abilitySelected={abilitySelected}
+            />
           </div>
           <div className="championAbilities-style__abilities-preview"></div>
         </div>

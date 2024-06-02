@@ -1,8 +1,8 @@
 import "./ChampionInfoAbilityDescriptions.scss";
 
-import { useState } from "react";
+export function ChampionInfoAbilityDescriptions({ abilitySelected }) {
+  console.log(abilitySelected);
 
-export function ChampionInfoAbilityDescriptions() {
   const description = [
     {
       name: "Essence Theft",
@@ -19,7 +19,7 @@ export function ChampionInfoAbilityDescriptions() {
     {
       name: "Fox-Fire",
       type: "W",
-      descrp:
+      descr:
         "Ahri gains a brief burst of Move Speed and releases three fox-fires, that lock onto and attack nearby enemies.",
     },
     {
@@ -36,18 +36,83 @@ export function ChampionInfoAbilityDescriptions() {
     },
   ];
 
+  const abilityDescriptionRender = function (abilitySelected: string) {
+    if (abilitySelected === "Passive") {
+      return (
+        <>
+          <div className="championAbilities-style__description-ability-type">
+            {description[0].type}
+          </div>
+          <div className="championAbilities-style__description-ability-name">
+            {description[0].name}
+          </div>
+          <div className="championAbilities-style__description-ability">
+            {description[0].descr}
+          </div>
+        </>
+      );
+    } else if (abilitySelected === "SpellQ") {
+      return (
+        <>
+          <div className="championAbilities-style__description-ability-type">
+            {description[1].type}
+          </div>
+          <div className="championAbilities-style__description-ability-name">
+            {description[1].name}
+          </div>
+          <div className="championAbilities-style__description-ability">
+            {description[1].descr}
+          </div>
+        </>
+      );
+    } else if (abilitySelected === "SpellW") {
+      return (
+        <>
+          <div className="championAbilities-style__description-ability-type">
+            {description[2].type}
+          </div>
+          <div className="championAbilities-style__description-ability-name">
+            {description[2].name}
+          </div>
+          <div className="championAbilities-style__description-ability">
+            {description[2].descr}
+          </div>
+        </>
+      );
+    } else if (abilitySelected === "SpellE") {
+      return (
+        <>
+          <div className="championAbilities-style__description-ability-type">
+            {description[3].type}
+          </div>
+          <div className="championAbilities-style__description-ability-name">
+            {description[3].name}
+          </div>
+          <div className="championAbilities-style__description-ability">
+            {description[3].descr}
+          </div>
+        </>
+      );
+    } else if (abilitySelected === "SpellR") {
+      return (
+        <>
+          <div className="championAbilities-style__description-ability-type">
+            {description[4].type}
+          </div>
+          <div className="championAbilities-style__description-ability-name">
+            {description[4].name}
+          </div>
+          <div className="championAbilities-style__description-ability">
+            {description[4].descr}
+          </div>
+        </>
+      );
+    } else return null;
+  };
+
   return (
     <div className="championAbilities-style__description-wrapper">
-      <div className="championAbilities-style__description-ability-type">
-        Passive
-      </div>
-      <div className="championAbilities-style__description-ability-name">
-        Essence Theft
-      </div>
-      <div className="championAbilities-style__description-ability">
-        After killing 9 minions or monsters, Ahri heals. After taking down an
-        enemy champion, Ahri heals for a greater amount.
-      </div>
+      {abilityDescriptionRender(abilitySelected)}
     </div>
   );
 }
