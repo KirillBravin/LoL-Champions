@@ -68,8 +68,13 @@ export function ChampionAbilities() {
             className={`icon-wrapper__style-dot ${
               index === iconIsActive ? "dot-active" : ""
             }`}
-          ></div>
-          {index === iconIsActive ? <div className="active-circle"></div> : ""}
+          >
+            {index === iconIsActive ? (
+              <div className="active-circle"></div>
+            ) : (
+              ""
+            )}
+          </div>
         </div>
       );
     });
@@ -104,7 +109,24 @@ export function ChampionAbilities() {
               abilitySelected={abilitySelected}
             />
           </div>
-          <div className="championAbilities-style__abilities-preview"></div>
+          <div className="championAbilities-style__abilities-preview">
+            <video
+              className="championAbilities-style__videos"
+              autoPlay
+              loop
+              muted
+            >
+              <source
+                src="https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0103/ability_0103_P1.mp4"
+                type="video/mp4"
+              />
+              <source
+                src="https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0103/ability_0103_P1.webm"
+                type="video/webm"
+              />
+              <p>Your browser doesn't support HTML video.</p>
+            </video>
+          </div>
         </div>
       </div>
     </div>

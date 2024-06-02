@@ -1,5 +1,3 @@
-
-
 .championAbilities-style{
 
     &__background{
@@ -18,6 +16,10 @@
         transform: translateX(-50%);
         filter: invert(10%) sepia(39%) saturate(616%) hue-rotate(162deg) brightness(67%) contrast(103%);
         z-index: -1;
+    }
+
+    &__abilities-info{
+        width: 43rem;
     }
 
     &__abilities-sideText{
@@ -83,6 +85,18 @@
         bottom: 5px;
         z-index: -1;
     }
+
+    &__abilities-preview{
+        position:absolute;
+        width: 44rem;
+        height: 30rem;
+        right: 12rem;
+    }
+
+    &__videos{
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .icon-wrapper{
@@ -130,5 +144,6 @@
     border: 2px solid #d0a85c;
     margin-left:50%;
     transform: translateX(-50%);
-    bottom:15px;
+    bottom:5px;
 }
+

@@ -1,8 +1,12 @@
 import "./ChampionInfoAbilityDescriptions.scss";
 
-export function ChampionInfoAbilityDescriptions({ abilitySelected }) {
-  console.log(abilitySelected);
+interface AbilitySelected {
+  abilitySelected: string;
+}
 
+export function ChampionInfoAbilityDescriptions({
+  abilitySelected,
+}: AbilitySelected) {
   const description = [
     {
       name: "Essence Theft",
