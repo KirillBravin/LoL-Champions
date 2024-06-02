@@ -1,7 +1,7 @@
 import "./ChampionInfoAbilityDescriptions.scss";
 
 interface AbilitySelected {
-  abilitySelected: string;
+  abilitySelected: string | null;
 }
 
 export function ChampionInfoAbilityDescriptions({
