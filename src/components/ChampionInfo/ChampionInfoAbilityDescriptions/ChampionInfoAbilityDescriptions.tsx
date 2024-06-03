@@ -12,7 +12,7 @@ export function ChampionInfoAbilityDescriptions({
       name: "Essence Theft",
       type: "Passive",
       descr:
-        "After killing 9 minions or monsters, Ahri heals.<br>After taking down an enemy champion, Ahri heals for a greater amount.",
+        "After killing 9 minions or monsters, Ahri heals. After taking down an enemy champion, Ahri heals for a greater amount.",
     },
     {
       name: "Orb of Deception",
@@ -40,7 +40,7 @@ export function ChampionInfoAbilityDescriptions({
     },
   ];
 
-  const abilityDescriptionRender = function (abilitySelected: string) {
+  const abilityDescriptionRender = function (abilitySelected: string | null) {
     if (abilitySelected === "Passive") {
       return (
         <>

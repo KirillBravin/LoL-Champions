@@ -89,7 +89,7 @@ export function ChampionAbilities() {
   const iconsRender = abilityIcons(abilities);
 
   return (
-    <div className="championAbilities">
+    <div className="championAbilities-style">
       <div className="championAbilities-style__background">
         <img
           className="championAbilities-style__icon"

@@ -1,0 +1,69 @@
+.championSkins{
+    position: relative;
+    height: 80rem;
+
+    &__background{
+        height: 100%;
+    }
+
+    &__skins-sideText{
+        position:absolute;
+        top: 23rem;
+        font-family: Spiegel;
+        left: -26px;
+
+        color: black;
+        text-transform: uppercase;
+        font-size: 0.625rem;
+        letter-spacing: 0.25em;
+        font-weight: bold;
+        transform: rotate(-90deg) translate(-100%, -50%);
+        cursor:default;
+        &::after{
+            content: "";
+            display: inline-block;
+            width: 1.4em;
+            height: 1px;
+            margin-left: 0.5em;
+            background-color: currentColor;
+            margin-bottom: 2px;
+        }
+    }
+
+    &__slider{
+        display: flex;
+        justify-content: center;
+        margin-top: 5rem;
+
+        &-wrapper{
+            position:relative;
+            width: 97rem;
+        }
+
+        &-background{
+            width:100%;
+        }
+
+        &-cover{
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(7px);
+            width: 30rem;
+            height: 57.25rem;
+            top: 0rem;
+            z-index: 1;
+        }
+
+        &-header{
+            font-family: BeaufortforLOL-HeavyItalic;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: white;
+
+            padding: 20px;
+            margin: 40px 40px 0px;
+            font-size: 40px;
+            border-bottom: 1px solid rgba(193, 193, 193, 0.2);
+        }
+    }
+}
