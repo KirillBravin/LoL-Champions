@@ -1,0 +1,149 @@
+.championAbilities-style{
+    height: 45rem;
+
+    &__background{
+        position:absolute;
+        width: 100%;
+        height: 45rem;
+        background-color: #000913;
+        z-index: -1;
+    }
+
+    &__icon{
+        position:absolute;
+        width: 50rem;
+        left:50%;
+        bottom: 1rem;
+        transform: translateX(-50%);
+        filter: invert(10%) sepia(39%) saturate(616%) hue-rotate(162deg) brightness(67%) contrast(103%);
+        z-index: -1;
+    }
+
+    &__abilities-info{
+        width: 43rem;
+    }
+
+    &__abilities-sideText{
+        position:absolute;
+        top: 66rem;
+
+        color: white;
+        text-transform: uppercase;
+        font-size: 0.625rem;
+        letter-spacing: 0.25em;
+        font-weight: bold;
+        transform: rotate(-90deg) translate(-100%, -50%);
+        cursor:default;
+        &::after{
+            content: "";
+            display: inline-block;
+            width: 1.4em;
+            height: 1px;
+            margin-left: 0.5em;
+            background-color: currentColor;
+            margin-bottom: 2px;
+        }
+    }
+
+    &__wrapper{
+        display: flex;
+    }
+
+    &__header{
+        text-transform: uppercase;
+        color: white;
+        font-family: BeaufortforLOL-BoldItalic, sans-serif;
+        font-weight: 800;
+        font-size: 3.75rem;
+        font-style: italic;
+        line-height: 1;
+        cursor:default;
+    }
+
+    &__ability-icons-wrapper{
+        margin-top: 5rem;
+        display: flex;
+        justify-content: space-between;
+        width: 27rem;
+    }
+
+    &__ability-icon{
+        position:relative;
+        filter: brightness(50%);
+        transition-duration: 0.6s;
+
+       &:hover{
+        transition-duration: 0.3s;
+        transform: translateY(-10%);
+       }
+    }
+
+    &__diving-line{
+        position: relative;
+        height: 1px;
+        width: 70rem;
+        background-color: #394048;
+        right: 19rem;
+        bottom: 5px;
+        z-index: -1;
+    }
+
+    &__abilities-preview{
+        position:absolute;
+        width: 44rem;
+        height: 30rem;
+        right: 12rem;
+
+        border: 2px solid #d0a85c;
+    }
+
+}
+
+.icon-wrapper{
+    display:flex;
+    flex-direction: column;
+
+    &__style-dot{
+        background-color: #394048;
+        margin-top:2rem;
+        width:10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-left:50%;
+        transform: translateX(-50%);
+        transition-duration: 0.3s;
+    }
+
+    &:hover{
+        .icon-wrapper__style-dot{
+            background-color: #d0a85c;
+            transition-duration: 0.5s;
+        }
+    }
+}
+
+.ability-icon-active{
+    filter: brightness(100%);
+    transition-duration: 0.5s;
+    transform: translateY(-20%);
+    &:hover{
+        transform: translateY(-20%);
+    }
+}
+
+.dot-active{
+    background-color: #d0a85c;
+    transition-duration: 0.5s;
+}
+
+.active-circle{
+    border-radius: 50%;
+    position: relative;
+    height: 20px;
+    width: 20px;
+    border: 2px solid #d0a85c;
+    margin-left:50%;
+    transform: translateX(-50%);
+    bottom:5px;
+}
+

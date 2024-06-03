@@ -1,0 +1,23 @@
+.championSkins__background {
+  height: 70rem;
+}
+.championSkins__sideText {
+  position: absolute;
+  top: 138rem;
+  font-family: Spiegel;
+  color: black;
+  text-transform: uppercase;
+  font-size: 0.625rem;
+  letter-spacing: 0.25em;
+  font-weight: bold;
+  transform: rotate(-90deg);
+  cursor: default;
+}
+.championSkins__sideText::after {
+  content: "";
+  display: inline-block;
+  width: 1.4em;
+  height: 1px;
+  margin-left: 0.5em;
+  background-color: currentColor;
+}/*# sourceMappingURL=ChampionSkins.css.map */

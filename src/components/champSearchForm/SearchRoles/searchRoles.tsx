@@ -2,7 +2,11 @@ import { useState } from "react";
 
 import "./searchRoles.scss";
 
-export function SearchRoles({ getRoleSelected }) {
+interface ChampionRoleProps {
+  getRoleSelected: (data: string) => void;
+}
+
+export function SearchRoles({ getRoleSelected }: ChampionRoleProps) {
   const [activeButton, setActiveButton] = useState<number | null>(null);
 
   const roles = [

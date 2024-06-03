@@ -44,6 +44,10 @@
             width: 12rem;
             display: flex;
             justify-content: space-between;
+            &::after{
+                left: 1.7rem !important;
+                top: 1rem;
+            }
         }
         &:hover{
             background-color: transparent;
@@ -151,6 +155,17 @@
 
 li {
     list-style: none;
+}
+
+.btn-close{
+    &__difficulties{
+        position: relative;
+        top: 1rem;
+        right: 1.4rem;
+        &:focus {
+            box-shadow: none;
+          }
+    }
 }
 
 .button__hidden{

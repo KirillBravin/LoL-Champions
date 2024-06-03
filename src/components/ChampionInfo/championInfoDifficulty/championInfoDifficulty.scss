@@ -1,0 +1,25 @@
+.difficulty__icons{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 3.4rem;
+    left: 0.4rem;
+    padding-bottom: 0.5rem;
+    margin-top: 0.8rem;
+}
+
+.parallelogramEmpty {
+    width: 1rem;
+    height: 0.7rem;
+    transform: skew(-41deg);
+    background: #013241;
+}
+
+.parallelogramFilled{
+    width: 1rem;
+    height: 0.7rem;
+    transform: skew(-41deg);
+    background: #08d7f7;
+}

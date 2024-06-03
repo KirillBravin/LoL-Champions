@@ -1,0 +1,36 @@
+.championAbilities-style__description-wrapper {
+  font-family: BeaufortforLOL-Regular;
+  position: relative;
+  left: 2rem;
+  margin-top: 2rem;
+  width: 25rem;
+  height: 11rem;
+}
+.championAbilities-style__description-ability-type {
+  text-transform: uppercase;
+  font-size: 0.625rem;
+  line-height: 1;
+  letter-spacing: 0.15em;
+  color: rgb(126, 126, 126);
+  pointer-events: none;
+}
+.championAbilities-style__description-ability-name {
+  text-transform: uppercase;
+  margin-top: 0.375rem;
+  font-size: 1.125rem;
+  line-height: 1.11111;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  pointer-events: none;
+  color: white;
+}
+.championAbilities-style__description-ability {
+  font-family: Spiegel;
+  cursor: default;
+  margin-top: 0.375rem;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  color: white;
+}/*# sourceMappingURL=ChampionInfoAbilityDescriptions.css.map */

@@ -39,6 +39,10 @@
   display: flex;
   justify-content: space-between;
 }
+.difficulties__btn-main-active::after {
+  left: 1.7rem !important;
+  top: 1rem;
+}
 .difficulties__btn-main:hover {
   background-color: transparent;
   color: black;
@@ -137,6 +141,15 @@
 
 li {
   list-style: none;
+}
+
+.btn-close__difficulties {
+  position: relative;
+  top: 1rem;
+  right: 1.4rem;
+}
+.btn-close__difficulties:focus {
+  box-shadow: none;
 }
 
 .button__hidden {

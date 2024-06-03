@@ -5,7 +5,7 @@ import { ChampionCards } from "../../ChampionCard/championCard";
 import "animate.css";
 import "./home.scss";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useLeagueService } from "../../../Backend/LeagueService";
 
 interface SingleChampionData {
@@ -25,15 +25,23 @@ export default function Home() {
   const [roleSelected, setRoleSelected] = useState<string>("");
   const [difficultySelected, setDifficultySelected] = useState<number[]>([]);
 
-  console.log("render");
-
   const { getAllChampions } = useLeagueService();
 
+  const fetchChampions = useCallback(async () => {
+    try {
+      const data = await getAllChampions();
+      setChampionList(data);
+    } catch (error) {
+      console.error("Failed to fetch champions:", error);
+    }
+  }, [getAllChampions]);
+
   useEffect(() => {
-    getAllChampions().then((res) => {
-      setChampionList(res);
-    });
-  }, []);
+    console.log("home - effect render");
+    fetchChampions();
+  }, [fetchChampions]);
+
+  console.log("Home render");
 
   function handleChampionSelected(data: string): void {
     setChampionSelected(data);
@@ -49,7 +57,7 @@ export default function Home() {
 
   return (
     <>
-      <SkinDiscounts />
+      {<SkinDiscounts />}
       <h1 className="title">
         <span className="animate__animated title__intro animate__fadeIn">
           choose your

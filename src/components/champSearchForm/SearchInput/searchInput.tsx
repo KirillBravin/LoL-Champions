@@ -112,7 +112,9 @@ export function SearchInput({
           />
           <button
             type="button"
-            className={`btn-close ${filterActive ? "" : "button__hidden"}`}
+            className={`btn-close btn-close__search-input ${
+              filterActive ? "" : "button__hidden"
+            }`}
             aria-label="Close"
             onClick={resetFilter}
           ></button>

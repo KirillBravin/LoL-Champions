@@ -68,6 +68,8 @@ export function ChampionCards({
       } else if (newDifficulty <= 27 && newDifficulty > 22) {
         setCurrentDifficulty("Hard");
       }
+    } else {
+      setCurrentDifficulty("");
     }
   }
 
