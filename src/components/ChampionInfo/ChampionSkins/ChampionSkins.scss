@@ -1,6 +1,6 @@
 .championSkins{
     position: relative;
-    height: 80rem;
+    height: 65rem;
 
     &__background{
         height: 100%;
@@ -69,6 +69,29 @@
         &__skin-image{
             width:25rem;
         }
+
+        &__skin-name{
+            position:absolute;
+
+            font-family: BeaufortforLOL-BoldItalic;
+            word-break: break-word;
+            font-size: 20px;
+            line-height: 1;
+            color: burlywood;
+            cursor:default;
+        }   
+
+        &__skin-blinder{
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            bottom: 1px;
+
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(1px);
+            width: 100%;
+            height: 26px;
+        }
     }
 }
 
@@ -76,4 +99,4 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}

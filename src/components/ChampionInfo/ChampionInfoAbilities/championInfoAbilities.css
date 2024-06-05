@@ -38,6 +38,7 @@
   height: 1px;
   margin-left: 0.5em;
   background-color: currentColor;
+  margin-bottom: 2px;
 }
 .championAbilities-style__wrapper {
   display: flex;

@@ -4,6 +4,10 @@ import "./ChampionSkins.scss";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { useState } from "react";
 
+interface ahriSkins {
+  [name: string]: string;
+}
+
 export function ChampionSkins() {
   const [skinSelected, setSkinSelected] = useState("Ahri_0.jpg");
 
@@ -82,7 +86,7 @@ export function ChampionSkins() {
     },
   ];
 
-  const skinsCounter = (ahriSkins) => {
+  const skinsCounter = (ahriSkins: ahriSkins[]) => {
     const items = ahriSkins.map((item, i) => {
       return (
         <SplideSlide key={i}>
@@ -94,6 +98,9 @@ export function ChampionSkins() {
             src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${item.path}`}
             alt={item.name}
           />
+          <div className="championSkins__slider__skin-blinder">
+            <div className="championSkins__slider__skin-name">{item.name}</div>
+          </div>
         </SplideSlide>
       );
     });
@@ -107,6 +114,7 @@ export function ChampionSkins() {
         <div className="championSkins__slider-wrapper">
           <img
             className="championSkins__slider-background"
+            style={{ transition: "background-image 0.5s ease-in-out" }}
             src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${skinSelected}`}
             alt="champion skin"
           />
@@ -121,7 +129,7 @@ export function ChampionSkins() {
                 arrows: false,
                 pagination: false,
                 perPage: 3,
-                gap: `10px`,
+                gap: `20px`,
                 speed: 2000,
                 easing: "ease",
               }}

@@ -111,7 +111,20 @@ export function ChampionInfoAbilityDescriptions({
           </div>
         </>
       );
-    } else return null;
+    } else
+      return (
+        <>
+          <div className="championAbilities-style__description-ability-type">
+            {description[0].type}
+          </div>
+          <div className="championAbilities-style__description-ability-name">
+            {description[0].name}
+          </div>
+          <div className="championAbilities-style__description-ability">
+            {description[0].descr}
+          </div>
+        </>
+      );
   };
 
   return (

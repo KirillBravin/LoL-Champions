@@ -1,6 +1,7 @@
 import { SkinDiscounts } from "../../skinDiscounts/SkinDiscounts";
 import { ChampSearchForm } from "../../champSearchForm/ChampSearchForm";
 import { ChampionCards } from "../../ChampionCard/championCard";
+import { Footer } from "../../Footer/Footer";
 
 import "animate.css";
 import "./home.scss";
@@ -82,6 +83,7 @@ export default function Home() {
         roleSelected={roleSelected}
         difficultySelected={difficultySelected}
       />
+      <Footer />
     </>
   );
 }

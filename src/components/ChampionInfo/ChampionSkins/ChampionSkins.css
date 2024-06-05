@@ -1,23 +1,88 @@
-.championSkins__background {
-  height: 70rem;
+.championSkins {
+  position: relative;
+  height: 65rem;
 }
-.championSkins__sideText {
+.championSkins__background {
+  height: 100%;
+}
+.championSkins__skins__sideText {
   position: absolute;
-  top: 138rem;
+  top: 23rem;
   font-family: Spiegel;
+  left: -26px;
   color: black;
   text-transform: uppercase;
   font-size: 0.625rem;
   letter-spacing: 0.25em;
   font-weight: bold;
-  transform: rotate(-90deg);
+  transform: rotate(-90deg) translate(-100%, -50%);
   cursor: default;
 }
-.championSkins__sideText::after {
+.championSkins__skins__sideText::after {
   content: "";
   display: inline-block;
   width: 1.4em;
   height: 1px;
   margin-left: 0.5em;
   background-color: currentColor;
+  margin-bottom: 2px;
+}
+.championSkins__slider {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+.championSkins__slider-wrapper {
+  position: relative;
+  width: 97rem;
+}
+.championSkins__slider-background {
+  width: 100%;
+}
+.championSkins__slider-cover {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(7px);
+  width: 30rem;
+  height: 57.25rem;
+  top: 0rem;
+  z-index: 1;
+}
+.championSkins__slider-header {
+  font-family: BeaufortforLOL-HeavyItalic;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: white;
+  padding: 20px;
+  margin: 40px 40px 20px;
+  font-size: 40px;
+  border-bottom: 1px solid rgba(193, 193, 193, 0.2);
+}
+.championSkins__slider__skin-image {
+  width: 25rem;
+}
+.championSkins__slider__skin-name {
+  position: absolute;
+  font-family: BeaufortforLOL-BoldItalic;
+  word-break: break-word;
+  font-size: 20px;
+  line-height: 1;
+  color: burlywood;
+  cursor: default;
+}
+.championSkins__slider__skin-blinder {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 1px;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(1px);
+  width: 100%;
+  height: 26px;
+}
+
+.splide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=ChampionSkins.css.map */

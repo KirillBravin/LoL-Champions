@@ -1,0 +1,36 @@
+.footer {
+  height: 12rem;
+  background-color: black;
+}
+.footer__wrapper {
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer__icons {
+  width: 14rem;
+  display: flex;
+  justify-content: space-between;
+}
+.footer__icon {
+  width: 2rem;
+}
+.footer__riot-copyright {
+  margin-top: 2rem;
+  width: 40rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.footer__riot-copyright-text {
+  font-family: Spiegel;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 140%;
+  text-align: center;
+  word-break: keep-all;
+  color: #7e7e7e;
+}/*# sourceMappingURL=Footer.css.map */

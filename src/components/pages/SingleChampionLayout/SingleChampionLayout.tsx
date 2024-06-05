@@ -1,6 +1,7 @@
 import { ChampionOverview } from "../../ChampionInfo/ChampionOverview/ChampionOverview";
 import { ChampionAbilities } from "../../ChampionInfo/ChampionInfoAbilities/ChampionInfoAbilities";
 import { ChampionSkins } from "../../ChampionInfo/ChampionSkins/ChampionSkins";
+import { Footer } from "../../Footer/Footer";
 
 export default function SingleChampionLayout() {
   return (
@@ -8,6 +9,7 @@ export default function SingleChampionLayout() {
       <ChampionOverview />
       <ChampionAbilities />
       <ChampionSkins />
+      <Footer />
     </>
   );
 }
