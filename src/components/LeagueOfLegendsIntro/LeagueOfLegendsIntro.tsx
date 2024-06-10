@@ -62,7 +62,17 @@ export function LeagueOfLegendsIntro() {
               </div>
             </div>
           </div>
-          <div className="leagueIntro__preview"></div>
+          <div className="leagueIntro__preview">
+            <div className="leagueIntro__video-preview">
+              <video className="leagueIntro__video" autoPlay loop muted>
+                <source
+                  src="https://cmsassets.rgpub.io/sanity/files/dsfx7636/news/3dc01ace5cb488af854ce527e03999215633da79.mp4"
+                  type="video/mp4"
+                />
+                <p>Your browser doesn't support HTML video.</p>
+              </video>
+            </div>
+          </div>
         </div>
       </div>
     </section>
