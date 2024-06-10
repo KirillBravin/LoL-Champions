@@ -189,6 +189,7 @@
     }
 
     &__video-preview{
+        width: 38rem;
         margin: 0 auto;
         overflow: hidden;
         border-radius: 50%;
@@ -240,4 +241,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.modeInfo-active {
+    color: rgb(255, 255, 255);
+}
+
+.modeIcon-active {
+    filter: brightness(100%);
 }

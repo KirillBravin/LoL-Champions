@@ -1,4 +1,6 @@
 import "./leagueoflegendsintro.scss";
+import { useState } from "react";
+
 import wallpaper from "../../assets/images/Main_page_wallpaper.webp";
 
 //Mode icons
@@ -11,13 +13,6 @@ const aramIcon =
 const tftIcon =
   "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/d1df552539dd70a8ffd38b6e93d1e751fb980ea6-440x440.png?auto=format&fit=crop&q=80&h=80&w=80&crop=center";
 
-//Mode previews
-import arenaVideo from "https://cmsassets.rgpub.io/sanity/files/dsfx7636/news/3dc01ace5cb488af854ce527e03999215633da79.mp4";
-import summonersRiftVideo from "https://cmsassets.rgpub.io/sanity/files/dsfx7636/news/bbc27473157462adacf0de441a8796268eb2d0ac.mp4";
-import aramVideo from "https://cmsassets.rgpub.io/sanity/files/dsfx7636/news/0a9b9f8dacb54086c58c1af8aa880d7cf6d7fea6.mp4";
-import tftVideo from "https://cmsassets.rgpub.io/sanity/files/dsfx7636/news/e5791dbc0787a96e83b82df20d44375f09f4d861.mp4";
-import { useState } from "react";
-
 interface ModeInfo {
   modeName: string;
   modeIcon: string;
@@ -25,7 +20,7 @@ interface ModeInfo {
 }
 
 export function LeagueOfLegendsIntro() {
-  const [modeSelected, setModeSelected] = useState<string>("arena");
+  const [modeSelected, setModeSelected] = useState<string>("Arena");
 
   const modeInfo: ModeInfo[] = [
     { modeName: "arena-mode", modeIcon: arenaIcon, alt: "Arena" },
@@ -38,16 +33,70 @@ export function LeagueOfLegendsIntro() {
     { modeName: "tft-mode", modeIcon: tftIcon, alt: "Teamfight Tactics" },
   ];
 
+  const videoInfo = [
+    {
+      mode: "Arena",
+      videoPath:
+        "https://cmsassets.rgpub.io/sanity/files/dsfx7636/news/3dc01ace5cb488af854ce527e03999215633da79.mp4",
+      shortDescr: "Calling all dynamic duos",
+      longDescr:
+        "Throw down across a series of maps, draft augments and items, and climb to the top with your partner in this 2v2v2v2v2v2v2v2 tournament.",
+    },
+    {
+      mode: "Summoner's Rift",
+      videoPath:
+        "https://cmsassets.rgpub.io/sanity/files/dsfx7636/news/bbc27473157462adacf0de441a8796268eb2d0ac.mp4",
+      shortDescr: "The most popular game mode",
+      longDescr:
+        "Clear your lane, dive into epic 5v5 team fights, and destroy the enemy nexus before they destroy yours.",
+    },
+    {
+      mode: "ARAM",
+      videoPath:
+        "https://cmsassets.rgpub.io/sanity/files/dsfx7636/news/0a9b9f8dacb54086c58c1af8aa880d7cf6d7fea6.mp4",
+      shortDescr: "All random, all mid",
+      longDescr:
+        "Battle across an icy bridge as your team of random champions charge toward the enemy Nexus in this chaotically fun 5v5 game mode.",
+    },
+    {
+      mode: "Teamfight Tactics",
+      videoPath:
+        "https://cmsassets.rgpub.io/sanity/files/dsfx7636/news/e5791dbc0787a96e83b82df20d44375f09f4d861.mp4",
+      shortDescr: "A free-for-all war for supremacy",
+      longDescr:
+        "Assemble a squad of champions that battle on your behalf. Outlast all seven of your opponents and become the last person standing.",
+    },
+  ];
+
   const modeInfoRender = (modeInfo: ModeInfo[]) => {
+    const handleDrag = (event: React.DragEvent<HTMLElement>) => {
+      event.preventDefault();
+    };
+
     const items = modeInfo.map((item, index) => {
       return (
-        <div key={index} className={`leagueIntro__${item.modeName}`}>
+        <div
+          key={index}
+          className={`leagueIntro__${item.modeName}`}
+          onClick={() => {
+            setModeSelected(item.alt);
+          }}
+        >
           <img
-            className="leagueIntro__mode-img"
+            className={`leagueIntro__mode-img ${
+              item.alt === modeSelected ? "modeIcon-active" : ""
+            }`}
             src={item.modeIcon}
             alt={item.alt}
+            onDragStart={handleDrag}
           />
-          <div className="leagueIntro__mode-name">Arena</div>
+          <div
+            className={`leagueIntro__mode-name ${
+              item.alt === modeSelected ? "modeInfo-active" : ""
+            }`}
+          >
+            {item.alt}
+          </div>
         </div>
       );
     });
@@ -55,6 +104,37 @@ export function LeagueOfLegendsIntro() {
   };
 
   const modeInfoView = modeInfoRender(modeInfo);
+
+  const whichModeSelected = (modeSelected: string) => {
+    const selectedMode = videoInfo.find((mode) => mode.mode === modeSelected);
+
+    if (selectedMode) {
+      return (
+        <div className="leagueIntro__preview">
+          <div className="leagueIntro__video-preview">
+            <video
+              key={selectedMode.mode}
+              className="leagueIntro__video"
+              autoPlay
+              loop
+              muted
+            >
+              <source src={selectedMode.videoPath} type="video/mp4" />
+              <p>Your browser doesn't support HTML video.</p>
+            </video>
+            <div className="video-border"></div>
+          </div>
+          <p className="leagueIntro__video-short-description">
+            {selectedMode.shortDescr}
+          </p>
+          <p className="leagueIntro__video-long-description">
+            {selectedMode.longDescr}
+          </p>
+        </div>
+      );
+    }
+    return null;
+  };
 
   return (
     <section className="leagueIntro">
@@ -82,32 +162,16 @@ export function LeagueOfLegendsIntro() {
               <a
                 className="leagueIntro__link-btn-play"
                 href="https://authenticate.riotgames.com/?client_id=prod-xsso-leagueoflegends&code_challenge=pYWSQNVZqcG78DUvJszpPLbC-LXuO6wmwo2UgdLAJpU&method=riot_identity_signup&platform=web&redirect_uri=https%3A%2F%2Fauth.riotgames.com%2Fauthorize%3Fclient_id%3Dprod-xsso-leagueoflegends%26code_challenge%3DpYWSQNVZqcG78DUvJszpPLbC-LXuO6wmwo2UgdLAJpU%26code_challenge_method%3DS256%26prompt%3Dsignup%26redirect_uri%3Dhttps%253A%252F%252Fxsso.leagueoflegends.com%252Fredirect%26response_type%3Dcode%26scope%3Dopenid%2520account%2520email%2520offline_access%26state%3Df5e04bd23a9141a38cc95119a6%26uri%3Dhttps%253A%252F%252Fsignup.leagueoflegends.com%252Fen-gb%252Fsignup%252Fredownload"
+                onDragStart={(e) => {
+                  e.preventDefault();
+                }}
               >
                 <button className="leagueIntro__btn-play">Play now</button>
               </a>
             </div>
             {modeInfoView}
           </div>
-          <div className="leagueIntro__preview">
-            <div className="leagueIntro__video-preview">
-              <video className="leagueIntro__video" autoPlay loop muted>
-                <source
-                  src="https://cmsassets.rgpub.io/sanity/files/dsfx7636/news/3dc01ace5cb488af854ce527e03999215633da79.mp4"
-                  type="video/mp4"
-                />
-                <p>Your browser doesn't support HTML video.</p>
-              </video>
-              <div className="video-border"></div>
-            </div>
-            <p className="leagueIntro__video-short-description">
-              Calling all dynamic duos
-            </p>
-            <p className="leagueIntro__video-long-description">
-              Throw down across a series of maps, draft augments and items, and
-              climb to the top with your partner in this 2v2v2v2v2v2v2v2
-              tournament.
-            </p>
-          </div>
+          {whichModeSelected(modeSelected)}
         </div>
       </div>
     </section>
