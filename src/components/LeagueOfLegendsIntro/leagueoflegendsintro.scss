@@ -189,7 +189,8 @@
     }
 
     &__video-preview{
-        width: 38rem;
+        width: 608px;
+        height: 608px;
         margin: 0 auto;
         overflow: hidden;
         border-radius: 50%;
@@ -238,9 +239,6 @@
     background: transparent;
     border: 1px solid #d0a85c;
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .modeInfo-active {

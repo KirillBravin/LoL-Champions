@@ -208,9 +208,9 @@
   background: transparent;
   border: 1px solid #d0a85c;
   border-radius: 50%;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 .modeInfo-active {
