@@ -78,13 +78,9 @@ export function ChampionCards({
     if (currentRole === "" && currentDifficulty === "") {
       const items = arr.map((item) => {
         if (item.name === championSelected || championSelected === "") {
-          console.log("Item.id: " + item.id);
-          console.log("ChampionSelected: " + championSelected);
           return (
             <ChampionCard
-              key={
-                championSelected === "" ? `${item.id}` : `${championSelected}`
-              }
+              key={`${item.id}-${championSelected}-${currentRole}-${currentDifficulty}`}
               champion={item.id}
             />
           );
@@ -104,9 +100,7 @@ export function ChampionCards({
         ) {
           return (
             <ChampionCard
-              key={
-                championSelected === "" ? `${item.id}` : `${championSelected}`
-              }
+              key={`${item.id}-${championSelected}-${currentRole}-${currentDifficulty}`}
               champion={item.id}
             />
           );
@@ -152,7 +146,7 @@ export function ChampionCards({
         ) {
           return (
             <ChampionCard
-              key={`${item.id}-${championSelected}`}
+              key={`${item.id}-${championSelected}-${currentRole}-${currentDifficulty}`}
               champion={item.id}
             />
           );
@@ -203,7 +197,7 @@ export function ChampionCards({
         ) {
           return (
             <ChampionCard
-              key={`${item.id}-${championSelected}`}
+              key={`${item.id}-${championSelected}-${currentRole}-${currentDifficulty}`}
               champion={item.id}
             />
           );
