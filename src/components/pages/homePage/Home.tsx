@@ -20,7 +20,11 @@ interface SingleChampionData {
   difficulty: number;
 }
 
-export default function Home() {
+interface ChampionName {
+  getChampionName: (data: string) => void;
+}
+
+export default function Home({ getChampionName }: ChampionName) {
   const [championList, setChampionList] = useState<SingleChampionData[]>([]);
   const [championSelected, setChampionSelected] = useState<string>("");
   const [roleSelected, setRoleSelected] = useState<string>("");
@@ -82,6 +86,7 @@ export default function Home() {
         championSelected={championSelected}
         roleSelected={roleSelected}
         difficultySelected={difficultySelected}
+        getChampionName={getChampionName}
       />
       <Footer />
     </>

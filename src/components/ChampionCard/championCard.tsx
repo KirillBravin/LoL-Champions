@@ -18,6 +18,7 @@ interface ChampionCardsProps {
   championSelected: string;
   roleSelected: string;
   difficultySelected: number[];
+  getChampionName: (data: string) => void;
 }
 
 interface ChampionCardProps {
@@ -29,6 +30,7 @@ export function ChampionCards({
   championSelected,
   roleSelected,
   difficultySelected,
+  getChampionName,
 }: ChampionCardsProps) {
   const [currentRole, setCurrentRole] = useState<string>("");
   const [currentDifficulty, setCurrentDifficulty] = useState<string>("");
@@ -88,8 +90,8 @@ export function ChampionCards({
         return null;
       });
       return <div className="cards-style">{items}</div>;
-      //If role is selected + any champion
     }
+    //If role is selected + any champion
     if (currentRole !== "" && currentDifficulty === "") {
       const items = arr.map((item) => {
         if (
@@ -116,8 +118,8 @@ export function ChampionCards({
       } else {
         return <div className="cards-style">{items}</div>;
       }
-      //If difficulty is selected, but role is not
     }
+    //If difficulty is selected, but role is not
     if (currentRole === "" && currentDifficulty !== "") {
       const items = arr.map((item) => {
         if (
