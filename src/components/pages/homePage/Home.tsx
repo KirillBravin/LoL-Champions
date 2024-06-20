@@ -1,4 +1,3 @@
-import { SkinDiscounts } from "../../skinDiscounts/SkinDiscounts";
 import { ChampSearchForm } from "../../champSearchForm/ChampSearchForm";
 import { ChampionCards } from "../../ChampionCard/championCard";
 import { Footer } from "../../Footer/Footer";
@@ -59,7 +58,6 @@ export default function Home() {
 
   return (
     <>
-      {/* {<SkinDiscounts />} */}
       {<LeagueOfLegendsIntro />}
       <h1 className="title">
         <span className="animate__animated title__intro animate__fadeIn">

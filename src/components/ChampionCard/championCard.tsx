@@ -1,7 +1,5 @@
 import "./championCard.scss";
 import "animate.css";
-import { Spinner } from "../Spinner/Spinner";
-import { useLeagueService } from "../../Backend/LeagueService";
 import { useEffect, useState } from "react";
 
 interface SingleChampionData {
@@ -34,9 +32,6 @@ export function ChampionCards({
 }: ChampionCardsProps) {
   const [currentRole, setCurrentRole] = useState<string>("");
   const [currentDifficulty, setCurrentDifficulty] = useState<string>("");
-
-  const { loading } = useLeagueService();
-  const spinner = loading ? <Spinner /> : null;
 
   function roleCorrection(role: string) {
     if (role === "Assassins") {
@@ -83,9 +78,13 @@ export function ChampionCards({
     if (currentRole === "" && currentDifficulty === "") {
       const items = arr.map((item) => {
         if (item.name === championSelected || championSelected === "") {
+          console.log("Item.id: " + item.id);
+          console.log("ChampionSelected: " + championSelected);
           return (
             <ChampionCard
-              key={`${item.id}-${championSelected}`}
+              key={
+                championSelected === "" ? `${item.id}` : `${championSelected}`
+              }
               champion={item.id}
             />
           );
@@ -105,7 +104,9 @@ export function ChampionCards({
         ) {
           return (
             <ChampionCard
-              key={`${item.id}-${championSelected}`}
+              key={
+                championSelected === "" ? `${item.id}` : `${championSelected}`
+              }
               champion={item.id}
             />
           );
@@ -225,10 +226,7 @@ export function ChampionCards({
   return (
     <>
       <div className="champion-cards">
-        <div className="container">
-          {spinner}
-          {cards}
-        </div>
+        <div className="container">{cards}</div>
       </div>
     </>
   );
