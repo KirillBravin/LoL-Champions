@@ -6,7 +6,7 @@ import championIcon from "../../../assets/icons/champion-icon.svg";
 
 import { ChampionInfoDifficulty } from "../championInfoDifficulty/ChampionInfoDifficulty";
 
-export function ChampionOverview() {
+export function ChampionOverview({ champion }) {
   const [showMore, setShowMore] = useState(false);
 
   const backgroundStyle = {
@@ -45,7 +45,7 @@ export function ChampionOverview() {
           />
           {/* Short info of champion*/}
           <div className="headers">
-            <h1 className="headers__champion-name">Ahri</h1>
+            <h1 className="headers__champion-name">{champion.name}</h1>
             <h2 className="headers__champion-title">the Nine-Tailed Fox</h2>
           </div>
           <div className="championInfo__short-info">

@@ -62,6 +62,37 @@ interface AllChampionsBody {
   };
 }
 
+interface SingleChampionBody {
+  id: string;
+  name: string;
+  title: string;
+  skins: {
+    [name: string]: {
+      num: number;
+      name: string;
+    };
+  };
+  lore: string;
+  tags: {
+    [name: string]: string;
+  };
+  info: {
+    difficulty: number;
+  };
+  spells: {
+    [name: string]: {
+      id: string;
+      name: string;
+      description: string;
+    };
+  };
+  passive: {
+    name: string;
+    description: string;
+    full: string;
+  };
+}
+
 interface Champions {
   [key: string]: AllChampionsBody;
 }
@@ -93,8 +124,19 @@ export const useLeagueService = () => {
     }));
   }, [request]);
 
+  const getChampion = useCallback(
+    async (name: string): Promise<SingleChampionData> => {
+      const res: SingleChampionData = await request(
+        `http://localhost:5000/champion/${name}`
+      );
+      return res;
+    },
+    [request]
+  );
+
   return {
     getChampionLoading,
     getAllChampions,
+    getChampion,
   };
 };

@@ -51,7 +51,7 @@ export function ChampionAbilities() {
       return (
         <div className="icon-wrapper">
           <img
-            key={index}
+            key={`${item.name}-${index}`}
             onClick={() => {
               iconClicked(index);
             }}
