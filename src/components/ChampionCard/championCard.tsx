@@ -1,6 +1,7 @@
 import "./championCard.scss";
 import "animate.css";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface SingleChampionData {
   id: string;
@@ -18,11 +19,7 @@ interface ChampionCardsProps {
   championSelected: string;
   roleSelected: string;
   difficultySelected: number[];
-  getChampionName: (data: string) => void;
-}
-
-interface ChampionCardProps {
-  champion: string;
+  handleChampionName: (data: string) => void;
 }
 
 export function ChampionCards({
@@ -30,7 +27,7 @@ export function ChampionCards({
   championSelected,
   roleSelected,
   difficultySelected,
-  getChampionName,
+  handleChampionName,
 }: ChampionCardsProps) {
   const [currentRole, setCurrentRole] = useState<string>("");
   const [currentDifficulty, setCurrentDifficulty] = useState<string>("");
@@ -82,6 +79,7 @@ export function ChampionCards({
         if (item.name === championSelected || championSelected === "") {
           return (
             <ChampionCard
+              handleChampionName={handleChampionName}
               key={`${item.id}-${championSelected}-${currentRole}-${currentDifficulty}`}
               champion={item.id}
             />
@@ -102,6 +100,7 @@ export function ChampionCards({
         ) {
           return (
             <ChampionCard
+              handleChampionName={handleChampionName}
               key={`${item.id}-${championSelected}-${currentRole}-${currentDifficulty}`}
               champion={item.id}
             />
@@ -148,6 +147,7 @@ export function ChampionCards({
         ) {
           return (
             <ChampionCard
+              handleChampionName={handleChampionName}
               key={`${item.id}-${championSelected}-${currentRole}-${currentDifficulty}`}
               champion={item.id}
             />
@@ -199,6 +199,7 @@ export function ChampionCards({
         ) {
           return (
             <ChampionCard
+              handleChampionName={handleChampionName}
               key={`${item.id}-${championSelected}-${currentRole}-${currentDifficulty}`}
               champion={item.id}
             />
@@ -228,34 +229,49 @@ export function ChampionCards({
   );
 }
 
-function ChampionCard(championList: ChampionCardProps) {
-  let championId: string = championList.champion;
+interface ChampionCardProps {
+  champion: string;
+  handleChampionName: (data: string) => void;
+}
+
+function ChampionCard({ champion, handleChampionName }: ChampionCardProps) {
+  let championId: string = champion;
   let championName: string = championId;
+
+  const navigate = useNavigate();
+
+  const submitChampion = (championName: string) => {
+    handleChampionName(championName);
+    navigate(`/champion/${championName}`);
+  };
 
   if (championId === "Fiddlesticks") {
     championId = "FiddleSticks";
   }
-
   if (championName === "MonkeyKing") {
     championName = "Wukong";
   }
   if (championName === "Nunu") {
     championName = "Nunu & Willump";
   }
+
   return (
-    <>
-      <div className="champion-card animate__animated animate__fadeIn animate__slow">
-        <div className="champion-card__wrapper">
-          <img
-            src={`https://ddragon.leagueoflegends.com/cdn/img/champion/centered/${championId}_0.jpg`}
-            alt=""
-            className="champion-card__thumbnail"
-          />
-          <div className="champion-card__label">
-            <span>{championName}</span>
-          </div>
+    <div
+      className="champion-card animate__animated animate__fadeIn animate__slow"
+      onClick={() => {
+        submitChampion(championName);
+      }}
+    >
+      <div className="champion-card__wrapper">
+        <img
+          src={`https://ddragon.leagueoflegends.com/cdn/img/champion/centered/${championId}_0.jpg`}
+          alt=""
+          className="champion-card__thumbnail"
+        />
+        <div className="champion-card__label">
+          <span>{championName}</span>
         </div>
       </div>
-    </>
+    </div>
   );
 }

@@ -3,7 +3,12 @@ import { ChampionAbilities } from "../../ChampionInfo/ChampionInfoAbilities/Cham
 import { ChampionSkins } from "../../ChampionInfo/ChampionSkins/ChampionSkins";
 import { Footer } from "../../Footer/Footer";
 
-export default function SingleChampionLayout() {
+interface ChampionName {
+  champName: string;
+}
+
+export default function SingleChampionLayout({ champName }: ChampionName) {
+  console.log(champName);
   return (
     <>
       <ChampionOverview />
