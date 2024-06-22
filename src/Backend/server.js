@@ -8,7 +8,7 @@ app.use(cors());
 app.get("/champions", async (req, res) => {
   try {
     const response = await axios.get(
-      "https://ddragon.leagueoflegends.com/cdn/14.7.1/data/en_US/champion.json"
+      "https://ddragon.leagueoflegends.com/cdn/14.12.1/data/en_US/champion.json"
     );
     const championInfo = response.data.data;
     res.json(championInfo);
@@ -18,7 +18,7 @@ app.get("/champions", async (req, res) => {
   }
 });
 
-app.get("champion/:name", async (req, res) => {
+app.get("/champion/:name", async (req, res) => {
   const { name } = req.params;
   try {
     const response = await axios.get(

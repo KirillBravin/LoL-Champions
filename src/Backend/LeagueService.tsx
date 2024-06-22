@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import { useHttp } from "./http.hook";
 
+// Single Champion descr short
 interface SingleChampionData {
   id: string;
   name: string;
@@ -62,7 +63,9 @@ interface AllChampionsBody {
   };
 }
 
-interface SingleChampionBody {
+// Single champion description full
+
+interface SingleChampionDataLong {
   id: string;
   name: string;
   title: string;
@@ -89,7 +92,136 @@ interface SingleChampionBody {
   passive: {
     name: string;
     description: string;
+    image: {
+      full: string;
+    };
+  };
+}
+
+interface SingleChampionBody {
+  id: string;
+  key: string;
+  name: string;
+  title: string;
+  image: {
     full: string;
+    sprite: string;
+    group: string;
+    x: number;
+    y: number;
+    w: number;
+    h: number;
+  };
+  skins: {
+    [name: string]: {
+      id: string;
+      num: number;
+      name: string;
+      chromas: boolean;
+    };
+  };
+  lore: string;
+  blurb: string;
+  allytips: {
+    [name: string]: string;
+  };
+  enemytips: {
+    [name: string]: string;
+  };
+  tags: {
+    [name: string]: string;
+  };
+  partype: string;
+  info: {
+    attack: number;
+    defense: number;
+    magic: number;
+    difficulty: number;
+  };
+  stats: {
+    hp: number;
+    hpperlevel: number;
+    mp: number;
+    mpperlevel: number;
+    movespeed: number;
+    armor: number;
+    armorperlevel: number;
+    spellblock: number;
+    spellblockperlevel: number;
+    attackrange: number;
+    hpregen: number;
+    hpregenperlevel: number;
+    mpregen: number;
+    mpregenperlevel: number;
+    crit: number;
+    critperlevel: number;
+    attackdamage: number;
+    attackdamageperlevel: number;
+    attackspeedperlevel: number;
+    attackspeed: number;
+  };
+  spells: {
+    [name: string]: {
+      id: string;
+      name: string;
+      description: string;
+      tooltip: string;
+      leveltip: {
+        label: {
+          [name: string]: string;
+        };
+        effect: {
+          [name: string]: string;
+        };
+      };
+      maxrank: number;
+      cooldown: {
+        [name: string]: number;
+      };
+      cooldownBurn: string;
+      cost: {
+        [name: string]: number;
+      };
+      costBurn: string;
+      datavalues: object;
+      effect: {
+        [name: string]: number | null;
+      };
+      effectBurn: {
+        [name: string]: number | null;
+      };
+      vars: [];
+      costType: string;
+      maxammo: string;
+      range: {
+        [name: string]: number;
+      };
+      rangeBurn: number;
+      image: {
+        full: string;
+        sprite: string;
+        group: string;
+        x: number;
+        y: number;
+        w: number;
+        h: number;
+      };
+      resource: string;
+    };
+  };
+  passive: {
+    name: string;
+    description: string;
+    image: {
+      full: string;
+      sprite: string;
+      group: string;
+      x: number;
+      y: number;
+      w: number;
+      h: number;
+    };
+    recommend: [];
   };
 }
 
@@ -125,11 +257,21 @@ export const useLeagueService = () => {
   }, [request]);
 
   const getChampion = useCallback(
-    async (name: string): Promise<SingleChampionData> => {
-      const res: SingleChampionData = await request(
+    async (name: string): Promise<SingleChampionDataLong> => {
+      const res: SingleChampionBody = await request(
         `http://localhost:5000/champion/${name}`
       );
-      return res;
+      return Object.values(res).map((champ: SingleChampionBody) => ({
+        id: champ.id,
+        name: champ.name,
+        title: champ.title,
+        skins: champ.skins,
+        lore: champ.lore,
+        tags: champ.tags,
+        info: champ.info.difficulty,
+        spells: champ.spells,
+        passive: champ.passive,
+      }));
     },
     [request]
   );
