@@ -152,7 +152,7 @@ export default function SingleChampionLayout({ champName }: ChampionName) {
 
   const fetchChampion = useCallback(async () => {
     try {
-      const champData = await getChampion("Ahri");
+      const champData = await getChampion(champName);
       setChampion(champData);
     } catch (error) {
       console.log("Failed to fetch champion:", error);

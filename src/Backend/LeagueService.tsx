@@ -257,21 +257,11 @@ export const useLeagueService = () => {
   }, [request]);
 
   const getChampion = useCallback(
-    async (name: string): Promise<SingleChampionDataLong> => {
+    async (name: string): Promise<SingleChampionBody> => {
       const res: SingleChampionBody = await request(
         `http://localhost:5000/champion/${name}`
       );
-      return Object.values(res).map((champ: SingleChampionBody) => ({
-        id: champ.id,
-        name: champ.name,
-        title: champ.title,
-        skins: champ.skins,
-        lore: champ.lore,
-        tags: champ.tags,
-        info: champ.info.difficulty,
-        spells: champ.spells,
-        passive: champ.passive,
-      }));
+      return res;
     },
     [request]
   );
