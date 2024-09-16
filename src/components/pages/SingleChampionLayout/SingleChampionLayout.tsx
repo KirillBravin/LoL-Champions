@@ -4,6 +4,7 @@ import { ChampionAbilities } from "../../ChampionInfo/ChampionInfoAbilities/Cham
 import { ChampionSkins } from "../../ChampionInfo/ChampionSkins/ChampionSkins";
 import { Footer } from "../../Footer/Footer";
 import { useLeagueService } from "../../../Backend/LeagueService";
+import { useParams } from "react-router-dom";
 
 interface ChampionName {
   champName: string;
@@ -136,9 +137,10 @@ interface SingleChampionBody {
   };
 }
 
-export default function SingleChampionLayout({ champName }: ChampionName) {
+export default function SingleChampionLayout() {
   const [champion, setChampion] = useState<SingleChampionBody | null>(null);
   const { getChampion } = useLeagueService();
+  const { championName } = useParams();
 
   /*   useEffect(() => {
     const fetchChampion = async () => {
@@ -152,12 +154,14 @@ export default function SingleChampionLayout({ champName }: ChampionName) {
 
   const fetchChampion = useCallback(async () => {
     try {
-      const champData = await getChampion(champName);
-      setChampion(champData);
+      if (championName) {
+        const champData = await getChampion(championName);
+        setChampion(champData);
+      }
     } catch (error) {
       console.log("Failed to fetch champion:", error);
     }
-  }, [getChampion]);
+  }, [getChampion, championName]);
 
   useEffect(() => {
     fetchChampion();

@@ -19,7 +19,6 @@ interface ChampionCardsProps {
   championSelected: string;
   roleSelected: string;
   difficultySelected: number[];
-  handleChampionName: (data: string) => void;
 }
 
 export function ChampionCards({
@@ -27,7 +26,6 @@ export function ChampionCards({
   championSelected,
   roleSelected,
   difficultySelected,
-  handleChampionName,
 }: ChampionCardsProps) {
   const [currentRole, setCurrentRole] = useState<string>("");
   const [currentDifficulty, setCurrentDifficulty] = useState<string>("");
@@ -79,7 +77,6 @@ export function ChampionCards({
         if (item.name === championSelected || championSelected === "") {
           return (
             <ChampionCard
-              handleChampionName={handleChampionName}
               key={`${item.id}-${championSelected}-${currentRole}-${currentDifficulty}`}
               champion={item.id}
             />
@@ -100,7 +97,6 @@ export function ChampionCards({
         ) {
           return (
             <ChampionCard
-              handleChampionName={handleChampionName}
               key={`${item.id}-${championSelected}-${currentRole}-${currentDifficulty}`}
               champion={item.id}
             />
@@ -147,7 +143,6 @@ export function ChampionCards({
         ) {
           return (
             <ChampionCard
-              handleChampionName={handleChampionName}
               key={`${item.id}-${championSelected}-${currentRole}-${currentDifficulty}`}
               champion={item.id}
             />
@@ -199,7 +194,6 @@ export function ChampionCards({
         ) {
           return (
             <ChampionCard
-              handleChampionName={handleChampionName}
               key={`${item.id}-${championSelected}-${currentRole}-${currentDifficulty}`}
               champion={item.id}
             />
@@ -231,17 +225,15 @@ export function ChampionCards({
 
 interface ChampionCardProps {
   champion: string;
-  handleChampionName: (data: string) => void;
 }
 
-function ChampionCard({ champion, handleChampionName }: ChampionCardProps) {
+function ChampionCard({ champion }: ChampionCardProps) {
   let championId: string = champion;
   let championName: string = championId;
 
   const navigate = useNavigate();
 
   const submitChampion = (championName: string) => {
-    handleChampionName(championName);
     navigate(`/champion/${championName}`);
   };
 

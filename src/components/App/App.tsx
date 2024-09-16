@@ -9,18 +9,6 @@ const SingleChampionLayout = lazy(
 const Page404 = lazy(() => import("../pages/Page404/Page404"));
 
 function App() {
-  const [champName, setChampName] = useState<string>("");
-
-  useEffect(() => {
-    console.log(champName);
-  }, [champName]);
-
-  function handleChampionName(data: string): void {
-    setChampName(data);
-  }
-
-  console.log(champName);
-
   return (
     <div className="App">
       <Routes>
@@ -28,15 +16,15 @@ function App() {
           path="/"
           element={
             <Suspense fallback={<Spinner />}>
-              <Home handleChampionName={handleChampionName} />
+              <Home />
             </Suspense>
           }
         />
         <Route
-          path={`/champion/:champName`}
+          path={`/champion/:championName`}
           element={
             <Suspense fallback={<Spinner />}>
-              <SingleChampionLayout champName={champName} />
+              <SingleChampionLayout />
             </Suspense>
           }
         />
