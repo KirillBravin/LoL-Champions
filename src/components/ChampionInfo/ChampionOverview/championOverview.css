@@ -156,6 +156,7 @@
   color: #d0a85c;
   cursor: default;
   margin-bottom: 0;
+  text-transform: uppercase;
 }
 .championInfo__description-wrapper {
   display: flex;

@@ -6,10 +6,6 @@ import { Footer } from "../../Footer/Footer";
 import { useLeagueService } from "../../../Backend/LeagueService";
 import { useParams } from "react-router-dom";
 
-interface ChampionName {
-  champName: string;
-}
-
 interface SingleChampionBody {
   id: string;
   key: string;
@@ -142,16 +138,6 @@ export default function SingleChampionLayout() {
   const { getChampion } = useLeagueService();
   const { championName } = useParams();
 
-  /*   useEffect(() => {
-    const fetchChampion = async () => {
-      const champData = await getChampion("Ahri");
-      console.log(champData);
-      setChampion(champData);
-    };
-
-    fetchChampion();
-  }, [champName, getChampion]); */
-
   const fetchChampion = useCallback(async () => {
     try {
       if (championName) {
@@ -167,12 +153,10 @@ export default function SingleChampionLayout() {
     fetchChampion();
   }, [fetchChampion]);
 
-  console.log(champion);
-
   return (
     <>
-      <ChampionOverview />
-      <ChampionAbilities />
+      <ChampionOverview champion={champion} />
+      <ChampionAbilities champion={champion} />
       <ChampionSkins />
       <Footer />
     </>

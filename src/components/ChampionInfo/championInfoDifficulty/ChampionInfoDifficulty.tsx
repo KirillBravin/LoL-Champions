@@ -6,11 +6,11 @@ interface difficultyObj {
   render: () => JSX.Element;
 }
 
-interface ChampionDifficultyProps {
-  getDifficulty: number;
-}
-
-export function ChampionInfoDifficulty() {
+export function ChampionInfoDifficulty({
+  difficultyId,
+}: {
+  difficultyId: number | undefined;
+}) {
   const difficultyObj: difficultyObj[] = [
     {
       id: 1,
@@ -53,5 +53,5 @@ export function ChampionInfoDifficulty() {
     },
   ];
 
-  return difficultyObj[0].render();
+  return difficultyObj[difficultyId].render();
 }
