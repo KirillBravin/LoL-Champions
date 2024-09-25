@@ -1,4 +1,5 @@
 import "./ChampionInfoAbilityDescriptions.scss";
+import { useChampionInfo } from "../../../services/championInfo";
 
 interface SingleChampionBody {
   id: string;
@@ -129,50 +130,20 @@ interface SingleChampionBody {
 
 type ChampionInfoAbilityDescriptionsProps = {
   abilitySelected: string | null;
-  champion: SingleChampionBody | null; // Make sure the type is correct
+  champion: SingleChampionBody | null;
 };
 
 export function ChampionInfoAbilityDescriptions({
   abilitySelected,
   champion,
 }: ChampionInfoAbilityDescriptionsProps) {
+  const championInfo = useChampionInfo(champion?.name ?? "");
+
   if (!champion) {
     return null;
   }
-  const { spells, passive } = champion;
 
-  const description = [
-    {
-      name: "Essence Theft",
-      type: "Passive",
-      descr:
-        "After killing 9 minions or monsters, Ahri heals. After taking down an enemy champion, Ahri heals for a greater amount.",
-    },
-    {
-      name: "Orb of Deception",
-      type: "Q",
-      descr:
-        "Ahri sends out and pulls back her orb, dealing magic damage on the way out and true damage on the way back.",
-    },
-    {
-      name: "Fox-Fire",
-      type: "W",
-      descr:
-        "Ahri gains a brief burst of Move Speed and releases three fox-fires, that lock onto and attack nearby enemies.",
-    },
-    {
-      name: "Charm",
-      type: "E",
-      descr:
-        "Ahri blows a kiss that damages and charms an enemy it encounters, instantly stopping movement abilities and causing them to walk harmlessly towards her.",
-    },
-    {
-      name: "Spirit Rush",
-      type: "R",
-      descr:
-        "Ahri dashes forward and fires essence bolts, damaging nearby enemies. Spirit Rush can be cast up to three times before going on cooldown, and gains additional recasts when taking down enemy champions.",
-    },
-  ];
+  const { spells, passive } = champion;
 
   const abilityDescriptionRender = function (abilitySelected: string | null) {
     if (abilitySelected === "Passive") {
@@ -185,7 +156,7 @@ export function ChampionInfoAbilityDescriptions({
             {passive.name}
           </div>
           <div className="championAbilities-style__description-ability">
-            {passive.description}
+            {championInfo?.abilityPassiveDescription}
           </div>
         </>
       );
