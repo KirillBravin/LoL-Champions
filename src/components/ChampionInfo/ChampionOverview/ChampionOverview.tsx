@@ -8,15 +8,144 @@ import championIcon from "../../../assets/icons/champion-icon.svg";
 
 import { ChampionInfoDifficulty } from "../championInfoDifficulty/ChampionInfoDifficulty";
 
-export function ChampionOverview({ champion }) {
+interface SingleChampionBody {
+  id: string;
+  key: string;
+  name: string;
+  title: string;
+  image: {
+    full: string;
+    sprite: string;
+    group: string;
+    x: number;
+    y: number;
+    w: number;
+    h: number;
+  };
+  skins: {
+    [name: string]: {
+      id: string;
+      num: number;
+      name: string;
+      chromas: boolean;
+    };
+  };
+  lore: string;
+  blurb: string;
+  allytips: {
+    [name: string]: string;
+  };
+  enemytips: {
+    [name: string]: string;
+  };
+  tags: {
+    [name: string]: string;
+  };
+  partype: string;
+  info: {
+    attack: number;
+    defense: number;
+    magic: number;
+    difficulty: number;
+  };
+  stats: {
+    hp: number;
+    hpperlevel: number;
+    mp: number;
+    mpperlevel: number;
+    movespeed: number;
+    armor: number;
+    armorperlevel: number;
+    spellblock: number;
+    spellblockperlevel: number;
+    attackrange: number;
+    hpregen: number;
+    hpregenperlevel: number;
+    mpregen: number;
+    mpregenperlevel: number;
+    crit: number;
+    critperlevel: number;
+    attackdamage: number;
+    attackdamageperlevel: number;
+    attackspeedperlevel: number;
+    attackspeed: number;
+  };
+  spells: {
+    [name: string]: {
+      id: string;
+      name: string;
+      description: string;
+      tooltip: string;
+      leveltip: {
+        label: {
+          [name: string]: string;
+        };
+        effect: {
+          [name: string]: string;
+        };
+      };
+      maxrank: number;
+      cooldown: {
+        [name: string]: number;
+      };
+      cooldownBurn: string;
+      cost: {
+        [name: string]: number;
+      };
+      costBurn: string;
+      datavalues: object;
+      effect: {
+        [name: string]: number | null;
+      };
+      effectBurn: {
+        [name: string]: number | null;
+      };
+      vars: [];
+      costType: string;
+      maxammo: string;
+      range: {
+        [name: string]: number;
+      };
+      rangeBurn: number;
+      image: {
+        full: string;
+        sprite: string;
+        group: string;
+        x: number;
+        y: number;
+        w: number;
+        h: number;
+      };
+      resource: string;
+    };
+  };
+  passive: {
+    name: string;
+    description: string;
+    image: {
+      full: string;
+      sprite: string;
+      group: string;
+      x: number;
+      y: number;
+      w: number;
+      h: number;
+    };
+    recommend: [];
+  };
+}
+
+export function ChampionOverview({
+  champion,
+}: {
+  champion: SingleChampionBody | null;
+}) {
   const [showMore, setShowMore] = useState(false);
-  const championInfo = useChampionInfo(champion?.name);
+  const championInfo = useChampionInfo(champion?.name ?? "");
 
   if (!champion) {
     return <Spinner />;
   }
-
-  console.log(champion);
 
   const backgroundStyle = {
     background: `url(${championInfo?.background}) no-repeat center center`,
@@ -68,7 +197,7 @@ export function ChampionOverview({ champion }) {
               </div>
               <div className="championInfo__difficulties">
                 <ChampionInfoDifficulty
-                  difficultyId={championInfo?.difficultyId}
+                  difficultyId={championInfo?.difficultyId ?? 404}
                 />
                 <p className="championInfo__difficulties__general">
                   Difficulty

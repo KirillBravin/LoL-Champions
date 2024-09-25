@@ -246,7 +246,10 @@ export function ChampionAbilities({ champion }: ChampionAbilitiesProps) {
             />
           </div>
           <div className="championAbilities-style__abilities-preview">
-            <ChampionAbilityPreview abilitySelected={abilitySelected} />
+            <ChampionAbilityPreview
+              abilitySelected={abilitySelected}
+              champion={champion}
+            />
           </div>
         </div>
       </div>

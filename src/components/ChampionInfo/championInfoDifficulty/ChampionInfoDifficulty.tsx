@@ -53,5 +53,9 @@ export function ChampionInfoDifficulty({
     },
   ];
 
-  return difficultyObj[difficultyId].render();
+  if (difficultyId === 404) {
+    return null;
+  } else {
+    return difficultyObj[difficultyId].render();
+  }
 }

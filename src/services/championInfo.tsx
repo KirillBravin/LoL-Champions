@@ -13,6 +13,43 @@ export const useChampionInfo = (championName: string) => {
         difficultyId: 1,
         abilityPassiveDescription:
           "After killing 9 minions or monsters, Ahri heals. After taking down an enemy champion, Ahri heals for a greater amount.",
+        videoPaths: [
+          {
+            name: "Passive",
+            path_1:
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0103/ability_0103_P1.mp4",
+            path_2:
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0103/ability_0103_P1.webm",
+          },
+          {
+            name: "SpellQ",
+            path_1:
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0103/ability_0103_Q1.mp4",
+            path_2:
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0103/ability_0103_P1.webm",
+          },
+          {
+            name: "SpellW",
+            path_1:
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0103/ability_0103_W1.mp4",
+            path_2:
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0103/ability_0103_P1.webm",
+          },
+          {
+            name: "SpellE",
+            path_1:
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0103/ability_0103_E1.mp4",
+            path_2:
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0103/ability_0103_P1.webm",
+          },
+          {
+            name: "SpellR",
+            path_1:
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0103/ability_0103_R1.mp4",
+            path_2:
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0103/ability_0103_P1.webm",
+          },
+        ],
       };
     case "Akali":
       return {
