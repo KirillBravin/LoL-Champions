@@ -10,7 +10,138 @@ interface Abilities {
   name: string;
 }
 
-export function ChampionAbilities({ champion }) {
+type ChampionAbilitiesProps = {
+  champion: SingleChampionBody | null; // Add proper typing
+};
+
+interface SingleChampionBody {
+  id: string;
+  key: string;
+  name: string;
+  title: string;
+  image: {
+    full: string;
+    sprite: string;
+    group: string;
+    x: number;
+    y: number;
+    w: number;
+    h: number;
+  };
+  skins: {
+    [name: string]: {
+      id: string;
+      num: number;
+      name: string;
+      chromas: boolean;
+    };
+  };
+  lore: string;
+  blurb: string;
+  allytips: {
+    [name: string]: string;
+  };
+  enemytips: {
+    [name: string]: string;
+  };
+  tags: {
+    [name: string]: string;
+  };
+  partype: string;
+  info: {
+    attack: number;
+    defense: number;
+    magic: number;
+    difficulty: number;
+  };
+  stats: {
+    hp: number;
+    hpperlevel: number;
+    mp: number;
+    mpperlevel: number;
+    movespeed: number;
+    armor: number;
+    armorperlevel: number;
+    spellblock: number;
+    spellblockperlevel: number;
+    attackrange: number;
+    hpregen: number;
+    hpregenperlevel: number;
+    mpregen: number;
+    mpregenperlevel: number;
+    crit: number;
+    critperlevel: number;
+    attackdamage: number;
+    attackdamageperlevel: number;
+    attackspeedperlevel: number;
+    attackspeed: number;
+  };
+  spells: {
+    [name: string]: {
+      id: string;
+      name: string;
+      description: string;
+      tooltip: string;
+      leveltip: {
+        label: {
+          [name: string]: string;
+        };
+        effect: {
+          [name: string]: string;
+        };
+      };
+      maxrank: number;
+      cooldown: {
+        [name: string]: number;
+      };
+      cooldownBurn: string;
+      cost: {
+        [name: string]: number;
+      };
+      costBurn: string;
+      datavalues: object;
+      effect: {
+        [name: string]: number | null;
+      };
+      effectBurn: {
+        [name: string]: number | null;
+      };
+      vars: [];
+      costType: string;
+      maxammo: string;
+      range: {
+        [name: string]: number;
+      };
+      rangeBurn: number;
+      image: {
+        full: string;
+        sprite: string;
+        group: string;
+        x: number;
+        y: number;
+        w: number;
+        h: number;
+      };
+      resource: string;
+    };
+  };
+  passive: {
+    name: string;
+    description: string;
+    image: {
+      full: string;
+      sprite: string;
+      group: string;
+      x: number;
+      y: number;
+      w: number;
+      h: number;
+    };
+    recommend: [];
+  };
+}
+
+export function ChampionAbilities({ champion }: ChampionAbilitiesProps) {
   const [iconIsActive, setIconIsActive] = useState<number | null>(null);
   const [abilitySelected, setAbilitySelected] = useState<string | null>(null);
 
@@ -18,27 +149,25 @@ export function ChampionAbilities({ champion }) {
     return <Spinner />;
   }
 
+  const abilityMap: { [key: number]: string } = {
+    0: "Passive",
+    1: "SpellQ",
+    2: "SpellW",
+    3: "SpellE",
+    4: "SpellR",
+  };
+
   const iconClicked = (i: number) => {
     setIconIsActive(i === iconIsActive ? null : i);
-    if (i === 0) {
-      setAbilitySelected("Passive");
-    } else if (i === 1) {
-      setAbilitySelected("SpellQ");
-    } else if (i === 2) {
-      setAbilitySelected("SpellW");
-    } else if (i === 3) {
-      setAbilitySelected("SpellE");
-    } else if (i === 4) {
-      setAbilitySelected("SpellR");
-    }
+    setAbilitySelected(abilityMap[i] || null);
   };
 
   const abilities: Abilities[] = [
-    { abilityType: "passive", name: "Ahri_SoulEater2" },
-    { abilityType: "spell", name: "AhriQ" },
-    { abilityType: "spell", name: "AhriW" },
-    { abilityType: "spell", name: "AhriE" },
-    { abilityType: "spell", name: "AhriR" },
+    { abilityType: "passive", name: champion?.passive?.image?.full },
+    { abilityType: "spell", name: champion?.spells[0]?.image?.full },
+    { abilityType: "spell", name: champion?.spells[1]?.image?.full },
+    { abilityType: "spell", name: champion?.spells[2]?.image?.full },
+    { abilityType: "spell", name: champion?.spells[3]?.image?.full },
   ];
 
   const getImagePath = (ability: Abilities) => {
@@ -65,7 +194,7 @@ export function ChampionAbilities({ champion }) {
             }`}
             src={`https://ddragon.leagueoflegends.com/cdn/14.10.1/img/${getImagePath(
               item
-            )}/${item.name}.png`}
+            )}/${item.name}`}
             alt={item.name}
             draggable="false"
             onDragStart={handleDrag}

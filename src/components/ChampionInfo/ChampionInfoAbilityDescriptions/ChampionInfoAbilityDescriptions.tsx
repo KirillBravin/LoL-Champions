@@ -145,96 +145,50 @@ export function ChampionInfoAbilityDescriptions({
 
   const { spells, passive } = champion;
 
-  const abilityDescriptionRender = function (abilitySelected: string | null) {
-    if (abilitySelected === "Passive") {
-      return (
-        <>
-          <div className="championAbilities-style__description-ability-type">
-            {passive.image.group}
-          </div>
-          <div className="championAbilities-style__description-ability-name">
-            {passive.name}
-          </div>
-          <div className="championAbilities-style__description-ability">
-            {championInfo?.abilityPassiveDescription}
-          </div>
-        </>
-      );
-    } else if (abilitySelected === "SpellQ") {
-      return (
-        <>
-          <div className="championAbilities-style__description-ability-type">
-            Q
-          </div>
-          <div className="championAbilities-style__description-ability-name">
-            {spells[0].name}
-          </div>
-          <div className="championAbilities-style__description-ability">
-            {spells[0].description}
-          </div>
-        </>
-      );
-    } else if (abilitySelected === "SpellW") {
-      return (
-        <>
-          <div className="championAbilities-style__description-ability-type">
-            W
-          </div>
-          <div className="championAbilities-style__description-ability-name">
-            {spells[1].name}
-          </div>
-          <div className="championAbilities-style__description-ability">
-            {spells[1].description}
-          </div>
-        </>
-      );
-    } else if (abilitySelected === "SpellE") {
-      return (
-        <>
-          <div className="championAbilities-style__description-ability-type">
-            E
-          </div>
-          <div className="championAbilities-style__description-ability-name">
-            {spells[2].name}
-          </div>
-          <div className="championAbilities-style__description-ability">
-            {spells[2].description}
-          </div>
-        </>
-      );
-    } else if (abilitySelected === "SpellR") {
-      return (
-        <>
-          <div className="championAbilities-style__description-ability-type">
-            R
-          </div>
-          <div className="championAbilities-style__description-ability-name">
-            {spells[3].name}
-          </div>
-          <div className="championAbilities-style__description-ability">
-            {spells[3].description}
-          </div>
-        </>
-      );
-    } else
-      return (
-        <>
-          <div className="championAbilities-style__description-ability-type">
-            Q
-          </div>
-          <div className="championAbilities-style__description-ability-name">
-            {spells[0].name}
-          </div>
-          <div className="championAbilities-style__description-ability">
-            {spells[0].description}
-          </div>
-        </>
-      );
+  const abilityMap: {
+    [key: string]: { type: string; name: string; description: string };
+  } = {
+    Passive: {
+      type: passive.image.group,
+      name: passive.name,
+      description: championInfo?.abilityPassiveDescription ?? "",
+    },
+    SpellQ: {
+      type: "Q",
+      name: spells[0].name,
+      description: spells[0].description,
+    },
+    SpellW: {
+      type: "W",
+      name: spells[1].name,
+      description: spells[1].description,
+    },
+    SpellE: {
+      type: "E",
+      name: spells[2].name,
+      description: spells[2].description,
+    },
+    SpellR: {
+      type: "R",
+      name: spells[3].name,
+      description: spells[3].description,
+    },
   };
+
+  // Default to "SpellQ" if no ability is selected
+  const selectedAbility = abilityMap[abilitySelected || "SpellQ"];
 
   return (
     <div className="championAbilities-style__description-wrapper">
-      {abilityDescriptionRender(abilitySelected)}
+      <div className="championAbilities-style__description-ability-type">
+        {selectedAbility.type}
+      </div>
+      <div className="championAbilities-style__description-ability-name">
+        {selectedAbility.name}
+      </div>
+      <div className="championAbilities-style__description-ability">
+        {selectedAbility.description}
+      </div>
     </div>
   );
 }

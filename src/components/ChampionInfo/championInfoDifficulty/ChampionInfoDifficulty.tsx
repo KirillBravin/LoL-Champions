@@ -9,7 +9,7 @@ interface difficultyObj {
 export function ChampionInfoDifficulty({
   difficultyId,
 }: {
-  difficultyId: number | undefined;
+  difficultyId: number;
 }) {
   const difficultyObj: difficultyObj[] = [
     {
