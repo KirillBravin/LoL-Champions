@@ -3,15 +3,20 @@ import "./championInfoAbilities.scss";
 
 import { ChampionInfoAbilityDescriptions } from "../ChampionInfoAbilityDescriptions/ChampionInfoAbilityDescriptions";
 import { ChampionAbilityPreview } from "../ChampionAbilityPreview/ChampionAbilityPreview";
+import { Spinner } from "../../Spinner/Spinner";
 
 interface Abilities {
   abilityType: string;
   name: string;
 }
 
-export function ChampionAbilities() {
+export function ChampionAbilities({ champion }) {
   const [iconIsActive, setIconIsActive] = useState<number | null>(null);
   const [abilitySelected, setAbilitySelected] = useState<string | null>(null);
+
+  if (!champion) {
+    return <Spinner />;
+  }
 
   const iconClicked = (i: number) => {
     setIconIsActive(i === iconIsActive ? null : i);
@@ -108,6 +113,7 @@ export function ChampionAbilities() {
             <div className="championAbilities-style__diving-line"></div>
             <ChampionInfoAbilityDescriptions
               abilitySelected={abilitySelected}
+              champion={champion}
             />
           </div>
           <div className="championAbilities-style__abilities-preview">

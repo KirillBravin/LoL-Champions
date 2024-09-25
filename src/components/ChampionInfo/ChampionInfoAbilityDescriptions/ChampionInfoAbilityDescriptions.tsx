@@ -1,12 +1,146 @@
 import "./ChampionInfoAbilityDescriptions.scss";
 
-interface AbilitySelected {
-  abilitySelected: string | null;
+interface SingleChampionBody {
+  id: string;
+  key: string;
+  name: string;
+  title: string;
+  image: {
+    full: string;
+    sprite: string;
+    group: string;
+    x: number;
+    y: number;
+    w: number;
+    h: number;
+  };
+  skins: {
+    [name: string]: {
+      id: string;
+      num: number;
+      name: string;
+      chromas: boolean;
+    };
+  };
+  lore: string;
+  blurb: string;
+  allytips: {
+    [name: string]: string;
+  };
+  enemytips: {
+    [name: string]: string;
+  };
+  tags: {
+    [name: string]: string;
+  };
+  partype: string;
+  info: {
+    attack: number;
+    defense: number;
+    magic: number;
+    difficulty: number;
+  };
+  stats: {
+    hp: number;
+    hpperlevel: number;
+    mp: number;
+    mpperlevel: number;
+    movespeed: number;
+    armor: number;
+    armorperlevel: number;
+    spellblock: number;
+    spellblockperlevel: number;
+    attackrange: number;
+    hpregen: number;
+    hpregenperlevel: number;
+    mpregen: number;
+    mpregenperlevel: number;
+    crit: number;
+    critperlevel: number;
+    attackdamage: number;
+    attackdamageperlevel: number;
+    attackspeedperlevel: number;
+    attackspeed: number;
+  };
+  spells: {
+    [name: string]: {
+      id: string;
+      name: string;
+      description: string;
+      tooltip: string;
+      leveltip: {
+        label: {
+          [name: string]: string;
+        };
+        effect: {
+          [name: string]: string;
+        };
+      };
+      maxrank: number;
+      cooldown: {
+        [name: string]: number;
+      };
+      cooldownBurn: string;
+      cost: {
+        [name: string]: number;
+      };
+      costBurn: string;
+      datavalues: object;
+      effect: {
+        [name: string]: number | null;
+      };
+      effectBurn: {
+        [name: string]: number | null;
+      };
+      vars: [];
+      costType: string;
+      maxammo: string;
+      range: {
+        [name: string]: number;
+      };
+      rangeBurn: number;
+      image: {
+        full: string;
+        sprite: string;
+        group: string;
+        x: number;
+        y: number;
+        w: number;
+        h: number;
+      };
+      resource: string;
+    };
+  };
+  passive: {
+    name: string;
+    description: string;
+    image: {
+      full: string;
+      sprite: string;
+      group: string;
+      x: number;
+      y: number;
+      w: number;
+      h: number;
+    };
+    recommend: [];
+  };
 }
+
+type ChampionInfoAbilityDescriptionsProps = {
+  abilitySelected: string | null;
+  champion: SingleChampionBody | null; // Make sure the type is correct
+};
 
 export function ChampionInfoAbilityDescriptions({
   abilitySelected,
-}: AbilitySelected) {
+  champion,
+}: ChampionInfoAbilityDescriptionsProps) {
+  if (!champion) {
+    return null;
+  }
+  const { spells, passive } = champion;
+
   const description = [
     {
       name: "Essence Theft",
@@ -45,13 +179,13 @@ export function ChampionInfoAbilityDescriptions({
       return (
         <>
           <div className="championAbilities-style__description-ability-type">
-            {description[0].type}
+            {passive.image.group}
           </div>
           <div className="championAbilities-style__description-ability-name">
-            {description[0].name}
+            {passive.name}
           </div>
           <div className="championAbilities-style__description-ability">
-            {description[0].descr}
+            {passive.description}
           </div>
         </>
       );
@@ -59,13 +193,13 @@ export function ChampionInfoAbilityDescriptions({
       return (
         <>
           <div className="championAbilities-style__description-ability-type">
-            {description[1].type}
+            Q
           </div>
           <div className="championAbilities-style__description-ability-name">
-            {description[1].name}
+            {spells[0].name}
           </div>
           <div className="championAbilities-style__description-ability">
-            {description[1].descr}
+            {spells[0].description}
           </div>
         </>
       );
@@ -73,13 +207,13 @@ export function ChampionInfoAbilityDescriptions({
       return (
         <>
           <div className="championAbilities-style__description-ability-type">
-            {description[2].type}
+            W
           </div>
           <div className="championAbilities-style__description-ability-name">
-            {description[2].name}
+            {spells[1].name}
           </div>
           <div className="championAbilities-style__description-ability">
-            {description[2].descr}
+            {spells[1].description}
           </div>
         </>
       );
@@ -87,13 +221,13 @@ export function ChampionInfoAbilityDescriptions({
       return (
         <>
           <div className="championAbilities-style__description-ability-type">
-            {description[3].type}
+            E
           </div>
           <div className="championAbilities-style__description-ability-name">
-            {description[3].name}
+            {spells[2].name}
           </div>
           <div className="championAbilities-style__description-ability">
-            {description[3].descr}
+            {spells[2].description}
           </div>
         </>
       );
@@ -101,13 +235,13 @@ export function ChampionInfoAbilityDescriptions({
       return (
         <>
           <div className="championAbilities-style__description-ability-type">
-            {description[4].type}
+            R
           </div>
           <div className="championAbilities-style__description-ability-name">
-            {description[4].name}
+            {spells[3].name}
           </div>
           <div className="championAbilities-style__description-ability">
-            {description[4].descr}
+            {spells[3].description}
           </div>
         </>
       );
@@ -115,13 +249,13 @@ export function ChampionInfoAbilityDescriptions({
       return (
         <>
           <div className="championAbilities-style__description-ability-type">
-            {description[0].type}
+            Q
           </div>
           <div className="championAbilities-style__description-ability-name">
-            {description[0].name}
+            {spells[0].name}
           </div>
           <div className="championAbilities-style__description-ability">
-            {description[0].descr}
+            {spells[0].description}
           </div>
         </>
       );
