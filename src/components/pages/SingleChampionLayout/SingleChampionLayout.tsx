@@ -157,7 +157,7 @@ export default function SingleChampionLayout() {
     <>
       <ChampionOverview champion={champion} />
       <ChampionAbilities champion={champion} />
-      <ChampionSkins />
+      <ChampionSkins champion={champion} />
       <Footer />
     </>
   );

@@ -50,6 +50,28 @@ export const useChampionInfo = (championName: string) => {
               "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0103/ability_0103_P1.webm",
           },
         ],
+        skinPath: [
+          "Ahri_0.jpg",
+          "Ahri_1.jpg",
+          "Ahri_2.jpg",
+          "Ahri_3.jpg",
+          "Ahri_4.jpg",
+          "Ahri_5.jpg",
+          "Ahri_6.jpg",
+          "Ahri_7.jpg",
+          "Ahri_14.jpg",
+          "Ahri_15.jpg",
+          "Ahri_16.jpg",
+          "Ahri_17.jpg",
+          "Ahri_27.jpg",
+          "Ahri_28.jpg",
+          "Ahri_42.jpg",
+          "Ahri_65.jpg",
+          "Ahri_66.jpg",
+          "Ahri_76.jpg",
+          "Ahri_85.jpg",
+          "Ahri_86.jpg",
+        ],
       };
     case "Akali":
       return {

@@ -176,7 +176,7 @@ export function ChampionInfoAbilityDescriptions({
   };
 
   // Default to "SpellQ" if no ability is selected
-  const selectedAbility = abilityMap[abilitySelected || "SpellQ"];
+  const selectedAbility = abilityMap[abilitySelected || "Passive"];
 
   return (
     <div className="championAbilities-style__description-wrapper">
