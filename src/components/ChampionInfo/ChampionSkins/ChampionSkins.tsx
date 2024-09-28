@@ -2,7 +2,7 @@ import "@splidejs/react-splide/css";
 import "./ChampionSkins.scss";
 
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useChampionInfo } from "../../../services/championInfo";
 
 interface Skin {
@@ -26,7 +26,14 @@ interface SingleChampionBody {
     w: number;
     h: number;
   };
-  skins: Skin[];
+  skins: {
+    [name: string]: {
+      id: string;
+      num: number;
+      name: string;
+      chromas: boolean;
+    };
+  };
   lore: string;
   blurb: string;
   allytips: {
@@ -155,12 +162,18 @@ export function ChampionSkins({
     champion?.name ?? ""
   ) as ChampionInfo | null;
   const [skinSelected, setSkinSelected] = useState<string>("");
+  const isInitialRender = useRef(true);
 
   useEffect(() => {
-    if (championInfo?.skinPath && championInfo.skinPath.length > 0) {
+    if (
+      isInitialRender.current &&
+      championInfo?.skinPath &&
+      championInfo.skinPath.length > 0
+    ) {
       setSkinSelected(championInfo.skinPath[0]);
+      isInitialRender.current = false; // Mark as not the first render anymore
     }
-  }, []);
+  }, [championInfo]);
 
   if (!champion || !championInfo) {
     return null;
@@ -172,7 +185,7 @@ export function ChampionSkins({
     });
   };
 
-  const champSkinNames = champSkinsMap(champion?.skins);
+  const champSkinNames = champSkinsMap(Object.values(champion?.skins ?? {}));
 
   const skinsCounter = (skinNames: string[]) => {
     const items = skinNames.map((_, i) => {

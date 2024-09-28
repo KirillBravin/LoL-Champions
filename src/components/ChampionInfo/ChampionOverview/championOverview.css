@@ -9,7 +9,7 @@
   flex-direction: column;
   align-items: center;
   left: 51rem;
-  top: 38rem;
+  top: 34rem;
   font-family: BeaufortforLOL-BoldItalic, sans-serif;
   text-transform: uppercase;
 }
@@ -124,8 +124,6 @@
   left: 3rem;
 }
 .championInfo__roles__icon {
-  height: 32px;
-  width: 32px;
   filter: invert(74%) sepia(18%) saturate(845%) hue-rotate(2deg) brightness(92%) contrast(86%);
 }
 .championInfo__roles__general {

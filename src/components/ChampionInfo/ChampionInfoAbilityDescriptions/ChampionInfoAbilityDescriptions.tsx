@@ -1,5 +1,4 @@
 import "./ChampionInfoAbilityDescriptions.scss";
-import { useChampionInfo } from "../../../services/championInfo";
 
 interface SingleChampionBody {
   id: string;
@@ -137,13 +136,17 @@ export function ChampionInfoAbilityDescriptions({
   abilitySelected,
   champion,
 }: ChampionInfoAbilityDescriptionsProps) {
-  const championInfo = useChampionInfo(champion?.name ?? "");
-
   if (!champion) {
     return null;
   }
 
   const { spells, passive } = champion;
+
+  const filteredPassive = passive.description.replace(/<[^>]*>/g, "");
+  const filteredSpellQ = spells[0].description.replace(/<[^>]*>/g, "");
+  const filteredSpellW = spells[1].description.replace(/<[^>]*>/g, "");
+  const filteredSpellE = spells[2].description.replace(/<[^>]*>/g, "");
+  const filteredSpellR = spells[3].description.replace(/<[^>]*>/g, "");
 
   const abilityMap: {
     [key: string]: { type: string; name: string; description: string };
@@ -151,27 +154,27 @@ export function ChampionInfoAbilityDescriptions({
     Passive: {
       type: passive.image.group,
       name: passive.name,
-      description: championInfo?.abilityPassiveDescription ?? "",
+      description: filteredPassive ?? "",
     },
     SpellQ: {
       type: "Q",
       name: spells[0].name,
-      description: spells[0].description,
+      description: filteredSpellQ,
     },
     SpellW: {
       type: "W",
       name: spells[1].name,
-      description: spells[1].description,
+      description: filteredSpellW,
     },
     SpellE: {
       type: "E",
       name: spells[2].name,
-      description: spells[2].description,
+      description: filteredSpellE,
     },
     SpellR: {
       type: "R",
       name: spells[3].name,
-      description: spells[3].description,
+      description: filteredSpellR,
     },
   };
 

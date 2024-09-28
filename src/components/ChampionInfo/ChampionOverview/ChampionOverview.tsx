@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./championOverview.css";
 import { useChampionInfo } from "../../../services/championInfo";
-import { Spinner } from "../../Spinner/Spinner";
 
 import icon from "../../../assets/icons/swift-146-svgrepo-com.svg";
 import championIcon from "../../../assets/icons/champion-icon.svg";
@@ -144,7 +143,7 @@ export function ChampionOverview({
   const championInfo = useChampionInfo(champion?.name ?? "");
 
   if (!champion) {
-    return <Spinner />;
+    return null;
   }
 
   const backgroundStyle = {
@@ -186,7 +185,7 @@ export function ChampionOverview({
             <div className="championInfo__short-info__wrapper">
               <div className="championInfo__roles">
                 <img
-                  src="https://www.leagueoflegends.com/_next/static/node_modules/@riotgames/blades-ui/dist/skins/common/assets/roleMage.svg"
+                  src={championInfo?.role}
                   alt="Role Icon"
                   className="championInfo__roles__icon"
                 />
@@ -211,8 +210,8 @@ export function ChampionOverview({
             <div className="championInfo__description-wrapper">
               <div className="championInfo__short-description">
                 {showMore
-                  ? championInfo?.descriptionText
-                  : `${championInfo?.descriptionText.substring(0, 250)}...`}
+                  ? champion?.lore
+                  : `${champion?.lore.substring(0, 250)}...`}
                 <p
                   className={`btn__show-more ${showMore ? "hidden" : ""}`}
                   onClick={btnShowMoreClick}
