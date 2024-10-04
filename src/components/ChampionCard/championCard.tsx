@@ -228,8 +228,8 @@ interface ChampionCardProps {
 }
 
 function ChampionCard({ champion }: ChampionCardProps) {
-  let championId: string = champion;
-  let championName: string = championId;
+  let championNameImage: string = champion;
+  let championDisplayName: string = champion;
 
   const navigate = useNavigate();
 
@@ -237,31 +237,40 @@ function ChampionCard({ champion }: ChampionCardProps) {
     navigate(`/champion/${championName}`);
   };
 
-  if (championId === "Fiddlesticks") {
-    championId = "FiddleSticks";
+  if (championNameImage === "Fiddlesticks") {
+    championNameImage = "FiddleSticks";
   }
-  if (championName === "MonkeyKing") {
-    championName = "Wukong";
+  if (championNameImage === "MonkeyKing") {
+    championDisplayName = "Wukong";
   }
-  if (championName === "Nunu") {
-    championName = "Nunu & Willump";
+  if (championNameImage === "Nunu") {
+    championDisplayName = "Nunu & Willump";
+  }
+  if (championNameImage === "Belveth") {
+    championDisplayName = "Bel'Veth";
+  }
+  if (championNameImage === "Chogath") {
+    championDisplayName = "Cho'Gath";
+  }
+  if (championNameImage === "DrMundo") {
+    championDisplayName = "Dr. Mundo";
   }
 
   return (
     <div
       className="champion-card animate__animated animate__fadeIn animate__slow"
       onClick={() => {
-        submitChampion(championName);
+        submitChampion(champion);
       }}
     >
       <div className="champion-card__wrapper">
         <img
-          src={`https://ddragon.leagueoflegends.com/cdn/img/champion/centered/${championId}_0.jpg`}
+          src={`https://ddragon.leagueoflegends.com/cdn/img/champion/centered/${championNameImage}_0.jpg`}
           alt=""
           className="champion-card__thumbnail"
         />
         <div className="champion-card__label">
-          <span>{championName}</span>
+          <span>{championDisplayName}</span>
         </div>
       </div>
     </div>

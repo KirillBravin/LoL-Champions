@@ -147,7 +147,9 @@ export function ChampionOverview({
   }
 
   const backgroundStyle = {
-    background: `url(${championInfo?.background}) no-repeat center center`,
+    backgroundImage: `url(${championInfo?.background})`,
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
     backgroundSize: "cover",
   };
 
