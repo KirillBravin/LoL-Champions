@@ -1344,37 +1344,37 @@ export const useChampionInfo = (championName: string) => {
           {
             name: "Passive",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_P1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_P1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_P1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_P1.webm",
           },
           {
             name: "SpellQ",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_P1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_P1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_P1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_P1.webm",
           },
           {
             name: "SpellW",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_W1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_W1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_W1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_W1.webm",
           },
           {
             name: "SpellE",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_E1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_E1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_E1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_E1.webm",
           },
           {
             name: "SpellR",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_R1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_R1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_R1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_R1.webm",
           },
         ],
         skinPath: [
@@ -1402,37 +1402,37 @@ export const useChampionInfo = (championName: string) => {
           {
             name: "Passive",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_P1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_P1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_P1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_P1.webm",
           },
           {
             name: "SpellQ",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_Q1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_Q1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_Q1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_Q1.webm",
           },
           {
             name: "SpellW",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_W1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_W1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_W1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_W1.webm",
           },
           {
             name: "SpellE",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_E1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_E1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_E1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_E1.webm",
           },
           {
             name: "SpellR",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_R1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_R1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_R1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_R1.webm",
           },
         ],
         skinPath: [
@@ -1463,37 +1463,37 @@ export const useChampionInfo = (championName: string) => {
           {
             name: "Passive",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_P1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_P1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_P1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_P1.webm",
           },
           {
             name: "SpellQ",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_Q1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_Q1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_Q1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_Q1.webm",
           },
           {
             name: "SpellW",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_W1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_W1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_W1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_W1.webm",
           },
           {
             name: "SpellE",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_E1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_E1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_E1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_E1.webm",
           },
           {
             name: "SpellR",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_R1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_R1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_R1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_R1.webm",
           },
         ],
         skinPath: [
@@ -1523,37 +1523,37 @@ export const useChampionInfo = (championName: string) => {
           {
             name: "Passive",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_P1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_P1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_P1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_P1.webm",
           },
           {
             name: "SpellQ",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_Q1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_Q1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_Q1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_Q1.webm",
           },
           {
             name: "SpellW",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_W1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_W1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_W1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_W1.webm",
           },
           {
             name: "SpellE",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_E1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_E1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_E1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_E1.webm",
           },
           {
             name: "SpellR",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_R1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_R1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_R1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_R1.webm",
           },
         ],
         skinPath: [
@@ -1583,37 +1583,37 @@ export const useChampionInfo = (championName: string) => {
           {
             name: "Passive",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_P1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_P1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_P1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_P1.webm",
           },
           {
             name: "SpellQ",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_Q1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_Q1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_Q1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_Q1.webm",
           },
           {
             name: "SpellW",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_W1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_W1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_W1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_W1.webm",
           },
           {
             name: "SpellE",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_E1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_E1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_E1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_E1.webm",
           },
           {
             name: "SpellR",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_R1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_R1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_R1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_R1.webm",
           },
         ],
         skinPath: [
@@ -1642,37 +1642,37 @@ export const useChampionInfo = (championName: string) => {
           {
             name: "Passive",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_P1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_P1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_P1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_P1.webm",
           },
           {
             name: "SpellQ",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_Q1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_Q1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_Q1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_Q1.webm",
           },
           {
             name: "SpellW",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_W1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_W1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_W1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_W1.webm",
           },
           {
             name: "SpellE",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_E1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_E1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_E1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_E1.webm",
           },
           {
             name: "SpellR",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_R1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_R1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_R1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_R1.webm",
           },
         ],
         skinPath: [
@@ -1701,37 +1701,37 @@ export const useChampionInfo = (championName: string) => {
           {
             name: "Passive",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_P1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_P1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_P1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_P1.webm",
           },
           {
             name: "SpellQ",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_Q1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_Q1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_Q1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_Q1.webm",
           },
           {
             name: "SpellW",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_W1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_W1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_W1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_W1.webm",
           },
           {
             name: "SpellE",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_E1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_E1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_E1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_E1.webm",
           },
           {
             name: "SpellR",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_R1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_R1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_R1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_R1.webm",
           },
         ],
         skinPath: [
@@ -1757,37 +1757,37 @@ export const useChampionInfo = (championName: string) => {
           {
             name: "Passive",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_P1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_P1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_P1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_P1.webm",
           },
           {
             name: "SpellQ",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_Q1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_Q1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_Q1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_Q1.webm",
           },
           {
             name: "SpellW",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_W1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_W1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_W1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_W1.webm",
           },
           {
             name: "SpellE",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_E1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_E1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_E1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_E1.webm",
           },
           {
             name: "SpellR",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_R1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_R1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_R1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_R1.webm",
           },
         ],
         skinPath: [
@@ -1820,37 +1820,37 @@ export const useChampionInfo = (championName: string) => {
           {
             name: "Passive",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_Q1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_Q1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_Q1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_Q1.webm",
           },
           {
             name: "SpellQ",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_Q1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_Q1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_Q1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_Q1.webm",
           },
           {
             name: "SpellW",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_W1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_W1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_W1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_W1.webm",
           },
           {
             name: "SpellE",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_E1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_E1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_E1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_E1.webm",
           },
           {
             name: "SpellR",
             path_1:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_R1.mp4",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_R1.mp4",
             path_2:
-              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0081/ability_0081_R1.webm",
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_R1.webm",
           },
         ],
         skinPath: [
@@ -1875,6 +1875,65 @@ export const useChampionInfo = (championName: string) => {
           "Ezreal_43.jpg",
           "Ezreal_44.jpg",
           "Ezreal_54.jpg",
+        ],
+      };
+    case "Fiddlesticks":
+      return {
+        background:
+          "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/FiddleSticks_0.jpg",
+        difficulty: "High",
+        difficultyId: 2,
+        role: "https://www.leagueoflegends.com/_next/static/node_modules/@riotgames/blades-ui/dist/skins/common/assets/roleMage.svg",
+        videoPaths: [
+          {
+            name: "Passive",
+            path_1:
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_P1.mp4",
+            path_2:
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_Q1.webm",
+          },
+          {
+            name: "SpellQ",
+            path_1:
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_Q1.mp4",
+            path_2:
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_Q1.webm",
+          },
+          {
+            name: "SpellW",
+            path_1:
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_W1.mp4",
+            path_2:
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_W1.webm",
+          },
+          {
+            name: "SpellE",
+            path_1:
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_E1.mp4",
+            path_2:
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_E1.webm",
+          },
+          {
+            name: "SpellR",
+            path_1:
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_R1.mp4",
+            path_2:
+              "https://d28xe8vt774jo5.cloudfront.net/champion-abilities/0009/ability_0009_R1.webm",
+          },
+        ],
+        skinPath: [
+          "FiddleSticks_0.jpg",
+          "FiddleSticks_1.jpg",
+          "FiddleSticks_2.jpg",
+          "FiddleSticks_3.jpg",
+          "FiddleSticks_4.jpg",
+          "FiddleSticks_5.jpg",
+          "FiddleSticks_6.jpg",
+          "FiddleSticks_7.jpg",
+          "FiddleSticks_8.jpg",
+          "FiddleSticks_9.jpg",
+          "FiddleSticks_27.jpg",
+          "FiddleSticks_37.jpg",
         ],
       };
     default:

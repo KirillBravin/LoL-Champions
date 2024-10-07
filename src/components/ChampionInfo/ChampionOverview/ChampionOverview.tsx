@@ -153,6 +153,8 @@ export function ChampionOverview({
     backgroundSize: "cover",
   };
 
+  const champLore = champion.lore.replace(/<[^>]*>/g, "");
+
   const btnShowMoreClick = () => {
     setShowMore(true);
   };
@@ -211,9 +213,7 @@ export function ChampionOverview({
             <div className="championInfo__dividing-line"></div>
             <div className="championInfo__description-wrapper">
               <div className="championInfo__short-description">
-                {showMore
-                  ? champion?.lore
-                  : `${champion?.lore.substring(0, 250)}...`}
+                {showMore ? champLore : `${champLore.substring(0, 250)}...`}
                 <p
                   className={`btn__show-more ${showMore ? "hidden" : ""}`}
                   onClick={btnShowMoreClick}
