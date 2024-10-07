@@ -255,6 +255,27 @@ function ChampionCard({ champion }: ChampionCardProps) {
   if (championNameImage === "DrMundo") {
     championDisplayName = "Dr. Mundo";
   }
+  if (championNameImage === "JarvanIV") {
+    championDisplayName = "Jarvan IV";
+  }
+  if (championNameImage === "Kaisa") {
+    championDisplayName = "Kai'Sa";
+  }
+  if (championNameImage === "Khazix") {
+    championDisplayName = "Kha'Zix";
+  }
+  if (championNameImage === "KogMaw") {
+    championDisplayName = "Kog'Maw";
+  }
+  if (championNameImage === "KSante") {
+    championDisplayName = "K'Sante";
+  }
+  if (championNameImage === "Leblanc") {
+    championDisplayName = "LeBlanc";
+  }
+  if (championNameImage === "LeeSin") {
+    championDisplayName = "Lee Sin";
+  }
 
   return (
     <div
