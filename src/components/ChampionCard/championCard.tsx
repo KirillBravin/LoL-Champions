@@ -228,7 +228,7 @@ interface ChampionCardProps {
 }
 
 function ChampionCard({ champion }: ChampionCardProps) {
-  let championNameImage: string = champion;
+  const championNameImage: string = champion;
   let championDisplayName: string = champion;
 
   const navigate = useNavigate();
@@ -237,45 +237,30 @@ function ChampionCard({ champion }: ChampionCardProps) {
     navigate(`/champion/${championName}`);
   };
 
-  if (championNameImage === "Fiddlesticks") {
-    championNameImage = "FiddleSticks";
-  }
-  if (championNameImage === "MonkeyKing") {
-    championDisplayName = "Wukong";
-  }
-  if (championNameImage === "Nunu") {
-    championDisplayName = "Nunu & Willump";
-  }
-  if (championNameImage === "Belveth") {
-    championDisplayName = "Bel'Veth";
-  }
-  if (championNameImage === "Chogath") {
-    championDisplayName = "Cho'Gath";
-  }
-  if (championNameImage === "DrMundo") {
-    championDisplayName = "Dr. Mundo";
-  }
-  if (championNameImage === "JarvanIV") {
-    championDisplayName = "Jarvan IV";
-  }
-  if (championNameImage === "Kaisa") {
-    championDisplayName = "Kai'Sa";
-  }
-  if (championNameImage === "Khazix") {
-    championDisplayName = "Kha'Zix";
-  }
-  if (championNameImage === "KogMaw") {
-    championDisplayName = "Kog'Maw";
-  }
-  if (championNameImage === "KSante") {
-    championDisplayName = "K'Sante";
-  }
-  if (championNameImage === "Leblanc") {
-    championDisplayName = "LeBlanc";
-  }
-  if (championNameImage === "LeeSin") {
-    championDisplayName = "Lee Sin";
-  }
+  const championNameMap = {
+    Fiddlesticks: "FiddleSticks",
+    MonkeyKing: "Wukong",
+    Nunu: "Nunu & Willump",
+    Belveth: "Bel'Veth",
+    Chogath: "Cho'Gath",
+    DrMundo: "Dr. Mundo",
+    JarvanIV: "Jarvan IV",
+    Kaisa: "Kai'Sa",
+    Khazix: "Kha'Zix",
+    KogMaw: "Kog'Maw",
+    KSante: "K'Sante",
+    Leblanc: "LeBlanc",
+    LeeSin: "Lee Sin",
+    MasterYi: "Master Yi",
+    RekSai: "Rek'Sai",
+    Renata: "Renata Glasc",
+    TahmKench: "Tahm Kench",
+    TwistedFate: "Twisted Fate",
+    Velkoz: "Vel'Koz",
+    XinZhao: "Xin Zhao",
+  };
+
+  championDisplayName = championNameMap[championNameImage] || championNameImage;
 
   return (
     <div
