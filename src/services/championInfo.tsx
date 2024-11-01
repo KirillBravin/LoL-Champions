@@ -9756,11 +9756,3 @@ export const useChampionInfo = (championName: string) => {
       return null;
   }
 };
-
-/* 
-
-https://www.leagueoflegends.com/_next/static/node_modules/@riotgames/blades-ui/dist/skins/common/assets/roleSupport.svg 
-https://www.leagueoflegends.com/_next/static/node_modules/@riotgames/blades-ui/dist/skins/common/assets/roleFighter.svg
-https://www.leagueoflegends.com/_next/static/node_modules/@riotgames/blades-ui/dist/skins/common/assets/roleMage.svg
-https://www.leagueoflegends.com/_next/static/node_modules/@riotgames/blades-ui/dist/skins/common/assets/roleMarksman.svg
-*/

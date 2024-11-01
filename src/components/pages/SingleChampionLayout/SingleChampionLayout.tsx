@@ -5,6 +5,7 @@ import { ChampionSkins } from "../../ChampionInfo/ChampionSkins/ChampionSkins";
 import { Footer } from "../../Footer/Footer";
 import { useLeagueService } from "../../../Backend/LeagueService";
 import { useParams } from "react-router-dom";
+import { Spinner } from "../../Spinner/Spinner";
 
 interface SingleChampionBody {
   id: string;
@@ -137,8 +138,10 @@ export default function SingleChampionLayout() {
   const [champion, setChampion] = useState<SingleChampionBody | null>(null);
   const { getChampion } = useLeagueService();
   const { championName } = useParams();
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchChampion = useCallback(async () => {
+    setIsLoading(true);
     try {
       if (championName) {
         const champData = await getChampion(championName);
@@ -146,12 +149,18 @@ export default function SingleChampionLayout() {
       }
     } catch (error) {
       console.log("Failed to fetch champion:", error);
+    } finally {
+      setIsLoading(false);
     }
   }, [getChampion, championName]);
 
   useEffect(() => {
     fetchChampion();
   }, [fetchChampion]);
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   return (
     <>
