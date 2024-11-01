@@ -1,4 +1,4 @@
-import "./leagueoflegendsintro.scss";
+import "../../style/style.css";
 import { useState } from "react";
 
 import wallpaper from "../../assets/images/Main_page_wallpaper.webp";

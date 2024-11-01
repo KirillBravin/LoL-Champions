@@ -1,0 +1,11 @@
+@media (max-width: 1440px) {
+    .leagueIntro{
+        &__preview{
+            left: 0rem;
+        }
+
+        &__description-wrapper{
+            right: 3rem;
+        }
+    }
+}

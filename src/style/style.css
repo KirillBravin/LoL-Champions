@@ -1,3 +1,5 @@
+@import "../components/LeagueOfLegendsIntro/leagueoflegendsintro.css";
+@import "./media.css";
 @font-face {
   font-family: "BeaufortforLOL-Regular";
   src: url("../assets../assets/fonts/BeaufortforLOL-Regular.eot");

@@ -1,0 +1,8 @@
+@media (max-width: 1440px) {
+  .leagueIntro__preview {
+    left: 0rem;
+  }
+  .leagueIntro__description-wrapper {
+    right: 3rem;
+  }
+}/*# sourceMappingURL=media.css.map */

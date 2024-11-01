@@ -228,7 +228,7 @@ interface ChampionCardProps {
 }
 
 function ChampionCard({ champion }: ChampionCardProps) {
-  const championNameImage: string = champion;
+  let championNameImage: string = champion;
   let championDisplayName: string = champion;
 
   const navigate = useNavigate();
@@ -237,8 +237,11 @@ function ChampionCard({ champion }: ChampionCardProps) {
     navigate(`/champion/${championName}`);
   };
 
+  if (championNameImage === "Fiddlesticks") {
+    championNameImage = "FiddleSticks";
+  }
+
   const championNameMap = {
-    Fiddlesticks: "FiddleSticks",
     MonkeyKing: "Wukong",
     Nunu: "Nunu & Willump",
     Belveth: "Bel'Veth",
