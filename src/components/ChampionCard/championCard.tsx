@@ -1,4 +1,4 @@
-import "./championCard.scss";
+import "../../style/style.css";
 import "animate.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";

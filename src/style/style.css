@@ -1,4 +1,5 @@
 @import "../components/LeagueOfLegendsIntro/leagueoflegendsintro.css";
+@import "../components/ChampionCard/championCard.css";
 @import "./media.css";
 @font-face {
   font-family: "BeaufortforLOL-Regular";

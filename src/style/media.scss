@@ -9,3 +9,67 @@
         }
     }
 }
+
+@media (max-width: 1200px) {
+    .leagueIntro{
+        &__description-wrapper{
+            right: 2rem;
+        }
+    }
+}
+
+@media (max-width: 820px) {
+    .leagueIntro{
+        &__background{
+            height: 67rem;
+        }
+
+        &__wrapper{
+            flex-direction: column;
+            padding-top:4rem;
+        }
+
+        &__description-wrapper{
+            position:initial;
+            width: 100%;
+        }
+
+        &__header-info-first{
+            font-size: 19px;
+        }
+
+        &__header-info-second{
+            font-size: 60px;
+            line-height: 40px;
+        }
+
+        &__header-info-game{
+            font-size: 36px;
+        }
+
+        &__description-text{
+            padding-top: 0rem;
+        }
+
+        &__game-modes{
+            margin-top: 2rem;
+        }
+
+        &__preview{
+            margin-top: 3rem;
+        }
+
+        &__video-preview{
+            width: 50%;
+            height: 50%;
+        }
+
+        &__video-short-description{
+            margin-top: 1rem;
+        }
+    }
+    .video-border{
+        width: 22rem;
+        height: 22rem;
+    }
+}
