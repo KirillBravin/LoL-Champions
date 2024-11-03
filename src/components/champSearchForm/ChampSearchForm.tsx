@@ -2,7 +2,7 @@ import { SearchInput } from "./SearchInput/searchInput";
 import { SearchRoles } from "./SearchRoles/searchRoles";
 import { SearchDifficulty } from "./SearchDifficulty/searchDifficulty";
 
-import "./champSearchForm.css";
+import "../../style/style.css";
 
 interface SingleChampionData {
   id: string;

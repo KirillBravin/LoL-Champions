@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./searchDifficulty.scss";
+import "../../../style/style.css";
 
 interface difficultyObj {
   id: number;
@@ -43,7 +43,7 @@ export function SearchDifficulty({ getDifficulty }: ChampionDifficultyProps) {
       render: function () {
         return (
           <div
-            className={`dropdown-item style ${
+            className={`dropdown-item style dropdown-style ${
               difficultyId === 1 ? "dropdown-menu-selected" : ""
             } `}
             onClick={handleDifficultyClick.bind(null, this.difficulty, this.id)}
@@ -61,7 +61,7 @@ export function SearchDifficulty({ getDifficulty }: ChampionDifficultyProps) {
       render: function () {
         return (
           <div
-            className={`dropdown-item style ${
+            className={`dropdown-item style dropdown-style ${
               difficultyId === 2 ? "dropdown-menu-selected" : ""
             } `}
             onClick={handleDifficultyClick.bind(null, this.difficulty, this.id)}
@@ -79,7 +79,7 @@ export function SearchDifficulty({ getDifficulty }: ChampionDifficultyProps) {
       render: function () {
         return (
           <div
-            className={`dropdown-item style ${
+            className={`dropdown-item style dropdown-style ${
               difficultyId === 3 ? "dropdown-menu-selected" : ""
             } `}
             onClick={handleDifficultyClick.bind(null, this.difficulty, this.id)}
@@ -115,7 +115,7 @@ export function SearchDifficulty({ getDifficulty }: ChampionDifficultyProps) {
     const displayDifficulties = () => {
       if (difficultyId === 1) {
         return (
-          <div className="dropdown-item style item-selected">
+          <div className="dropdown-item style dropdown-style-selected item-selected">
             <span className="parallelogramFilled"></span>
             <span className="parallelogramEmpty"></span>
             <span className="parallelogramEmpty"></span>
@@ -123,7 +123,7 @@ export function SearchDifficulty({ getDifficulty }: ChampionDifficultyProps) {
         );
       } else if (difficultyId === 2) {
         return (
-          <div className="dropdown-item style item-selected">
+          <div className="dropdown-item style dropdown-style-selected item-selected">
             <span className="parallelogramFilled"></span>
             <span className="parallelogramFilled"></span>
             <span className="parallelogramEmpty"></span>
@@ -131,7 +131,7 @@ export function SearchDifficulty({ getDifficulty }: ChampionDifficultyProps) {
         );
       } else if (difficultyId === 3) {
         return (
-          <div className="dropdown-item style item-selected">
+          <div className="dropdown-item style dropdown-style-selected item-selected">
             <span className="parallelogramFilled"></span>
             <span className="parallelogramFilled"></span>
             <span className="parallelogramFilled"></span>

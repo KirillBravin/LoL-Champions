@@ -1,5 +1,11 @@
 @import "_fonts";
 @import "./variables";
+
 @import "../components/LeagueOfLegendsIntro/leagueoflegendsintro.css";
 @import "../components/ChampionCard/championCard.css";
+@import "../components/champSearchForm/champSearchForm.css";
+@import "../components/champSearchForm/SearchRoles/searchRoles.css";
+@import "../components/champSearchForm/SearchDifficulty/searchDifficulty.css";
+@import "../components/champSearchForm/SearchInput/searchInput.css";
+
 @import "./media.css";

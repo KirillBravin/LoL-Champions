@@ -72,4 +72,56 @@
         width: 22rem;
         height: 22rem;
     }
+
+    .search-section{
+        margin-top: 7rem;
+    }
+
+    .col-8{
+        width: 60.667%;
+    }
+
+    .roles{
+        padding-left: 0rem;
+    }
+
+    .difficulties{
+        width: 97%;
+
+        &__line-right{
+            right: 0rem;
+        }
+
+        &__btn-main-active{
+            width: 7rem;
+        }
+    }
+
+    .parallelogramFilled{
+        width: 20px;
+    }
+
+    .parallelogramEmpty{
+        width: 20px;
+    }
+
+    .dropdown-menu-active{
+        transform: translate(-1px, 51px) !important;
+        --bs-dropdown-min-width: 8.8rem;
+        --bs-dropdown-item-padding-x: 2rem;
+    }
+
+    .dropdown-style{
+        justify-content: space-around;
+    }
+
+    .dropdown-style-selected{
+        padding-left: 0;
+    }
+
+    .search-bar{
+        &__line-left{
+            width: 0.05rem;
+        }
+    }
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import magnifyingGlass from "../../../assets/icons/magnifying-glass.svg";
-import "./searchInput.scss";
+import "../../../style/style.css";
 
 interface SingleChampionData {
   id: string;

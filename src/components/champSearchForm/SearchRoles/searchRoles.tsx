@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import "./searchRoles.scss";
+import "../../../style/style.css";
 
 interface ChampionRoleProps {
   getRoleSelected: (data: string) => void;
