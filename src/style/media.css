@@ -91,4 +91,48 @@
   .search-bar__line-left {
     width: 0.05rem;
   }
+  .champion-card {
+    width: 9rem;
+    height: 15rem;
+  }
+  .champion-card__label {
+    line-height: 2rem;
+    bottom: 2rem;
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 428px) {
+  .leagueIntro {
+    height: 63rem;
+  }
+  .leagueIntro__mode-img {
+    width: 4rem;
+  }
+  .leagueIntro__background {
+    height: 63rem;
+  }
+  .leagueIntro__video-long-description {
+    margin-top: 2rem;
+  }
+  .video-border {
+    width: 13rem;
+    height: 13rem;
+  }
+  .title {
+    top: 2rem;
+  }
+  .title__main {
+    font-size: 4rem;
+    line-height: 67px;
+  }
+  .search-section {
+    display: none;
+  }
+  .champion-cards {
+    margin-top: 4rem;
+  }
+  .champion-card {
+    width: 6rem;
+    height: 11rem;
+  }
 }/*# sourceMappingURL=media.css.map */

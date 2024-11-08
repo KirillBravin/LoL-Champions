@@ -4,7 +4,7 @@ import { Footer } from "../../Footer/Footer";
 import { LeagueOfLegendsIntro } from "../../LeagueOfLegendsIntro/LeagueOfLegendsIntro";
 
 import "animate.css";
-import "./home.scss";
+import "../../../style/style.css";
 
 import { useCallback, useEffect, useState } from "react";
 import { useLeagueService } from "../../../Backend/LeagueService";
