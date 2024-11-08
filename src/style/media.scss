@@ -180,4 +180,10 @@
         width: 6rem;
         height: 11rem;
     }
+
+    .footer{
+        &__riot-copyright{
+            width: 100%;
+        }
+    }
 }
