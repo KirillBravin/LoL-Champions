@@ -141,6 +141,10 @@
     .leagueIntro{
         height: 63rem;
 
+        &__wrapper{
+            padding-top: 2rem;
+        }
+
         &__mode-img{
             width: 4rem;
         }
@@ -174,6 +178,7 @@
 
     .champion-cards{
         margin-top: 4rem;
+        padding-bottom: 4rem;
     }
 
     .champion-card{
@@ -182,8 +187,34 @@
     }
 
     .footer{
+        height: 10rem;
+
         &__riot-copyright{
             width: 100%;
+        }
+    }
+}
+
+@media (max-width: 390px){
+    .video-border{
+        width: 12rem;
+        height: 12rem;
+    }
+
+    .leagueIntro{
+        height: 59rem;
+
+        &__description-text{
+            font-size: 16px;
+        }
+
+        &__video-long-description{
+            font-size: 16px;
+        }
+
+        &__background{
+            height: 59rem;
+            filter:brightness(50%);
         }
     }
 }

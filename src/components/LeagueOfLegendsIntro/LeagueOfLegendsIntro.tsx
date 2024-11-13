@@ -1,7 +1,7 @@
 import "../../style/style.css";
 import { useState } from "react";
 
-import wallpaper from "../../assets/images/Main_page_wallpaper.webp";
+/* import wallpaper from "../../assets/images/Main_page_wallpaper.webp"; */
 
 //Mode icons
 const arenaIcon =
@@ -140,8 +140,8 @@ export function LeagueOfLegendsIntro() {
     <section className="leagueIntro">
       <img
         className="leagueIntro__background"
-        src={wallpaper}
-        alt="background wallpaper"
+        /* src={wallpaper}
+        alt="background wallpaper" */
       />
       <div className="container">
         <div className="leagueIntro__wrapper">

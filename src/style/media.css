@@ -105,6 +105,9 @@
   .leagueIntro {
     height: 63rem;
   }
+  .leagueIntro__wrapper {
+    padding-top: 2rem;
+  }
   .leagueIntro__mode-img {
     width: 4rem;
   }
@@ -130,12 +133,35 @@
   }
   .champion-cards {
     margin-top: 4rem;
+    padding-bottom: 4rem;
   }
   .champion-card {
     width: 6rem;
     height: 11rem;
   }
+  .footer {
+    height: 10rem;
+  }
   .footer__riot-copyright {
     width: 100%;
+  }
+}
+@media (max-width: 390px) {
+  .video-border {
+    width: 12rem;
+    height: 12rem;
+  }
+  .leagueIntro {
+    height: 59rem;
+  }
+  .leagueIntro__description-text {
+    font-size: 16px;
+  }
+  .leagueIntro__video-long-description {
+    font-size: 16px;
+  }
+  .leagueIntro__background {
+    height: 59rem;
+    filter: brightness(50%);
   }
 }/*# sourceMappingURL=media.css.map */
