@@ -218,3 +218,41 @@
         }
     }
 }
+
+@media (max-width: 360px){
+    .leagueIntro{
+
+        &__mode-name{
+            width: 5rem;
+            font-size: 12px;
+            margin-top: 6px;
+        }
+
+        &__video-long-description{
+            margin-top: 0rem;
+            margin-bottom: 0rem;
+            font-size: 15px;
+            line-height: 23px;
+        }
+    }
+
+    .title{
+        &__main{
+            font-size: 3rem;
+        }
+    }
+
+    .champion-card{
+        margin: 1rem 0.5rem 0 0.5rem;
+    }
+
+    .champion-cards{
+        padding-bottom: 1rem;
+    }
+
+    .footer{
+        &__riot-copyright{
+            margin-top: 1rem;
+        }
+    }
+}
