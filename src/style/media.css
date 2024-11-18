@@ -164,6 +164,18 @@
     height: 59rem;
     filter: brightness(50%);
   }
+  .title__subtitle {
+    max-width: 348px;
+  }
+  .champion-card {
+    margin: 1rem 0.5rem 0 0.5rem;
+  }
+  .champion-cards {
+    padding-bottom: 1rem;
+  }
+  .footer__riot-copyright {
+    margin-top: 1rem;
+  }
 }
 @media (max-width: 360px) {
   .leagueIntro__mode-name {

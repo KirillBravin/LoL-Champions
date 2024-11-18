@@ -217,6 +217,26 @@
             filter:brightness(50%);
         }
     }
+
+    .title{
+        &__subtitle{
+            max-width: 348px;
+        }
+    }
+
+    .champion-card{
+        margin: 1rem 0.5rem 0 0.5rem;
+    }
+
+    .champion-cards{
+        padding-bottom: 1rem;
+    }
+
+    .footer{
+        &__riot-copyright{
+            margin-top: 1rem;
+        }
+    }
 }
 
 @media (max-width: 360px){
