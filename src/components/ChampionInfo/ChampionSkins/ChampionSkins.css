@@ -85,4 +85,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute !important;
+  width: 100%;
+}
+.splide__track {
+  overflow: hidden;
+  position: absolute;
+}
+.splide__list {
+  height: 100%;
+}
+
+.splider-skin-slider {
+  height: 78vh;
 }/*# sourceMappingURL=ChampionSkins.css.map */

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./championInfoAbilities.scss";
+import "../../../style/style.css";
 
 import { ChampionInfoAbilityDescriptions } from "../ChampionInfoAbilityDescriptions/ChampionInfoAbilityDescriptions";
 import { ChampionAbilityPreview } from "../ChampionAbilityPreview/ChampionAbilityPreview";

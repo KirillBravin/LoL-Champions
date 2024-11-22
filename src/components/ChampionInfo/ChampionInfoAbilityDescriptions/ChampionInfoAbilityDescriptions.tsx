@@ -1,4 +1,4 @@
-import "./ChampionInfoAbilityDescriptions.scss";
+import "../../../style/style.css";
 
 interface SingleChampionBody {
   id: string;

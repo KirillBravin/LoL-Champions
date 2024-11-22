@@ -1,4 +1,4 @@
-import "./championInfoDifficulty.scss";
+import "../../../style/style.css";
 
 interface difficultyObj {
   id: number;

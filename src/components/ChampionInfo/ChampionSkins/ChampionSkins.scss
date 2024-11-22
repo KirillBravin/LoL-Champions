@@ -99,4 +99,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position:absolute !important;
+    width: 100%;
+
+    &__track{
+        overflow: hidden;
+        position:absolute;
+    }
+
+    &__list{
+        height: 100%;
+    }
+}
+
+.splider-skin-slider{
+    height: 78vh;
 }

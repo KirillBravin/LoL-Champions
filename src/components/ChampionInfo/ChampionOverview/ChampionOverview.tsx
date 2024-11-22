@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./championOverview.css";
+import "../../../style/style.css";
 import { useChampionInfo } from "../../../services/championInfo";
 
 import icon from "../../../assets/icons/swift-146-svgrepo-com.svg";

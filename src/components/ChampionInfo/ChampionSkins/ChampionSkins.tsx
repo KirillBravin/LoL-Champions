@@ -1,5 +1,5 @@
 import "@splidejs/react-splide/css";
-import "./ChampionSkins.scss";
+import "../../../style/style.css";
 
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { useEffect, useState, useRef } from "react";
@@ -210,6 +210,11 @@ export function ChampionSkins({
     return items;
   };
 
+  const getSliderHeight = () => {
+    if (window.innerWidth <= 1440) return "77vh"; // Laptop
+    return "115vh"; // Default
+  };
+
   return (
     <div className="championSkins">
       <div className="championSkins__skins__sideText">Available skins</div>
@@ -225,9 +230,10 @@ export function ChampionSkins({
             <h2 className="championSkins__slider-header">Available skins</h2>
             <Splide
               aria-label="Skin slider"
+              className="championSkins__slider-slides"
               options={{
                 direction: "ttb",
-                height: `47.1rem`,
+                height: getSliderHeight(),
                 wheel: true,
                 arrows: false,
                 pagination: false,
@@ -245,78 +251,3 @@ export function ChampionSkins({
     </div>
   );
 }
-
-/* skins: [
-  {
-    name: "Ahri",
-    path: "Ahri_0.jpg",
-  },
-  {
-    name: "Dynasty Ahri",
-    path: "Ahri_1.jpg",
-  },
-  {
-    name: "Midnight Ahri",
-    path: "Ahri_2.jpg",
-  },
-  {
-    name: "Foxfire Ahri",
-    path: "Ahri_3.jpg",
-  },
-  {
-    name: "Popstar Ahri",
-    path: "Ahri_4.jpg",
-  },
-  {
-    name: "Challenger Ahri",
-    path: "Ahri_5.jpg",
-  },
-  {
-    name: "Academy Ahri",
-    path: "Ahri_6.jpg",
-  },
-  {
-    name: "Arcade Ahri",
-    path: "Ahri_7.jpg",
-  },
-  {
-    name: "Star Guardian Ahri",
-    path: "Ahri_14.jpg",
-  },
-  {
-    name: "K/DA Ahri",
-    path: "Ahri_15.jpg",
-  },
-  {
-    name: "Prestige K/DA Ahri",
-    path: "Ahri_16.jpg",
-  },
-  {
-    name: "Elderwood Ahri",
-    path: "Ahri_17.jpg",
-  },
-  {
-    name: "Spirit Blossom Ahri",
-    path: "Ahri_27.jpg",
-  },
-  {
-    name: "K/DA ALL OUT Ahri",
-    path: "Ahri_28.jpg",
-  },
-  {
-    name: "Coven Ahri",
-    path: "Ahri_42.jpg",
-  },
-  {
-    name: "Prestige K/DA Ahri",
-    path: "Ahri_65.jpg",
-  },
-  {
-    name: "Arcana Ahri",
-    path: "Ahri_66.jpg",
-  },
-  {
-    name: "Snow Moon Ahri",
-    path: "Ahri_76.jpg",
-  },
-] */

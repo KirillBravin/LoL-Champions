@@ -1,4 +1,4 @@
-import "./championAbilityPreview.scss";
+import "../../../style/style.css";
 import { useChampionInfo } from "../../../services/championInfo";
 
 interface SingleChampionBody {

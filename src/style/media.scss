@@ -8,6 +8,44 @@
             right: 3rem;
         }
     }
+
+    .championAbilities-style{
+        &__abilities-preview{
+            position:initial;
+        }
+    }
+
+    .championInfo{
+        &__champion-list-wrapper{
+            right: 1rem;
+            top: 0.5rem;
+        }
+    }
+
+    .championSkins{
+        &__slider-cover{
+            height: 53.1rem;
+        }
+
+        &__slider{
+            &__skin-image{
+                width: 22rem;
+            }
+
+            &__skin-blinder{
+                bottom: 2rem;
+            }
+        }
+    }
+
+    .splide{
+        height: 82%;
+
+        &__slide{
+            height: 15rem !important;
+            margin-bottom: 0px !important;
+        }
+    }
 }
 
 @media (max-width: 1200px) {

@@ -5,6 +5,29 @@
   .leagueIntro__description-wrapper {
     right: 3rem;
   }
+  .championAbilities-style__abilities-preview {
+    position: initial;
+  }
+  .championInfo__champion-list-wrapper {
+    right: 1rem;
+    top: 0.5rem;
+  }
+  .championSkins__slider-cover {
+    height: 53.1rem;
+  }
+  .championSkins__slider__skin-image {
+    width: 22rem;
+  }
+  .championSkins__slider__skin-blinder {
+    bottom: 2rem;
+  }
+  .splide {
+    height: 82%;
+  }
+  .splide__slide {
+    height: 15rem !important;
+    margin-bottom: 0px !important;
+  }
 }
 @media (max-width: 1200px) {
   .leagueIntro__description-wrapper {
