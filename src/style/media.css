@@ -29,9 +29,57 @@
     margin-bottom: 0px !important;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 1280px) {
   .leagueIntro__description-wrapper {
     right: 2rem;
+  }
+  .championInfo__short-description {
+    margin: 0 0 0 4rem;
+  }
+  .championInfo__short-info {
+    padding-left: 6rem;
+    width: 68rem;
+  }
+  .championInfo__short-info__wrapper {
+    width: 34.5rem;
+  }
+  .championAbilities-style {
+    height: 34rem;
+  }
+  .championAbilities-style__abilities-info {
+    width: 33rem;
+  }
+  .championAbilities-style__abilities-preview {
+    height: 26rem;
+  }
+  .championAbilities-style__background {
+    height: 34rem;
+  }
+  .championSkins {
+    height: 47rem;
+  }
+  .championSkins__slider {
+    margin-top: 0rem;
+  }
+  .championSkins__slider__skin-image {
+    width: 18rem;
+  }
+  .championSkins__slider__skin-blinder {
+    bottom: 1.3rem;
+  }
+  .championSkins__slider-header {
+    margin: 1rem 2rem 1rem;
+    font-size: 29px;
+  }
+  .championSkins__slider-cover {
+    height: 47.3rem;
+    width: 24rem;
+  }
+  .splide {
+    height: 86%;
+  }
+  .splide__slide {
+    height: 12rem !important;
   }
 }
 @media (max-width: 820px) {
