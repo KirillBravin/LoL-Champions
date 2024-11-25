@@ -223,15 +223,22 @@
     width: 3rem;
   }
   .championAbilities-style__abilities-preview {
-    width: 24rem;
-    height: 13rem;
+    position: absolute;
+    width: 20rem;
+    height: 15rem;
+    right: 2rem;
+    top: 2rem;
   }
   .championAbilities-style__diving-line {
-    width: 25.1rem;
+    width: 25.4rem;
     right: 0;
   }
   .championAbilities-style__abilities-sideText {
     display: none;
+  }
+  .championAbilities-style__description-wrapper {
+    width: 25rem;
+    left: 0;
   }
   .bottom-dividing-line {
     left: 4rem;
@@ -268,6 +275,14 @@
   }
   .footer {
     height: 10rem;
+  }
+}
+@media (max-width: 810px) {
+  .championSkins {
+    height: 29.8rem;
+  }
+  .championSkins__slider-cover {
+    height: 29.9rem;
   }
 }
 @media (max-width: 428px) {
