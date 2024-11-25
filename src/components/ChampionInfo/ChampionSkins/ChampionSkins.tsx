@@ -211,6 +211,7 @@ export function ChampionSkins({
   };
 
   const getSliderHeight = () => {
+    if (window.innerWidth <= 820) return "35vh"; // iPad Air iPadsAI
     if (window.innerWidth <= 1440) return "77vh"; // Laptop
     return "115vh"; // Default
   };

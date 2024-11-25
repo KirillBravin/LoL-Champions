@@ -238,6 +238,137 @@
             font-size: 0.8rem;
         }
     }
+
+    .championInfo{
+        height: 48rem;
+
+        &__short-info{
+            width: 100%;
+            padding-left: 5rem;
+
+            &__wrapper{
+                justify-content: space-between;
+                width: 16.7rem;
+            }
+        }
+
+        &__short-description{
+            margin: 0 0 0 1rem;
+            width: 20rem;
+            font-size: 12px;
+        }
+
+        &__main-picture{
+            padding-left: 1rem;
+        }
+
+        &__overview{
+            display: none;
+        }
+
+        &__champion-list-wrapper{
+            z-index: 2;
+        }
+    }
+
+    .headers{
+        width: 100%;
+
+        &__champion-name{
+            font-size: 3rem;
+        }
+
+        &__champion-title{
+            font-size: 25px;
+        }
+    }
+
+    .championAbilities-style{
+        position: relative;
+        height: 29rem;
+
+        &__background{
+            height: 100%;
+        }
+
+        &__header{
+            font-size: 40px;
+        }
+
+        &__ability-icons-wrapper{
+            margin-top: 3rem;
+            width: 22rem;
+        }
+
+        &__ability-icon{
+            width: 3rem;
+        }
+
+        &__abilities-preview{
+            width: 24rem;
+            height: 13rem;
+        }
+
+        &__diving-line{
+            width: 25.1rem;
+            right: 0;
+        }
+
+        &__abilities-sideText{
+            display: none;
+        }
+    }
+
+    .bottom-dividing-line{
+        left: 4rem;
+    }
+
+    .championSkins{
+        height: 30.2rem;
+
+        &__slider-cover{
+            height: 30.2rem;
+            width: 18rem;
+        }
+
+        &__slider-header{
+            margin: 0rem 2rem 0rem;
+            font-size: 18px;
+            padding: 15px;
+        }
+
+        &__slider{
+            &__skin-image{
+                width: 13rem;
+            }
+
+            &__skin-name{
+                font-size: 16px;
+            }
+
+            &__skin-blinder{
+                height: 19px;
+            }
+        }
+
+        &__skins{
+            &__sideText{
+                display:none;
+            }
+        }
+    }
+
+    .splide{
+        height: 88%;
+
+        &__slide{
+            height: 9rem !important;
+        }
+    }
+
+    .footer{
+        height: 10rem;
+    }
 }
 
 @media (max-width: 428px){
