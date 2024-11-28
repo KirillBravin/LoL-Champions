@@ -284,6 +284,12 @@
   .championSkins__slider-cover {
     height: 29.9rem;
   }
+  .championSkins__slider__skin-blinder {
+    bottom: 0.3rem;
+  }
+  .splide__slide {
+    height: 8rem !important;
+  }
 }
 @media (max-width: 428px) {
   .leagueIntro {
@@ -328,6 +334,112 @@
   }
   .footer__riot-copyright {
     width: 100%;
+  }
+  .headers {
+    top: 51%;
+  }
+  .headers__champion-name {
+    font-size: 28px;
+  }
+  .headers__champion-title {
+    font-size: 20px;
+    margin-bottom: 0;
+    line-height: 23px;
+  }
+  .championInfo {
+    height: 41.7rem;
+  }
+  .championInfo__short-info {
+    padding-left: 1rem;
+  }
+  .championInfo__short-info {
+    flex-direction: column;
+  }
+  .championInfo__short-info__wrapper {
+    width: 100%;
+    justify-content: space-around;
+  }
+  .championInfo__roles__general {
+    margin-top: 7px;
+  }
+  .championInfo__difficulties__general {
+    margin-top: 7px;
+  }
+  .championInfo__short-description {
+    margin: 0 1rem 0 1rem;
+    width: 100%;
+  }
+  .championInfo__dividing-line {
+    display: none;
+  }
+  .championInfo__description-wrapper {
+    margin-top: 1rem;
+  }
+  .championInfo__black-background {
+    margin-top: -20rem;
+  }
+  .championInfo__bottom-wrapper {
+    position: absolute;
+    margin-top: 10rem;
+    margin-left: 13rem;
+  }
+  .difficulty__icons {
+    width: 4.4rem;
+  }
+  .bottom-dividing-line {
+    position: absolute;
+    width: 70%;
+    margin-top: 7rem;
+  }
+  .websites-links-wrapper {
+    position: absolute;
+    margin-top: 7rem;
+    margin-left: 4rem;
+  }
+  .championSkins {
+    height: 21.8rem;
+  }
+  .championSkins__slider-cover {
+    height: 6.9rem;
+    width: 100%;
+    top: 15rem;
+  }
+  .championSkins__slider-header {
+    display: none;
+  }
+  .championSkins__slider__skin-image {
+    width: 8rem;
+  }
+  .championSkins__slider__skin-name {
+    font-size: 14px;
+  }
+  .championAbilities-style {
+    width: 100%;
+    height: 40rem;
+  }
+  .championAbilities-style__icon {
+    width: 100%;
+  }
+  .championAbilities-style__wrapper {
+    flex-direction: column;
+  }
+  .championAbilities-style__abilities-preview {
+    position: initial;
+    width: 100%;
+  }
+  .championAbilities-style__abilities-info {
+    width: 100%;
+  }
+  .championAbilities-style__description-wrapper {
+    width: 100%;
+    height: 10rem;
+  }
+  .splide {
+    height: 100%;
+  }
+  .splide__slide {
+    height: 5.1rem !important;
+    width: 30% !important;
   }
 }
 @media (max-width: 390px) {

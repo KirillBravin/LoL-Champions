@@ -216,6 +216,16 @@ export function ChampionSkins({
     return "115vh"; // Default
   };
 
+  const getSliderDirection = () => {
+    if (window.innerWidth <= 428) return "ltr"; // carousel will go from left to right
+    return "ttb"; // Default top to bottom
+  };
+
+  const getSliderGap = () => {
+    if (window.innerWidth <= 428) return "15px";
+    return "20px";
+  };
+
   return (
     <div className="championSkins">
       <div className="championSkins__skins__sideText">Available skins</div>
@@ -233,13 +243,13 @@ export function ChampionSkins({
               aria-label="Skin slider"
               className="championSkins__slider-slides"
               options={{
-                direction: "ttb",
+                direction: getSliderDirection(),
                 height: getSliderHeight(),
                 wheel: true,
                 arrows: false,
                 pagination: false,
                 perPage: 3,
-                gap: `20px`,
+                gap: getSliderGap(),
                 speed: 2000,
                 easing: "ease",
               }}
