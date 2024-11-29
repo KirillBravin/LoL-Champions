@@ -368,6 +368,8 @@
   .championInfo__short-description {
     margin: 0 1rem 0 1rem;
     width: 100%;
+    height: 15vh;
+    overflow: scroll;
   }
   .championInfo__dividing-line {
     display: none;
@@ -403,6 +405,7 @@
     height: 6.9rem;
     width: 100%;
     top: 15rem;
+    background-color: black;
   }
   .championSkins__slider-header {
     display: none;
@@ -411,7 +414,7 @@
     width: 8rem;
   }
   .championSkins__slider__skin-name {
-    font-size: 14px;
+    font-size: 12px;
   }
   .championAbilities-style {
     width: 100%;
@@ -434,6 +437,15 @@
     width: 100%;
     height: 10rem;
   }
+  .championAbilities-style__description-ability {
+    height: 12vh;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    pointer-events: all;
+  }
+  .championAbilities-style__header {
+    margin-left: 11vh;
+  }
   .splide {
     height: 100%;
   }
@@ -446,6 +458,16 @@
   .video-border {
     width: 12rem;
     height: 12rem;
+  }
+  .championInfo__short-description {
+    align-items: baseline;
+  }
+  .headers__champion-name {
+    font-size: 22px;
+    margin-bottom: 0;
+  }
+  .headers__champion-title {
+    font-size: 17px;
   }
   .leagueIntro {
     height: 59rem;

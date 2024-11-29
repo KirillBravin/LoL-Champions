@@ -503,6 +503,8 @@
         &__short-description{
             margin: 0 1rem 0 1rem;
             width: 100%;
+            height: 15vh;
+            overflow: scroll;
         }
 
         &__dividing-line{
@@ -549,6 +551,7 @@
             height: 6.9rem;
             width: 100%;
             top: 15rem;
+            background-color: black;
         }
 
         &__slider-header{
@@ -561,7 +564,7 @@
             }
 
             &__skin-name{
-                font-size: 14px;
+                font-size: 12px;
             }
         }
     }
@@ -591,6 +594,17 @@
             width: 100%;
             height: 10rem;
         }
+
+        &__description-ability{
+            height: 12vh;
+            overflow: scroll;
+            -webkit-overflow-scrolling: touch;
+            pointer-events: all;
+        }
+
+        &__header{
+            margin-left: 11vh;
+        }
     }
 
     .splide{
@@ -607,6 +621,23 @@
     .video-border{
         width: 12rem;
         height: 12rem;
+    }
+
+    .championInfo{
+        &__short-description{
+            align-items: baseline;
+        }
+    }
+
+    .headers{
+        &__champion-name{
+            font-size: 22px;
+            margin-bottom: 0;
+        }
+
+        &__champion-title{
+            font-size: 17px;
+        }
     }
 
     .leagueIntro{
