@@ -230,7 +230,7 @@ interface Champions {
 }
 
 export const useLeagueService = () => {
-  const { request } = useHttp();
+  const { request, loading, error, process } = useHttp();
 
   const _apiBase: string = "https://ddragon.leagueoflegends.com/cdn/";
   const _skinLoading: string = "img/champion/loading/";
@@ -270,5 +270,8 @@ export const useLeagueService = () => {
     getChampionLoading,
     getAllChampions,
     getChampion,
+    loading,
+    error,
+    process,
   };
 };

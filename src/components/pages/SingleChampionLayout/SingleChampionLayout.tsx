@@ -148,6 +148,7 @@ export default function SingleChampionLayout() {
         setChampion(champData);
       }
     } catch (error) {
+      setIsLoading(false);
       console.log("Failed to fetch champion:", error);
     } finally {
       setIsLoading(false);

@@ -1,6 +1,7 @@
-import { lazy, Suspense} from "react";
+import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Spinner } from "../Spinner/Spinner";
+import ErrorBoundary from "../../errorBoundary/errorBoundary";
 
 const Home = lazy(() => import("../pages/homePage/Home"));
 const SingleChampionLayout = lazy(
@@ -19,6 +20,7 @@ function App() {
               <Home />
             </Suspense>
           }
+          errorElement={<ErrorBoundary />}
         />
         <Route
           path={`/champion/:championName`}
@@ -27,6 +29,7 @@ function App() {
               <SingleChampionLayout />
             </Suspense>
           }
+          errorElement={<ErrorBoundary />}
         />
         <Route
           path="*"
