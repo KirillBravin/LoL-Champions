@@ -624,8 +624,24 @@
     }
 
     .championInfo{
+        height: 40rem;
+
         &__short-description{
             align-items: baseline;
+        }
+
+        &__roles{
+            &__icon{
+                height: 50%;
+            }
+        }
+    }
+
+    .championAbilities-style{
+        height: 44rem;
+
+        &__diving-line{
+            width: 100%;
         }
     }
 
@@ -676,6 +692,14 @@
             margin-top: 1rem;
         }
     }
+
+    .championSkins{
+        height: 20.9rem;
+
+        &__slider-cover{
+            top: 14rem;
+        }
+    }
 }
 
 @media (max-width: 360px){
@@ -712,6 +736,46 @@
     .footer{
         &__riot-copyright{
             margin-top: 1rem;
+        }
+    }
+
+    .championInfo{
+        height: 39rem;
+        &__roles{
+            &__icon{
+                height: 35%;
+            }
+        }
+
+        &__short-info{
+            &__wrapper{
+                margin-top: 1rem;
+            }
+        }
+    }
+
+    .difficulty{
+        &__icons{
+            margin-top: 0;
+        }
+    }
+
+    .websites-links-wrapper{
+        margin-left: 2rem;
+    }
+
+    .championAbilities-style{
+        &__ability-icons-wrapper{
+            margin-top: 2rem;
+            width: 100%;
+        }
+    }
+
+    .championSkins{
+        height: 19.9rem;
+
+        &__slider-cover{
+            top:13rem;
         }
     }
 }

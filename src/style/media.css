@@ -459,8 +459,20 @@
     width: 12rem;
     height: 12rem;
   }
+  .championInfo {
+    height: 40rem;
+  }
   .championInfo__short-description {
     align-items: baseline;
+  }
+  .championInfo__roles__icon {
+    height: 50%;
+  }
+  .championAbilities-style {
+    height: 44rem;
+  }
+  .championAbilities-style__diving-line {
+    width: 100%;
   }
   .headers__champion-name {
     font-size: 22px;
@@ -494,6 +506,12 @@
   .footer__riot-copyright {
     margin-top: 1rem;
   }
+  .championSkins {
+    height: 20.9rem;
+  }
+  .championSkins__slider-cover {
+    top: 14rem;
+  }
 }
 @media (max-width: 360px) {
   .leagueIntro__mode-name {
@@ -518,5 +536,30 @@
   }
   .footer__riot-copyright {
     margin-top: 1rem;
+  }
+  .championInfo {
+    height: 39rem;
+  }
+  .championInfo__roles__icon {
+    height: 35%;
+  }
+  .championInfo__short-info__wrapper {
+    margin-top: 1rem;
+  }
+  .difficulty__icons {
+    margin-top: 0;
+  }
+  .websites-links-wrapper {
+    margin-left: 2rem;
+  }
+  .championAbilities-style__ability-icons-wrapper {
+    margin-top: 2rem;
+    width: 100%;
+  }
+  .championSkins {
+    height: 19.9rem;
+  }
+  .championSkins__slider-cover {
+    top: 13rem;
   }
 }/*# sourceMappingURL=media.css.map */
