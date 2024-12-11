@@ -2,7 +2,7 @@ import { useCallback, useState } from "react";
 
 export const useHttp = () => {
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState("");
   const [process, setProcess] = useState("waiting");
 
   const request = useCallback(
@@ -27,10 +27,10 @@ export const useHttp = () => {
         return data;
       } catch (e: unknown) {
         setLoading(false);
-        setError(e.message);
         setProcess("error");
 
         if (e instanceof Error) {
+          setError(e.message);
           console.error(e.message);
         }
         throw e;

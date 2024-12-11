@@ -63,41 +63,6 @@ interface AllChampionsBody {
   };
 }
 
-// Single champion description full
-
-interface SingleChampionDataLong {
-  id: string;
-  name: string;
-  title: string;
-  skins: {
-    [name: string]: {
-      num: number;
-      name: string;
-    };
-  };
-  lore: string;
-  tags: {
-    [name: string]: string;
-  };
-  info: {
-    difficulty: number;
-  };
-  spells: {
-    [name: string]: {
-      id: string;
-      name: string;
-      description: string;
-    };
-  };
-  passive: {
-    name: string;
-    description: string;
-    image: {
-      full: string;
-    };
-  };
-}
-
 interface SingleChampionBody {
   id: string;
   key: string;
@@ -245,7 +210,9 @@ export const useLeagueService = () => {
   const getAllChampions = useCallback(async (): Promise<
     SingleChampionData[]
   > => {
-    const res: Champions = await request("http://localhost:5000/champions");
+    const res: Champions = await request(
+      "https://leaguechampions-backend.onrender.com/champions"
+    );
     return Object.values(res).map((champ: AllChampionsBody) => ({
       id: champ.id,
       name: champ.name,
@@ -259,7 +226,7 @@ export const useLeagueService = () => {
   const getChampion = useCallback(
     async (name: string): Promise<SingleChampionBody> => {
       const res: SingleChampionBody = await request(
-        `http://localhost:5000/champion/${name}`
+        `https://leaguechampions-backend.onrender.com/champion/${name}`
       );
       return res;
     },

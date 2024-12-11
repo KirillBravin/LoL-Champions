@@ -241,7 +241,7 @@ function ChampionCard({ champion }: ChampionCardProps) {
     championNameImage = "FiddleSticks";
   }
 
-  const championNameMap = {
+  const championNameMap: { [key: string]: string } = {
     MonkeyKing: "Wukong",
     Nunu: "Nunu & Willump",
     Belveth: "Bel'Veth",

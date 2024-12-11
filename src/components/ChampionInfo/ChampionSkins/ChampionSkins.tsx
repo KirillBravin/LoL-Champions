@@ -211,9 +211,10 @@ export function ChampionSkins({
   };
 
   const getSliderHeight = () => {
-    if (window.innerWidth <= 820) return "35vh"; // iPad Air iPadsAI
-    if (window.innerWidth <= 1440) return "77vh"; // Laptop
-    return "115vh"; // Default
+    if (window.innerWidth <= 820) return "26rem"; // iPad Air iPadsAI
+    if (window.innerWidth <= 1280) return "35rem"; // Laptop
+    if (window.innerWidth <= 1440) return "44rem"; // Laptop
+    return "48rem"; // Default
   };
 
   const getSliderDirection = () => {
