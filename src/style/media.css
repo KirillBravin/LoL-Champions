@@ -512,6 +512,9 @@
   .championSkins__slider-cover {
     top: 14rem;
   }
+  .splide__slide {
+    width: 33% !important;
+  }
 }
 @media (max-width: 360px) {
   .leagueIntro__mode-name {
@@ -546,6 +549,9 @@
   .championInfo__short-info__wrapper {
     margin-top: 1rem;
   }
+  .championInfo__bottom-wrapper {
+    margin-left: 11rem;
+  }
   .difficulty__icons {
     margin-top: 0;
   }
@@ -561,5 +567,21 @@
   }
   .championSkins__slider-cover {
     top: 13rem;
+  }
+  .championSkins__slider__skin-image {
+    width: 7rem;
+  }
+  .championSkins__slider__skin-blinder {
+    bottom: 15px;
+    height: 11px;
+  }
+  .championAbilities-style__header {
+    margin-left: 5rem;
+  }
+  .championAbilities-style__description-wrapper {
+    height: 12rem;
+  }
+  .championAbilities-style__description-ability {
+    height: 9rem;
   }
 }/*# sourceMappingURL=media.css.map */

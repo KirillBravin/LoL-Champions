@@ -700,6 +700,12 @@
             top: 14rem;
         }
     }
+
+    .splide{
+        &__slide{
+            width: 33% !important;
+        }
+    }
 }
 
 @media (max-width: 360px){
@@ -752,6 +758,10 @@
                 margin-top: 1rem;
             }
         }
+
+        &__bottom-wrapper{
+            margin-left: 11rem;
+        }
     }
 
     .difficulty{
@@ -776,6 +786,31 @@
 
         &__slider-cover{
             top:13rem;
+        }
+
+        &__slider{
+            &__skin-image{
+                width: 7rem;
+            }
+
+            &__skin-blinder{
+                bottom: 15px;
+                height: 11px;
+            }
+        }
+    }
+
+    .championAbilities-style{
+        &__header{
+            margin-left: 5rem;
+        }
+        
+        &__description-wrapper{
+            height: 12rem;
+        }
+
+        &__description-ability{
+            height: 9rem;
         }
     }
 }

@@ -7,6 +7,8 @@ import { useLeagueService } from "../../../Backend/LeagueService";
 import { useParams } from "react-router-dom";
 import { Spinner } from "../../Spinner/Spinner";
 
+import "../../../style/style.css";
+
 interface SingleChampionBody {
   id: string;
   key: string;
@@ -160,7 +162,11 @@ export default function SingleChampionLayout() {
   }, [fetchChampion]);
 
   if (isLoading) {
-    return <Spinner />;
+    return (
+      <div className="spinner-container-single">
+        <Spinner />
+      </div>
+    );
   }
 
   return (

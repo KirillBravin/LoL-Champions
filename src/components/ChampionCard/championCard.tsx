@@ -21,6 +21,10 @@ interface ChampionCardsProps {
   difficultySelected: number[];
 }
 
+interface ChampionCardProps {
+  champion: string;
+}
+
 export function ChampionCards({
   championList,
   championSelected,
@@ -214,6 +218,7 @@ export function ChampionCards({
   };
 
   const cards = renderChampions(championList);
+
   return (
     <>
       <div className="champion-cards">
@@ -221,10 +226,6 @@ export function ChampionCards({
       </div>
     </>
   );
-}
-
-interface ChampionCardProps {
-  champion: string;
 }
 
 function ChampionCard({ champion }: ChampionCardProps) {

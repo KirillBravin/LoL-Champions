@@ -211,6 +211,7 @@ export function ChampionSkins({
   };
 
   const getSliderHeight = () => {
+    if (window.innerWidth <= 810) return "24rem"; // iPad Air iPadsAI
     if (window.innerWidth <= 820) return "26rem"; // iPad Air iPadsAI
     if (window.innerWidth <= 1280) return "35rem"; // Laptop
     if (window.innerWidth <= 1440) return "44rem"; // Laptop
@@ -223,6 +224,7 @@ export function ChampionSkins({
   };
 
   const getSliderGap = () => {
+    if (window.innerWidth <= 390) return "4px";
     if (window.innerWidth <= 428) return "15px";
     return "20px";
   };

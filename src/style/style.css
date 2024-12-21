@@ -12,6 +12,7 @@
 @import "../components/ChampionInfo/ChampionInfoAbilityDescriptions/ChampionInfoAbilityDescriptions.css";
 @import "../components/ChampionInfo/championInfoDifficulty/championInfoDifficulty.css";
 @import "../components/ChampionInfo/ChampionSkins/ChampionSkins.css";
+@import "../components/pages/SingleChampionLayout/singleChampionLayout.css";
 @import "./media.css";
 @font-face {
   font-family: "BeaufortforLOL-Regular";
