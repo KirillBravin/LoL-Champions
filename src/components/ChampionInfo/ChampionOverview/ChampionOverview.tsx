@@ -165,7 +165,7 @@ export function ChampionOverview({
       <div className="championInfo__overview">Overview</div>
       <a
         className="btn btn-dark championInfo__champion-list-wrapper"
-        href="http://localhost:5173/"
+        href="https://kirillbravin.github.io/LoL-Champions/"
       >
         <div className="championInfo__champion-list">Champion list</div>
         <img

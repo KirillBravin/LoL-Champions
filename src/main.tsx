@@ -8,7 +8,7 @@ import App from "./components/App/App.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/LoL-Champions">
       <App />
     </BrowserRouter>
   </React.StrictMode>
